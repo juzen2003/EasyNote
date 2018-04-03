@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import errorsSessionReducer from './session_errors_reducer';
+import errorsSessionReducer from './errors_session_reducer';
 
 const errorsReducer = combineReducers({
   session: errorsSessionReducer
