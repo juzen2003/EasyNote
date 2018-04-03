@@ -14,12 +14,15 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitEvent(this.state)
+    const user = Object.assign({}, this.state);
+    // login after submit
+    this.props.processForm(user).then(() => this.setState({username:"", password:""}));
   }
 
   render() {
     return (
       <div>
+        <h3>{this.props.formType}</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Username
             <input
@@ -35,7 +38,10 @@ class SessionForm extends React.Component {
               onChange={this.handleChange("password")}
             />
           </label>
-          <input type="submit" value={this.props.formType}/>
+          <input
+            type="submit"
+            value={this.props.formType}
+          />
         </form>
       </div>
     );
