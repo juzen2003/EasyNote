@@ -10,12 +10,21 @@
   justify-content: center;
   align-items: center;
   font-weight: 400;
+  border-top: solid 4px #2dbe60;
+  overflow: hidden;
 }
-//
+
+// .header-bar {
+//   background-color: #2dbe60;
+//   width: 100%;
+//   height: 4px;
+//   margin-top: 0;
+// }
+
 .session-form-wrapper {
   // height: 300px;
   width: 300px;
-  // max-width: 384px;
+  max-width: 384px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -31,26 +40,13 @@
 .session-form {
   margin: 20px 0px 10px 0px;
 }
-//
-// .username, .password {
-//   border: 1px solid #cacaca;
-//   color: #3b3b3b;
-//   border-radius: 7px;
-//   font-size: 16px;
-//   box-sizing: border-box;
-//   width:90%;
-//   margin: 10px;
-//
-// }
-// input {
-//   -webkit-appearance: none;
-// }
 
 .form-title {
   font-family: sans-serif;
   text-align: center;
   padding-bottom: 10px;
   font-weight: bold;
+  color: #6a6a6a;
 }
 
 input[type=text], input[type=password], input[type=submit] {
@@ -68,4 +64,22 @@ input[type=text], input[type=password], input[type=submit] {
 input[type=submit] {
   background-color: #2dbe60;
   color: #ffffff;
+  font-weight: bold;
+}
+
+.session-link {
+  margin: 5px;
+  color: #2dbe60;
+}
+
+.error-messages {
+  color: #F51010;
+  margin: 10px;
+}
+
+.session-link-prompt {
+  margin: 5px;
+  color: #747474;
+  font-family: helvetica, arial, sans-serif;
+  font-size: 0.91666667rem;
 }

@@ -28,19 +28,33 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     // clear errors messages in p tag after sucessfully login
-    const errorMessage = (this.props.errors.session === null) ? [] : <p>{this.props.errors.session.responseJSON}</p>
+    const errorMessage = (this.props.errors.session === null) ? [] : <p className="error-messages">{this.props.errors.session.responseJSON}</p>
     return(
       errorMessage
     );
   }
 
+  renderLink() {
+    const linkItem = (this.props.formType === "Login") ? <Link to="/signup" className="session-link">Create Account</Link> : <Link to="/login" className="session-link">Sign In</Link>
+
+    return linkItem;
+  }
+
+  renderPrompt() {
+    const prompt = (this.props.formType === "Login") ? <p className="session-link-prompt">Don't have an account?</p> : <p to="/login" className="session-link-prompt">Already have an account?</p>
+
+    return prompt;
+  }
+
   render() {
-    const linkItem = (this.props.formType === "Login") ? <Link to="/signup">Create Account</Link> : <Link to="/login">Sign In</Link>
+
+
     return (
-      <div className='session-page'>
-        <div className='session-form-wrapper'>
-          <form className='session-form' onSubmit={this.handleSubmit}>
-            <h3 className='form-title'>{this.props.formType}</h3>
+      <div className="session-page">
+
+        <div className="session-form-wrapper">
+          <form className="session-form" onSubmit={this.handleSubmit}>
+            <h3 className="form-title">{this.props.formType}</h3>
             <label>
               <input className="username"
                 type="text"
@@ -65,9 +79,11 @@ class SessionForm extends React.Component {
           </form>
         </div>
         {this.renderErrors()}
-        {linkItem}
+        {this.renderPrompt()}
+        {this.renderLink()}
       </div>
     );
+
   }
 }
 
