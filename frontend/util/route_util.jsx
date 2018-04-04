@@ -22,8 +22,9 @@ const Auth = ({ loggedIn, exact, path, component: Component}) => (
 // Build Protected component
 // when logged in, render component, else redirect to signup
 // this is to protect not-logged-in user to directly render '/notes'
-const Protected = ({ loggedIn, path, component: Component}) => (
+const Protected = ({ loggedIn, exact, path, component: Component}) => (
   <Route
+    exact={exact}
     path={path}
     render={props => (
       loggedIn ? <Component {...props}/> : <Redirect to='/signup'/>

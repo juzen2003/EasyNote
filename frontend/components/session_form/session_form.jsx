@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = this.props.info
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleChange(field) {
@@ -19,8 +20,16 @@ class SessionForm extends React.Component {
     // login after submit
     // clear form
     // this.props.processForm(user).then(() => this.setState({username:"", password:""}));
-    // go to "/"
-    this.props.processForm(user).then(() => this.props.history.push('/notes'));
+    // go to "/notes"
+    this.props.processForm(user).then(
+      () => this.props.history.push('/notes')
+    );
+  }
+
+  renderErrors() {
+    return(
+      <p>{this.props.errors.session.responseJSON}</p>
+    );
   }
 
   render() {
@@ -48,6 +57,7 @@ class SessionForm extends React.Component {
             value={this.props.formType}
           />
         </form>
+        {this.renderErrors()}
         {this.props.link}
       </div>
     );
