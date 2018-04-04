@@ -1,7 +1,4 @@
-// .form-title {
-//   font-family: sans-serif;
-// }
-//
+
 .session-page {
   font-family: sans-serif;
   background-color: #F3F3F3;
@@ -12,11 +9,13 @@
   height: 100vh;
   justify-content: center;
   align-items: center;
+  font-weight: 400;
 }
 //
-.session-form {
+.session-form-wrapper {
   // height: 300px;
   width: 300px;
+  // max-width: 384px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -24,6 +23,13 @@
   // align-items: stretch;
   border: 1px solid rgb(222,222,222);
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+}
+
+.session-form {
+  margin: 20px 0px 10px 0px;
 }
 //
 // .username, .password {
@@ -39,6 +45,14 @@
 // input {
 //   -webkit-appearance: none;
 // }
+
+.form-title {
+  font-family: sans-serif;
+  text-align: center;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
 input[type=text], input[type=password], input[type=submit] {
   border: 1px solid #cacaca;
   color: #3b3b3b;
@@ -48,14 +62,10 @@ input[type=text], input[type=password], input[type=submit] {
   width: 90%;
   margin: 10px 10px 10px 15px;
   padding: 10px;
-  background-color: #F3F3F3;
-
+  // background-color: #F3F3F3;
 }
 
-// .submit-button {
-//   padding: 10px;
-//   margin: 10px;
-//   border-radius: 7px;
-//   background-color: #2dbe60;
-//   width: 90%;
-// }
+input[type=submit] {
+  background-color: #2dbe60;
+  color: #ffffff;
+}

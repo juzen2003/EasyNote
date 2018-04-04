@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class SessionForm extends React.Component {
 
@@ -35,35 +35,37 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
+    const linkItem = (this.props.formType === "Login") ? <Link to="/signup">Create Account</Link> : <Link to="/login">Sign In</Link>
     return (
       <div className='session-page'>
-        <form className='session-form' onSubmit={this.handleSubmit}>
-          <h3 className='form-title'>{this.props.formType}</h3>
-          <label>
-            <input className="username"
-              type="text"
-              value={this.state.username}
-              onChange={this.handleChange("username")}
-              placeholder="Username"
+        <div className='session-form-wrapper'>
+          <form className='session-form' onSubmit={this.handleSubmit}>
+            <h3 className='form-title'>{this.props.formType}</h3>
+            <label>
+              <input className="username"
+                type="text"
+                value={this.state.username}
+                onChange={this.handleChange("username")}
+                placeholder="Username"
+              />
+            </label>
+            <label>
+              <input className="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange("password")}
+                placeholder="Password"
+              />
+            </label>
+            <input
+              className="submit-button"
+              type="submit"
+              value={this.props.formType}
             />
-          </label>
-          <label>
-            <input className="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange("password")}
-              placeholder="Password"
-            />
-          </label>
-          <input
-            className="submit-button"
-            type="submit"
-            value={this.props.formType}
-          />
-        </form>
+          </form>
+        </div>
         {this.renderErrors()}
-        {this.props.link}
+        {linkItem}
       </div>
     );
   }

@@ -7,8 +7,7 @@ import SessionForm from './session_form';
 const mapStateToProps = state => ({
   info: { username: "", password: "" },
   errors: state.errors,
-  formType: "Login",
-  link: <Link to="/signup">Create Account</Link>
+  formType: "Login"
 });
 
 const mapDispatchToProps = dispatch => ({
