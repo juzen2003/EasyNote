@@ -67,6 +67,10 @@ input[type=submit] {
   font-weight: bold;
 }
 
+input[type=submit]:hover {
+  background-color: rgb(31, 174, 82);
+}
+
 .session-link {
   margin: 5px;
   color: #2dbe60;
