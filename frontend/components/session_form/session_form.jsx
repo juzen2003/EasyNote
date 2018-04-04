@@ -1,4 +1,5 @@
 import React from 'react';
+// import { withRouter } from 'react-router-dom'
 
 class SessionForm extends React.Component {
 
@@ -16,10 +17,14 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     // login after submit
-    this.props.processForm(user).then(() => this.setState({username:"", password:""}));
+    // clear form
+    // this.props.processForm(user).then(() => this.setState({username:"", password:""}));
+    // go to "/"
+    this.props.processForm(user).then(() => this.props.history.push('/notes'));
   }
 
   render() {
+
     return (
       <div>
         <h3>{this.props.formType}</h3>
