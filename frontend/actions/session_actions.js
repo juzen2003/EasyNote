@@ -22,7 +22,8 @@ const receiveErrors = (errors) => ({
 
 export const signup = (formUser) => dispatch => (
   SessionUtil.signup(formUser).then(
-    user => dispatch(recieveCurrentUser(user)),
+    user => {dispatch(recieveCurrentUser(user));
+             dispatch(receiveErrors(null));},
     errors => dispatch(receiveErrors(errors))
   )
 );
