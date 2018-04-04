@@ -38,8 +38,8 @@ class SessionForm extends React.Component {
 
     return (
       <div className='session-page'>
-        <h3 className='form-title'>{this.props.formType}</h3>
         <form className='session-form' onSubmit={this.handleSubmit}>
+          <h3 className='form-title'>{this.props.formType}</h3>
           <label>
             <input className="username"
               type="text"
@@ -57,6 +57,7 @@ class SessionForm extends React.Component {
             />
           </label>
           <input
+            className="submit-button"
             type="submit"
             value={this.props.formType}
           />
