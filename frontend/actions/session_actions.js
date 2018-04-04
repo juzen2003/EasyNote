@@ -16,7 +16,7 @@ const recieveCurrentUser = (user) => ({
 
 const receiveErrors = (errors) => ({
   type: RECEIVE_SESSION_ERRORS,
-  errors
+  errors: errors
 });
 
 
@@ -29,7 +29,8 @@ export const signup = (formUser) => dispatch => (
 
 export const login = (formUser) => dispatch => (
   SessionUtil.login(formUser).then(
-    user => dispatch(recieveCurrentUser(user)),
+    user => {dispatch(recieveCurrentUser(user));
+             dispatch(receiveErrors(null));},
     errors => dispatch(receiveErrors(errors))
   )
 );

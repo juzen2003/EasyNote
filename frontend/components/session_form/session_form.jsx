@@ -27,29 +27,33 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    // clear errors messages in p tag after sucessfully login
+    const errorMessage = (this.props.errors.session === null) ? [] : <p>{this.props.errors.session.responseJSON}</p>
     return(
-      <p>{this.props.errors.session.responseJSON}</p>
+      errorMessage
     );
   }
 
   render() {
 
     return (
-      <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input
+      <div className='session-page'>
+        <h3 className='form-title'>{this.props.formType}</h3>
+        <form className='session-form' onSubmit={this.handleSubmit}>
+          <label>
+            <input className="username"
               type="text"
               value={this.state.username}
               onChange={this.handleChange("username")}
+              placeholder="Username"
             />
           </label>
-          <label>Password
-            <input
+          <label>
+            <input className="password"
               type="password"
               value={this.state.password}
               onChange={this.handleChange("password")}
+              placeholder="Password"
             />
           </label>
           <input
