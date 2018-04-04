@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import DemoButton from './demo_button';
 
 class SessionForm extends React.Component {
 
@@ -8,6 +9,8 @@ class SessionForm extends React.Component {
     this.state = this.props.info
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.renderLink = this.renderLink.bind(this);
+    this.renderPrompt = this.renderPrompt.bind(this);
   }
 
   handleChange(field) {
@@ -72,10 +75,10 @@ class SessionForm extends React.Component {
               />
             </label>
             <input
-              className="submit-button"
               type="submit"
               value={this.props.formType}
             />
+            <DemoButton/>
           </form>
         </div>
         {this.renderErrors()}

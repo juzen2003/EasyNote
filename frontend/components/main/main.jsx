@@ -9,7 +9,7 @@ class Main extends React.Component {
         <div className="nav-bar">
           <NavBarContainer />
         </div>
-        <div className="body-area">
+        <div className="main-body-area">
           <section className="section-left">
             <LogInFormContainer />
           </section>
