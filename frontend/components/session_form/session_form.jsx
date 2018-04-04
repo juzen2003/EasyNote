@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
 
 class SessionForm extends React.Component {
 
@@ -44,6 +43,7 @@ class SessionForm extends React.Component {
             value={this.props.formType}
           />
         </form>
+        {this.props.link}
       </div>
     );
   }

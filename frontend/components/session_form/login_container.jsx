@@ -1,11 +1,14 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
+import { Link } from 'react-router-dom'
 import SessionForm from './session_form';
 
 const mapStateToProps = state => ({
   info: { username: "", password: "" },
   errors: state.errors,
-  formType: "Login"
+  formType: "Login",
+  link: <Link to="/signup">Create Account</Link>
 });
 
 const mapDispatchToProps = dispatch => ({
