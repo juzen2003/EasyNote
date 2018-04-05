@@ -8,3 +8,16 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
+
+// State:
+// {
+//   session: {
+//     currentUser: {
+//       id: 1,
+//       username: 'breakfast'
+//     }
+//   },
+//   errors: {
+//     session: []
+//   }
+// }
