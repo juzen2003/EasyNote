@@ -43,11 +43,28 @@
   border: 1px solid #2dbe60;
 }
 
-.nav-bar-title {
-  font-family: "Gotham_SSm_3r", Helvetica, Arial, sans-serif;
-  color: #2dbe60;
-  font-size: 20px;
-  font-weight: bold;
+.logo {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  .nav-logo {
+    background: url("/logo.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    padding: 0px 0px 5px 0px;
+    margin-right: 10px;
+  }
+
+  .nav-bar-title {
+    font-family: "Gotham_SSm_3r", Helvetica, Arial, sans-serif;
+    color: #2dbe60;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+  }
 }
 
 // section {

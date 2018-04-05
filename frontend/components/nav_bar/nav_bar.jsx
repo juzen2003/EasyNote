@@ -10,7 +10,10 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <h3 className="nav-bar-title">EasyNote</h3>
+        <div className="logo">
+          <a className="nav-logo" href="/"></a>
+          <h3 className="nav-bar-title">EasyNote</h3>
+        </div>
         <Link className="nav-bar-singup" to='/signup'>Sign up for free</Link>
       </div>
     )
