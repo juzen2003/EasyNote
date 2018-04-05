@@ -15,9 +15,17 @@ class NavSideBar extends React.Component {
   render() {
     return (
       <div className="side-bar-area">
-        <h3>Notes Page Nav Bar Is Here</h3>
-        <p>welcome {this.state.username}</p>
-        <button onClick={this.handleLogout}>Logout</button>
+        <ul>
+          <li>
+            <img className="side-bar-logo" src="/logo.png" alt="Logo"/>
+          </li>
+          <li>
+            <p>welcome {this.state.username}</p>
+          </li>
+          <li>
+            <button onClick={this.handleLogout}>Logout</button>
+          </li>
+        </ul>
       </div>
     )
   }
