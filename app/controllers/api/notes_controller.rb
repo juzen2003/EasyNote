@@ -1,7 +1,8 @@
 class Api::NotesController < ApplicationController
-
+  # before_action :require_login
   def create
-    @note = current_user.notes.new(note_params)
+    # @note = current_user.notes.new(note_params)
+    @note = Note.new(note_params)
     if @note.save
       # render 'api/users/show'
       render :show
@@ -11,27 +12,31 @@ class Api::NotesController < ApplicationController
   end
 
   def update
-    @note = current_user.notes.find(params[:id])
+    # @note = current_user.notes.find(params[:id])
+    @note = Note.find(params[:id])
     if @note.update(note_params)
       render :show
     else
-      render json: @note.errors.full_messages. status: 422
+      render json: @note.errors.full_messages, status: 422
     end
   end
 
   def index
-    @notes = current_user.notes.all
+    # @notes = current_user.notes.all
+    @notes = Note.all
     render :index
   end
 
   def show
-    @note = current_user.notes.find(params[:id])
+    # @note = current_user.notes.find(params[:id])
+    @note = Note.find(params[:id])
     render :show
   end
 
   def destroy
-    @note = current_user.notes.find(params[:id])
-    if @note.destroy!
+    # @note = current_user.notes.find(params[:id])
+    @note = Note.find(params[:id])
+    if @note.destroy
       render json: {}
     else
       render json: ['Fail to delete note'], status: 422
