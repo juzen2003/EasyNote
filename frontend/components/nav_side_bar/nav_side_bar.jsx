@@ -14,7 +14,7 @@ class NavSideBar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="side-bar-area">
         <h3>Notes Page Nav Bar Is Here</h3>
         <p>welcome {this.state.username}</p>
         <button onClick={this.handleLogout}>Logout</button>

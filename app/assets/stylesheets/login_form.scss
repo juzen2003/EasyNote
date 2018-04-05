@@ -76,6 +76,7 @@ input[type=submit] {
   background-color: #2dbe60;
   color: #ffffff;
   font-weight: bold;
+  cursor: pointer;
 }
 
 input[type=submit]:hover {
@@ -93,6 +94,7 @@ input[type=submit]:hover {
   width: 90%;
   margin: 10px 10px 10px 15px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .demo-button:hover {
