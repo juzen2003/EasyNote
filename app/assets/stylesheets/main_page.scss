@@ -1,14 +1,51 @@
+.main-page {
+  font-family: sans-serif;
+  overflow: hidden;
+  font-weight: 400;
+}
+
 .main-body-area {
   display: flex;
-  // justify-content: center;
+  justify-content: space-around;
+}
+
+.nav-bar-area {
+  height: 20%;
+  padding: 30px 0 24px;
+  border-bottom: 1px solid rgb(222,222,222);
+  margin: 10px;
 }
 
 .nav-bar {
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+
+.nav-bar-singup {
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #000;
+  padding: 10px;
+}
+
+.nav-bar-singup:hover {
+  color: #2dbe60;
+  border: 1px solid #2dbe60;
+}
+
+.nav-bar-title {
+  font-family: "Gotham_SSm_3r", Helvetica, Arial, sans-serif;
+  color: #2dbe60;
+}
+
+// section {
+//   margin: auto;
+// }
 
 .section-left {
   flex: 1;
+  // margin: auto;
 }
 .section-left > .session-page {
   flex: 1;
@@ -18,4 +55,5 @@
 
 .section-right {
   flex: 1;
+  // margin: auto;
 }

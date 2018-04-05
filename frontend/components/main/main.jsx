@@ -6,7 +6,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-page">
-        <div className="nav-bar">
+        <div className="nav-bar-area">
           <NavBarContainer />
         </div>
         <div className="main-body-area">
