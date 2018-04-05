@@ -6,7 +6,7 @@ export const createNote = (note) => (
   })
 );
 
-export const udpateNote = (note) => (
+export const updateNote = (note) => (
   $.ajax ({
     url: `/api/notes/${note.id}`,
     method: 'PATCH',
