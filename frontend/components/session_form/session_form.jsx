@@ -55,9 +55,9 @@ class SessionForm extends React.Component {
     return (
       <div className="session-page">
         <a className="form-logo" href="/"></a>
+        <h3 className="form-title">{this.props.formType}</h3>
         <div className="session-form-wrapper">
           <form className="session-form" onSubmit={this.handleSubmit}>
-            <h3 className="form-title">{this.props.formType}</h3>
             <label>
               <input className="username"
                 type="text"

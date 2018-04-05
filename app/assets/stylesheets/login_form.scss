@@ -49,12 +49,13 @@
 
 
 .form-title {
-  font-family: sans-serif;
+  font-family: serif;
   text-align: center;
-  // padding-bottom: 10px;
-  font-weight: bold;
+  font-size: 28px;
+  // font-weight: bold;
+  font-family: Times, serif;
   color: #6a6a6a;
-  padding: 0px 0px 15px 0px;
+  padding: 0px 0px 20px 0px;
 }
 
 input[type=text], input[type=password], input[type=submit] {
