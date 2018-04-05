@@ -1,7 +1,24 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string           not null
+#  password_digest :string
+#  session_token   :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
   validates :username, presence: true, uniqueness: true
+
+  # TODO: asscociation to be added
+  has_many :notes,
+    foreign_key: :user_id,
+    class_name: :Note
 
   attr_reader :password
   after_initialize :ensure_session_token
