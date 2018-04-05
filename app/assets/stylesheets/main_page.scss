@@ -20,15 +20,16 @@
 
 .nav-bar-area {
   // height: 15%;
-  padding: 0px 0 10px;
+  padding: 5px 0 25px;
   border-bottom: 1px solid rgb(222,222,222);
-  margin: 10px 10px 0px 10px;
+  margin: 20px 10px 0px 10px;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  margin: 0 30px;
+  // nav button postion
+  margin: 0 120px;
   align-items: center;
 }
 
@@ -79,7 +80,7 @@
   flex: 1;
   border-top: none;
   background-color: #ffffff;
-  height: 75vh;
+  height: 85vh;
   margin: auto;
 }
 
@@ -92,7 +93,9 @@
   background-size: cover;
   background-position: center center;
   -webkit-font-smoothing: antialiased;
-  margin-right: 10px;
+  // image position
+  margin-right: 100px;
+  margin-bottom: 100px;
 
   .splash-area  {
     padding-top: 100px;
