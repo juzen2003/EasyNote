@@ -10,7 +10,6 @@ class DemoButton extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    console.log("click");
     dispatch(login(this.state));
   }
 
