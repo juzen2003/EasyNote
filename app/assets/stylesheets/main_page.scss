@@ -5,7 +5,7 @@
   background-color: #FFFFFF;
   background-size: auto;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -20,9 +20,9 @@
 
 .nav-bar-area {
   // height: 15%;
-  padding: 0px 0 20px;
+  padding: 0px 0 10px;
   border-bottom: 1px solid rgb(222,222,222);
-  margin: 5px 10px 5px 10px;
+  margin: 10px 10px 0px 10px;
 }
 
 .nav-bar {
@@ -92,6 +92,7 @@
   background-size: cover;
   background-position: center center;
   -webkit-font-smoothing: antialiased;
+  margin-right: 10px;
 
   .splash-area  {
     padding-top: 100px;
