@@ -17,8 +17,10 @@ class Main extends React.Component {
             <LogInFormContainer />
           </section>
           <section className="section-right">
-            <h3>{splashMessages}</h3>
-            <p>{messages}</p>
+            <div className="splash-area">
+              <h3>{splashMessages}</h3>
+              <p>{messages}</p>
+            </div>
           </section>
         </div>
         <div className="footer-area">

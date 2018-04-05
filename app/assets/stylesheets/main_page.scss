@@ -67,26 +67,38 @@
 
 .section-right {
   flex: 1;
-  margin: auto;
+  // margin: auto;
   justify-content: center;
+  background: url(main_page_background.jpg) no-repeat;
+  // overflow: hidden;
+  background-size: cover;
+  background-position: center center;
 
-  h3 {
-    font-family: "Gotham_SSm_5r", Helvetica, Arial, sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    padding: 20px 20px;
+  .splash-area  {
+    padding-top: 100px;
+    margin: auto;
+    color: #ffffff;
     text-align: center;
-    line-height: 42px;
-  }
 
-  p {
-    font-family: "webfont";
-    font-size: 13px;
-    line-height: 21px;
-    text-align: center;
+    h3 {
+      font-family: "Gotham_SSm_5r", Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: bold;
+      padding: 20px 20px;
+      line-height: 42px;
+      // text-shadow: 2px 2px #000;
+      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    }
+    p {
+      font-family: "webfont";
+      font-size: 18px;
+      line-height: 21px;
+      // text-shadow: 2px 2px #000;
+      text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    }
   }
-
 }
+
 
 .footer-area {
   padding: 20px 0 20px;
