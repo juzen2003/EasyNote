@@ -6,7 +6,11 @@ class Api::UsersController < ApplicationController
       render 'api/users/show'
       # render :show
     else
-      render json: ["invalid credentials"], status: 422
+      if params[:user][:password].length < 6
+        render json: ["Password too short!"], status: 422
+      else
+        render json: ["Username is taken!"], status: 422
+      end
     end
   end
 
