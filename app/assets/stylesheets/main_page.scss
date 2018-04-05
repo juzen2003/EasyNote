@@ -20,14 +20,15 @@
 
 .nav-bar-area {
   // height: 15%;
-  padding: 20px 0 20px;
+  padding: 0px 0 20px;
   border-bottom: 1px solid rgb(222,222,222);
   margin: 5px 10px 5px 10px;
 }
 
 .nav-bar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 30px;
   align-items: center;
 }
 
