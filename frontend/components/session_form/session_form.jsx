@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     // clear errors messages in p tag after sucessfully login
-    const errorMessage = (this.props.errors.session === null) ? [] : <p className="error-messages">{this.props.errors.session.responseJSON}</p>
+    const errorMessage = (this.props.errors.session === null) ? <p className="error-messages"></p> : <p className="error-messages">{this.props.errors.session.responseJSON}</p>
     return(
       errorMessage
     );

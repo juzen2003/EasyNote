@@ -22,7 +22,7 @@
   // height: 15%;
   padding: 20px 0 20px;
   border-bottom: 1px solid rgb(222,222,222);
-  margin: 5px 10px 20px 10px;
+  margin: 5px 10px 5px 10px;
 }
 
 .nav-bar {
@@ -49,12 +49,11 @@
   padding-bottom: 10px;
   .nav-logo {
     background: url("/logo.png") no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
     width: 30px;
     height: 30px;
     padding: 0px 0px 5px 0px;
-    margin-right: 10px;
   }
 
   .nav-bar-title {
@@ -63,7 +62,7 @@
     font-size: 20px;
     font-weight: bold;
     text-align: center;
-    padding: 15px 0px 0px 0px;
+    padding: 5px 0px 0px 0px;
   }
 }
 
@@ -80,6 +79,7 @@
   border-top: none;
   background-color: #ffffff;
   height: 75vh;
+  margin: auto;
 }
 
 .section-right {

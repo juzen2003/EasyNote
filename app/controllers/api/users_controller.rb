@@ -9,7 +9,7 @@ class Api::UsersController < ApplicationController
       if params[:user][:password].length < 6
         render json: ["Password too short!"], status: 422
       else
-        render json: ["Username is taken!"], status: 422
+        render json: ["Username is not valid or taken!"], status: 422
       end
     end
   end
