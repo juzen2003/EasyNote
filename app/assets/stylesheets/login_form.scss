@@ -11,6 +11,7 @@
   font-weight: 400;
   border-top: solid 4px #2dbe60;
   overflow: hidden;
+
 }
 
 .session-form-wrapper {
@@ -33,12 +34,30 @@
   margin: 20px 0px 10px 0px;
 }
 
+.form-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-logo {
+    // display: inline-block;
+    background: url("/logo.png") no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: 30px;
+    height: 30px;
+    // background-color: yellow;
+    padding: 0px 0px 5px 0px;
+    margin-right: 10px;
+  }
+}
+
 .form-title {
   font-family: sans-serif;
   text-align: center;
-  padding-bottom: 10px;
+  // padding-bottom: 10px;
   font-weight: bold;
   color: #6a6a6a;
+  padding: 15px 0px 0px 0px;
 }
 
 input[type=text], input[type=password], input[type=submit] {
