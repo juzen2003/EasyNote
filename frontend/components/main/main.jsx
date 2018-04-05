@@ -4,8 +4,9 @@ import LogInFormContainer from '../session_form/login_container'
 
 class Main extends React.Component {
   render() {
-    const splashMessages = "";
-    const copyrightMessages = "Copyright";
+    const splashMessages = "An Easy Way to Keep Track of Your Notable Ideas";
+    const messages = "Manage and organize your notes, thoughts, and ideas in one easy place with EasyNote."
+    const copyrightMessages = "2018 EasyNote Corporation. All rights reserved.";
     return (
       <div className="main-page">
         <div className="nav-bar-area">
@@ -16,7 +17,8 @@ class Main extends React.Component {
             <LogInFormContainer />
           </section>
           <section className="section-right">
-            <h3>Keep Track of Your Idea</h3>
+            <h3>{splashMessages}</h3>
+            <p>{messages}</p>
           </section>
         </div>
         <div className="footer-area">
