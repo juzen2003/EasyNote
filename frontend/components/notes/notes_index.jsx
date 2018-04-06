@@ -20,11 +20,13 @@ class NotesIndex extends React.Component {
     return (
       <div>
         <ul>
-          <div className="notes-index">
+          <li className="notes-index-title">
             <h3>NOTES</h3>
-            <p>{this.notesCount()}</p>
-          </div>
+            <p>{this.notesCount()} notes</p>
+          </li>
+          <li>
           {noteItems}
+          </li>
         </ul>
       </div>
     );

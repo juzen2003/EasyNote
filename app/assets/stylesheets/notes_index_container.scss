@@ -1,3 +1,36 @@
-.notes-index {
-  
+.notes-index-title {
+  height: 100px;
+  border-bottom: 1px solid #ececec;
+  font-family: helvetica, arial, sans-serif;
+
+  h3 {
+    color: #878787;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 300;
+    vertical-align: top;
+    letter-spacing: 0.5px;
+    padding: 24px 20px 0 24px;
+  }
+
+  p {
+    color: #ababab;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 20px 20px;
+  }
+
 }
+
+.notes-index-item {
+  height: 120px;
+  border-bottom: 1px solid #ececec;
+  color: #878787;
+}
+
+
+// body head
+// rgb(135,135,135)
+
+// title
+// rgb(74,74,74)
