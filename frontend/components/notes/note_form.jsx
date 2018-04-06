@@ -9,8 +9,16 @@ class NoteForm extends React.Component {
 
   // use quill library, config here
   componentDidMount() {
-    var quill = new Quill('#editor', {
-    theme: 'snow'
+    var quill = new Quill('#editor-container', {
+      modules: {
+        toolbar: [
+          [{ header: [1, 2, false] }],
+          ['bold', 'italic', 'underline'],
+          ['image', 'code-block']
+        ]
+      },
+      placeholder: 'Drag files here or just start typing...',
+      theme: 'snow'  // or 'bubble'
     });
   }
 
@@ -25,7 +33,7 @@ class NoteForm extends React.Component {
 
   render () {
     return (
-      <div id="editor">
+      <div id="editor-container">
         <p>Title your note</p>
       </div>
     );
