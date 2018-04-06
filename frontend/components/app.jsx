@@ -6,7 +6,7 @@ import NavSideBarContainer from './nav_side_bar/nav_side_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container'
 import NotesIndexContainer from './notes/notes_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import Main from './main/main'
+import Home from './home/home'
 
 
 
@@ -15,8 +15,8 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-      <ProtectedRoute exact path="/notes" component={NotesIndexContainer} />
-      <AuthRoute path="/" component={Main} />
+      <ProtectedRoute exact path="/notes" component={NavSideBarContainer} />
+      <AuthRoute path="/" component={Home} />
     </Switch>
   </div>
 );

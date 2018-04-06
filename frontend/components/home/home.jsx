@@ -2,7 +2,7 @@ import React from 'react';
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import LogInFormContainer from '../session_form/login_container'
 
-class Main extends React.Component {
+class Home extends React.Component {
   render() {
     const splashMessages = "An Easy Way to Keep Track of Your Amazing Ideas";
     const messages = "Manage and organize your notes, thoughts, and ideas in one easy place with EasyNote."
@@ -31,4 +31,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default Home;
