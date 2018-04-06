@@ -2,6 +2,7 @@
   height: 100px;
   border-bottom: 1px solid #ececec;
   font-family: helvetica, arial, sans-serif;
+  // margin: 10px;
 
   h3 {
     color: #878787;
@@ -10,7 +11,7 @@
     font-weight: 300;
     vertical-align: top;
     letter-spacing: 0.5px;
-    padding: 24px 20px 0 24px;
+    padding: 20px 20px 0 20px;
   }
 
   p {
@@ -26,6 +27,30 @@
   height: 120px;
   border-bottom: 1px solid #ececec;
   color: #878787;
+  margin: 0 15px;
+
+  h3 {
+    color: #4a4a4a;
+    font-weight: 400;
+    font-size: 20px;
+    // margin-bottom: 4px;
+    font-family: times, serif;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    line-height: 20px;
+    padding: 10px;
+  }
+
+  p {
+    color: #878787;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding: 5px 10px 5px 10px;
+  }
 }
 
 
