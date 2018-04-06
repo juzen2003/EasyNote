@@ -3,6 +3,7 @@ class Api::NotesController < ApplicationController
   def create
     @note = current_user.notes.new(note_params)
     # @note = Note.new(note_params)
+    @note.user_id = current_user.id
     if @note.save
       # render 'api/users/show'
       render :show
@@ -22,6 +23,7 @@ class Api::NotesController < ApplicationController
   end
 
   def index
+    # debugger
     @notes = current_user.notes.all
     # @notes = Note.all
     render :index

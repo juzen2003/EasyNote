@@ -24,9 +24,7 @@ class SessionForm extends React.Component {
     // clear form
     // this.props.processForm(user).then(() => this.setState({username:"", password:""}));
     // go to "/notes"
-    this.props.processForm(user).then(
-      () => this.props.history.push('/notes')
-    );
+    this.props.processForm(user);
   }
 
   renderErrors() {
