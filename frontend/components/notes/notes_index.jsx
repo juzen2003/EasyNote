@@ -16,7 +16,7 @@ class NotesIndex extends React.Component {
   }
 
   render () {
-    const noteItems = this.props.notes.map(note => <NotesIndexItem key={note.id} note={note}/>);
+    const noteItems = this.props.notes.map((note, idx) => <NotesIndexItem key={idx} note={note}/>);
     return (
       <div>
         <ul>

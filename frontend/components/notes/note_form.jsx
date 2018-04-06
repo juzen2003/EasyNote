@@ -7,6 +7,13 @@ class NoteForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // use quill library, config here
+  componentDidMount() {
+    var quill = new Quill('#editor', {
+    theme: 'snow'
+    });
+  }
+
   handleChange(type) {
     return e => this.setState({[type]: e.target.value})
   }
@@ -18,23 +25,8 @@ class NoteForm extends React.Component {
 
   render () {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.handleChange("title")}
-            />
-          </label>
-          <label>Body
-            <textarea
-              value={this.state.body}
-              onChange={this.handleChange("body")}
-            />
-          </label>
-          <input type="submit" value="submit"/>
-        </form>
+      <div id="editor">
+        <p>Title your note</p>
       </div>
     );
   }
