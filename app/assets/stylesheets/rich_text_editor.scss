@@ -5,4 +5,14 @@
 
 #editor-container {
   height: 375px;
+
+  strong {
+    font-weight: bold;
+  }
+  em {
+  font-style: italic;
+  }
+  u {
+  text-decoration: underline;
+  }
 }
