@@ -15,17 +15,13 @@ class NavSideBar extends React.Component {
   render() {
     return (
       <div className="side-bar-area">
+        <img className="side-bar-logo" src="/logo.png" alt="Logo"/>
         <ul>
           <li>
-            <img className="side-bar-logo" src="/logo.png" alt="Logo"/>
-          </li>
-          <li>
-            <p>welcome {this.state.username}</p>
-          </li>
-          <li>
-            <button onClick={this.handleLogout}>Logout</button>
+            <i class="material-icons plus-icon">add_circle_outline</i>
           </li>
         </ul>
+        <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
       </div>
     )
   }

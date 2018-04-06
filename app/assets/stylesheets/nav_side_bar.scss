@@ -1,13 +1,43 @@
 .side-bar-area {
+  // might not need this
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //
   height: 100vh;
   width: 73px;;
   border-right: 1px solid rgb(222,222,222);
   background-color: #F3F3F3;
 
   .side-bar-logo {
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-size: cover;
     background-position: center center;
+  }
+
+  .material-icons {
+    font-size: 48px;
+  }
+
+  .logout-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: #6a6a6a;
+    cursor: pointer;
+  }
+
+  .logout-icon:hover {
+    color: #878787;
+  }
+
+  .plus-icon {
+    color: #6a6a6a;
+    cursor: pointer;
+  }
+
+  .plus-icon:hover {
+    color: #878787;
   }
 }
