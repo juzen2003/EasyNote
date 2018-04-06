@@ -61,11 +61,17 @@
   cursor: pointer;
 
   .notes-index-item {
+    // fix the background toggling issue
     border-bottom: none;
+    padding-bottom: 1px;
     h3, p {
       color: #ffffff;
     }
   }
+}
+
+.click-notes-index-item {
+  border: 3px solid #878787;
 }
 
 // .notes-index-wrapper::selection {

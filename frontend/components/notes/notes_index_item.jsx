@@ -1,6 +1,7 @@
 import React from 'react';
 
 class NotesIndexItem extends React.Component {
+
   render() {
     return (
       <div className="notes-index-wrapper">
