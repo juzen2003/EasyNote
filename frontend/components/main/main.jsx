@@ -9,7 +9,7 @@ class Main extends React.Component {
         <nav className="nav-side-bar-area">
           <NavSideBarContainer />
         </nav>
-        <div className="notes-index">
+        <div className="notes-index-area">
           <NotesIndexContainer />
         </div>
       </div>

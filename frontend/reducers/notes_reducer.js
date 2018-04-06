@@ -9,7 +9,7 @@ const NotesReducer = (oldState={}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ALL_NOTES:
-      // remove oldState here to avoid caching previous users notes
+      // remove merging oldState to avoid caching previous users notes
       return merge({}, action.notes);
     case RECEIVE_NOTE:
       return merge({}, oldState, {[action.note.id]: action.note});
