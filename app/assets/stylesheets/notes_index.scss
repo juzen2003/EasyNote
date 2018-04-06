@@ -11,14 +11,14 @@
     font-weight: 300;
     vertical-align: top;
     letter-spacing: 0.5px;
-    padding: 20px 20px 0 20px;
+    padding: 20px 25px 0 25px;
   }
 
   p {
     color: #ababab;
     font-size: 13px;
     font-weight: 400;
-    padding: 20px 20px;
+    padding: 20px 25px;
   }
 
 }
@@ -26,13 +26,14 @@
 .notes-index-item {
   height: 120px;
   border-bottom: 1px solid #ececec;
-  color: #878787;
+  overflow: hidden;
   margin: 0 15px;
-
+  // title
   h3 {
     color: #4a4a4a;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
+    font-stretch: 100%;
     // margin-bottom: 4px;
     font-family: times, serif;
     overflow: hidden;
@@ -41,8 +42,9 @@
     padding: 10px;
   }
 
+  //body
   p {
-    color: #878787;
+    color: #ababab;
     font-family: helvetica, arial, sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -53,6 +55,30 @@
   }
 }
 
+.notes-index-wrapper:hover {
+  background-color: rgba(43, 181, 92, 0.9);
+  overflow: hidden;
+  cursor: pointer;
+
+  .notes-index-item {
+    border-bottom: none;
+    h3, p {
+      color: #ffffff;
+    }
+  }
+}
+
+// .notes-index-wrapper::selection {
+//   border: 3px solid #878787;
+// }
+
+// .notes-index-item:hover {
+//   background-color: rgba(43, 181, 92, 0.9);
+//   cursor: pointer;
+//   h3, p {
+//     color: #ffffff;
+//   }
+// }
 
 // body head
 // rgb(135,135,135)
