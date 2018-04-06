@@ -5,6 +5,7 @@
   background-color: #FFFFFF;
   background-size: auto;
   width: 100%;
+  // avoid home page scrolling issue
   height: 99vh;
   overflow: hidden;
   display: flex;
