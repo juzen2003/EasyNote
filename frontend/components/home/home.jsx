@@ -8,11 +8,11 @@ class Home extends React.Component {
     const messages = "Manage and organize your notes, thoughts, and ideas in one easy place with EasyNote."
     const copyrightMessages = "2018 EasyNote Corporation. All rights reserved.";
     return (
-      <div className="main-page">
+      <div className="home-page">
         <div className="nav-bar-area">
           <NavBarContainer />
         </div>
-        <div className="main-body-area">
+        <div className="home-body-area">
           <section className="section-left">
             <LogInFormContainer />
           </section>
