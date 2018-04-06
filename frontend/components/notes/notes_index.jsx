@@ -1,10 +1,19 @@
 import React from 'react';
 
 class NotesIndex extends React.Component {
-  render() {
+  componentDidMount() {
+    this.props.fetchAllNotes();
+  }
+
+  render () {
+    const noteItems = this.props.notes.map(note => <p key={note.id}>{note.title}</p>)
     return (
-      <h3>Notes Pages Is Here</h3>
-    )
+      <div>
+        <ul>
+          {noteItems}
+        </ul>
+      </div>
+    );
   }
 }
 
