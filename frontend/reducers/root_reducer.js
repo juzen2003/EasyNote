@@ -13,6 +13,9 @@ export default rootReducer;
 
 // State:
 // {
+//    notes : {
+//
+//   },
 //   session: {
 //     currentUser: {
 //       id: 1,
