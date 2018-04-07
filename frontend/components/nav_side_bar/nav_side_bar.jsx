@@ -13,13 +13,6 @@ class NavSideBar extends React.Component {
     this.props.logout();
   }
 
-  // handleRedirect(e) {
-  //   e.preventDefault();
-  //   console.log("click");
-  //   this.props.history.push('/note')
-  //   // <Redirect to='/note'/>
-  // }
-
   render() {
     return (
       <div className="side-bar-area">

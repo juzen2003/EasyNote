@@ -4,16 +4,19 @@ import ReactQuill from 'react-quill';
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.note;
+    const defaultState = this.props.note;
+    this.state = defaultState;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleTitleChange(type) {
     return e => this.setState({[type]: e.target.value})
   }
 
+  // react-quill onChange handler
   // value here is always pointing to value in react component
   handleBodyChange(value, delta, source, editor) {
     // Need to trim here otherwise it would complain about the out of range
@@ -22,8 +25,6 @@ class NoteForm extends React.Component {
       body: plainText,
       body_with_style: value
      } );
-    // console.log(editor.getText());
-    // console.log(editor.getHTML());
     // debugger
     this.setState(newBody);
   }
@@ -32,6 +33,13 @@ class NoteForm extends React.Component {
     e.preventDefault();
     // debugger
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    // debugger
+    this.setState(this.props.note);
+    this.props.history.push('/notes');
   }
 
   render () {
@@ -53,24 +61,27 @@ class NoteForm extends React.Component {
 
     return (
       <div className="rich-text-editor">
-        <button onClick={this.handleSubmit}>Done</button>
-        <input
-          className="note-title"
-          type="text"
-          value={this.state.title}
-          placeholder="Title your note"
-          onChange={this.handleTitleChange('title')}
-        />
-        <div className="editor-container">
-          <ReactQuill
-            className="react-quill-component"
-            value={this.state.body_with_style}
-            modules={{toolbar}}
-            placeholder="Start Typing here..."
-            onChange={this.handleBodyChange}
-          />
+        <div className="rich-text-editor-button-area">
+          <button className="done-button" onClick={this.handleSubmit}>Done</button>
+          <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
         </div>
-
+        <div className="rich-text-editor-area">
+          <input
+            className="note-title"
+            type="text"
+            value={this.state.title}
+            placeholder="Title your note"
+            onChange={this.handleTitleChange('title')}
+          />
+          <div className="editor-container">
+            <ReactQuill
+              value={this.state.body_with_style}
+              modules={{toolbar}}
+              placeholder="Start Typing here..."
+              onChange={this.handleBodyChange}
+            />
+          </div>
+        </div>
       </div>
     );
   }
