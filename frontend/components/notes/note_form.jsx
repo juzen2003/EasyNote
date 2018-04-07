@@ -33,7 +33,7 @@ class NoteForm extends React.Component {
     // with styling
     // this.state.body = document.getElementById("editor-container").innerHTML
     this.setState({body: document.getElementById("editor-container").innerText})
-    debugger
+    // debugger
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
   }
 
