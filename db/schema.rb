@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180405211907) do
+ActiveRecord::Schema.define(version: 20180407162344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "notes", force: :cascade do |t|
     t.string "title", null: false
-    t.string "body", null: false
+    t.text "body", null: false
     t.integer "user_id", null: false
     t.integer "notebook_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "body_with_style"
     t.index ["notebook_id"], name: "index_notes_on_notebook_id"
     t.index ["title"], name: "index_notes_on_title"
     t.index ["user_id"], name: "index_notes_on_user_id"
