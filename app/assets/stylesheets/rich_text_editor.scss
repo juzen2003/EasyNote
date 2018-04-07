@@ -44,17 +44,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  // tune the position of toolbar relative to top
+  margin-top: -60px;
 }
 
-.note-title > input[type=text] {
+.note-title {
   border: none;
+  position: relative;
+  top: 72px;
+  margin-top: 25px;
+  font-size: 24px;
+  // width: 75%;
+  // margin-left: auto;
+  // margin-right: auto;
+  padding-left: 25px;
+  max-width: 960px;
+  width: 80vw;
+  color: #2dbe60;
+  font-family: times, serif;
+}
+
+.note-title::placeholder {
+  color: #2dbe60;
 }
 
 .quill {
   max-width: 960px;
   min-width: 240px;
   height: 75vh;
-  margin: 0 50px;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .ql-toolbar.ql-snow {
@@ -73,6 +92,11 @@
 // toolbar size
 .ql-snow.ql-toolbar button svg {
   height: 70%;
+}
+
+// offset the editor so that title can be under tool bar
+.ql-editor {
+  margin-top: 40px;
 }
 
 // bypass css reset for following styling
