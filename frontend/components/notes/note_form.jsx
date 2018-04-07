@@ -1,39 +1,35 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.note;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleBodyChange = this.handleBodyChange.bind(this);
   }
 
-  // use quill library, config here
-  componentDidMount() {
-    const quill = new Quill('#editor-container', {
-      modules: {
-        toolbar: [
-          [{ header: [1, 2, false] }],
-          ['bold', 'italic', 'underline'],
-          ['image', 'code-block']
-        ]
-      },
-      placeholder: 'Drag files here or just start typing...',
-      theme: 'snow'  // or 'bubble'
-    });
-  }
-
-  handleChange(type) {
+  handleTitleChange(type) {
     return e => this.setState({[type]: e.target.value})
+  }
+
+  // value here is always pointing to value in react component
+  handleBodyChange(value, delta, source, editor) {
+    // Need to trim here otherwise it would complain about the out of range
+    const plainText = editor.getText().trim();
+    const newBody = Object.assign(this.state, {
+      body: plainText,
+      body_with_style: value
+     } );
+    // console.log(editor.getText());
+    // console.log(editor.getHTML());
+    // debugger
+    this.setState(newBody);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // just pure text
-    this.state.body = document.getElementById("editor-container").innerText
-    // with styling
-    this.state.body_with_style = document.getElementById("editor-container").innerHTML
-    // Use the following would result in two times of done button clicking
-    // this.setState({body: document.getElementById("editor-container").innerText})
     // debugger
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
   }
@@ -47,10 +43,14 @@ class NoteForm extends React.Component {
           type="text"
           value={this.state.title}
           placeholder="Title your note"
-          onChange={this.handleChange('title')}
+          onChange={this.handleTitleChange('title')}
         />
-        <div id="editor-container">
-        </div>
+        <ReactQuill
+          value={this.state.body_with_style}
+          placeholder="Start Typing here..."
+          onChange={this.handleBodyChange}
+        />
+
       </div>
     );
   }
