@@ -28,10 +28,12 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     // just pure text
-    this.state.body = document.getElementById("editor-container").innerText
+    // this.state.body = document.getElementById("editor-container").innerText
     // with styling
+    // this.state.body = document.getElementById("editor-container").innerHTML
+    this.setState({body: document.getElementById("editor-container").innerText})
+    debugger
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
   }
 
