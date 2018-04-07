@@ -32,6 +32,7 @@ class NoteForm extends React.Component {
     this.state.body = document.getElementById("editor-container").innerText
     // with styling
     this.state.body_with_style = document.getElementById("editor-container").innerHTML
+    // Use the following would result in two times of done button clicking
     // this.setState({body: document.getElementById("editor-container").innerText})
     // debugger
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
