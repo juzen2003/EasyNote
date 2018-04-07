@@ -1,5 +1,5 @@
 json.set! @note.id do
-  json.extract! @note, :id, :title, :body, :user_id, :notebook_id
+  json.extract! @note, :id, :title, :body, :body_with_style, :user_id, :notebook_id
 end
 
 # {

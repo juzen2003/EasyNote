@@ -4,7 +4,7 @@ import NoteForm from './note_form';
 import { createNote } from '../../actions/note_actions';
 
 const mapStateToProps = state => ({
-  note: {title:"", body:""}
+  note: {title:"", body:"", body_with_style:""}
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,6 +1,6 @@
 @notes.each do |note|
   json.set! note.id do
-    json.extract! note, :id, :title, :body, :user_id, :notebook_id, :created_at, :updated_at
+    json.extract! note, :id, :title, :body, :body_with_style, :user_id, :notebook_id, :created_at, :updated_at
   end
 end
 
