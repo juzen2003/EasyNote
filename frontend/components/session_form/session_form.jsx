@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
                 placeholder="Password"
               />
             </label>
-            <input
+            <input className="submit-login"
               type="submit"
               value={this.props.formType}
             />

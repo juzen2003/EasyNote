@@ -45,17 +45,10 @@
   flex-direction: column;
   align-items: center;
 }
-// background-color: #2dbe60;
-// color: #fff;
-// border: 1px solid #2dbe60;
-// border-radius: 4px;
-// cursor: pointer;
-// display: inline-block;
-// outline: none;
-// height: 28px;
-// box-sizing: border-box;
-// padding: 0 15px;
-// vertical-align: top;
+
+.note-title > input[type=text] {
+  border: none;
+}
 
 .quill {
   max-width: 960px;

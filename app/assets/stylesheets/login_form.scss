@@ -59,7 +59,7 @@
   padding: 0px 0px 20px 0px;
 }
 
-input[type=text], input[type=password], input[type=submit] {
+.username, .password, .submit-login {
   border: 1px solid #cacaca;
   color: #3b3b3b;
   border-radius: 7px;
@@ -70,14 +70,14 @@ input[type=text], input[type=password], input[type=submit] {
   padding: 10px;
 }
 
-input[type=submit] {
+.submit-login {
   background-color: #2dbe60;
   color: #ffffff;
   font-weight: bold;
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.submit-login:hover {
   background-color: rgb(31, 174, 82);
 }
 
