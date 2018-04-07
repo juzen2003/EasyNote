@@ -9,7 +9,7 @@ class NoteForm extends React.Component {
 
   // use quill library, config here
   componentDidMount() {
-    var quill = new Quill('#editor-container', {
+    const quill = new Quill('#editor-container', {
       modules: {
         toolbar: [
           [{ header: [1, 2, false] }],
@@ -28,13 +28,26 @@ class NoteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
+    // just pure text
+    this.state.body = document.getElementById("editor-container").innerText
+    // with styling
     this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
   }
 
   render () {
     return (
-      <div id="editor-container">
-        <p>Title your note</p>
+      <div className="rich-text-editor">
+        <button onClick={this.handleSubmit}>Done</button>
+        <input
+          className="note-title"
+          type="text"
+          value={this.state.title}
+          placeholder="Title your note"
+          onChange={this.handleChange('title')}
+        />
+        <div id="editor-container">
+        </div>
       </div>
     );
   }
