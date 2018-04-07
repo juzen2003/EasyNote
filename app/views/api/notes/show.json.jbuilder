@@ -7,6 +7,7 @@ end
 #         "id": 3,
 #         "title": "test3",
 #         "body": "test_body",
+#         "body_with_style": "<p>test_body</P>",
 #         "user_id": 8,
 #         "notebook_id": null
 #     }

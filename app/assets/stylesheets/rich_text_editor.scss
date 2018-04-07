@@ -1,18 +1,45 @@
-// .rich-text-editor {
-//   height: 99vh;
-//   border
+.rich-text-editor {
+  height: 99vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: space-around;
+}
+
+.quill {
+  max-width: 960px;
+  min-width: 240px;
+  height: 75vh;
+  margin: 0 50px;
+}
+
+.ql-toolbar.ql-snow {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #ccc;
+}
+
+.ql-container.ql-snow {
+  border: none;
+}
+// .react-quill-component {
+//   max-width: 960px;
+//   min-width: 240px;
+//   height: 75vh;
+//   margin: 0 50px;
+//   border: none;
 // }
 
-#editor-container {
-  height: 375px;
-
-  strong {
-    font-weight: bold;
-  }
-  em {
+strong {
+  font-weight: bold;
+}
+em {
   font-style: italic;
-  }
-  u {
+}
+u {
   text-decoration: underline;
-  }
+}
+s {
+  text-decoration: line-through;
 }

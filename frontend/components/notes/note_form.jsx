@@ -35,6 +35,22 @@ class NoteForm extends React.Component {
   }
 
   render () {
+    // customize toolbar here
+    const toolbar = [
+      // [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      [{ size: ["small", false, "large", "huge"] }],
+      [{ color: [] }, { background: [] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ script: "sub" }, { script: "super" }],
+      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ align: [] }],
+      [{ 'indent': '-1'}, { 'indent': '+1' }],
+      ["blockquote", "code-block"],
+      ["link", "image"],
+      ['clean']
+    ];
+
     return (
       <div className="rich-text-editor">
         <button onClick={this.handleSubmit}>Done</button>
@@ -45,11 +61,15 @@ class NoteForm extends React.Component {
           placeholder="Title your note"
           onChange={this.handleTitleChange('title')}
         />
-        <ReactQuill
-          value={this.state.body_with_style}
-          placeholder="Start Typing here..."
-          onChange={this.handleBodyChange}
-        />
+        <div className="editor-container">
+          <ReactQuill
+            className="react-quill-component"
+            value={this.state.body_with_style}
+            modules={{toolbar}}
+            placeholder="Start Typing here..."
+            onChange={this.handleBodyChange}
+          />
+        </div>
 
       </div>
     );
