@@ -55,6 +55,12 @@
   }
 }
 
+.delete-icon {
+  float: right;
+  padding-top: 10px;
+  display: none;
+}
+
 .notes-index-wrapper:hover {
   background-color: rgba(43, 181, 92, 0.9);
   overflow: hidden;
@@ -67,6 +73,15 @@
     h3, p {
       color: #ffffff;
     }
+  }
+
+  .delete-icon {
+    color: #ffffff;
+    display: inline-block;
+  }
+
+  .delete-icon:hover {
+    color: #ececec;
   }
 }
 

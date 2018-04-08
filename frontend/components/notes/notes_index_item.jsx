@@ -31,7 +31,7 @@ class NotesIndexItem extends React.Component {
     return (
       <div className="notes-index-wrapper">
         <div className="notes-index-item" >
-          <i class="material-icons delet-icon" onClick={this.handleDelete}>delete_forever</i>
+          <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
           <div onClick={this.handleClick}>
             <h3>{this.props.note.title}</h3>
             <p>{this.props.note.body}</p>
