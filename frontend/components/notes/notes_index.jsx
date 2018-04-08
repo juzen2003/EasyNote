@@ -5,7 +5,7 @@ class NotesIndex extends React.Component {
   constructor(props) {
     super(props);
     this.notesCount = this.notesCount.bind(this);
-    // this.state = this.props.notes
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -15,18 +15,20 @@ class NotesIndex extends React.Component {
   // Whenever a new post is created
   componentWillReceiveProps(nextProps) {
     if (this.props.notes.length !== nextProps.notes.length) {
-    //   this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
-    // }
     this.props.fetchAllNotes();
-  }
+    //   this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
+    //
+    }
     // debugger
-    // this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
-    // debugger
   }
-
 
   notesCount() {
     return this.props.notes.length;
+  }
+
+  handleClick(e) {
+    debugger
+    // this.props.fetchNote()
   }
 
   render () {

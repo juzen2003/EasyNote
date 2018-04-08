@@ -9,12 +9,14 @@ import { fetchAllNotes } from '../../actions/note_actions'
 class Main extends React.Component {
   constructor(props) {
     super(props);
+    // debugger
   }
 
   componentDidMount() {
-    // need to retrieve data again
-    // this.props.fetchAllNotes();
-    fetchAllNotes();
+    // debugger
+  //   // need to retrieve data again
+  //   // this.props.fetchAllNotes();
+  //   fetchAllNotes();
   }
 
   render () {
@@ -27,7 +29,7 @@ class Main extends React.Component {
           <NotesIndexContainer />
         </div>
         <div className="notes-editing-area">
-          <CreateNoteFormContainer />
+          <CreateNoteFormContainer/>
         </div>
       </div>
     )
