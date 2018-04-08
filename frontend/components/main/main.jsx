@@ -10,16 +10,19 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     // debugger
+    this.selectFrom = this.selectFrom.bind(this)
   }
 
-  componentDidMount() {
-    // debugger
-  //   // need to retrieve data again
-  //   // this.props.fetchAllNotes();
-  //   fetchAllNotes();
+  selectFrom() {
+    if(this.props.match.params.noteId === undefined) {
+      return <CreateNoteFormContainer />
+    } else {
+      return <EditNoteFormContainer />
+    }
   }
 
   render () {
+      // debugger
     return (
       <div className="main-page">
         <nav className="nav-side-bar-area">
@@ -29,7 +32,7 @@ class Main extends React.Component {
           <NotesIndexContainer />
         </div>
         <div className="notes-editing-area">
-          <CreateNoteFormContainer/>
+          {this.selectFrom()}
         </div>
       </div>
     )

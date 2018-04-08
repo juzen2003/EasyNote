@@ -4,10 +4,11 @@ import EditNoteForm from './edit_form';
 import { fetchNote, updateNote } from '../../actions/note_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const defaultNote = {title:"", body:"", body_with_style:""}
   // debugger
+  const defaultNote = {title:"", body:"", body_with_style:""}
   const note = state.entities.notes[ownProps.match.params.noteId] || defaultNote;
 
+  // debugger
   return { note };
 }
 
@@ -16,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
   action: (note) => dispatch(updateNote(note))
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditNoteForm);
+)(EditNoteForm));

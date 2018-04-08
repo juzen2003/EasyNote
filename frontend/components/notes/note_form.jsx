@@ -5,12 +5,23 @@ import { Redirect, withRouter } from 'react-router-dom';
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    const defaultState = this.props.note;
-    this.state = defaultState;
+    // const defaultState = this.props.note;
+    this.state = this.props.note;
+    // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // debugger
+    // if ((nextProps.note.id !== undefined) && (this.props.match.params.noteId !== nextProps.match.params.noteId)) {
+    //   this.props.fetchNote(nextProps.match.params.noteId);
+    // }
+    // debugger
+    // nextProps.match.params.noteId -> string
+    // nextPtops.note.id -> integer
   }
 
   handleTitleChange(type) {

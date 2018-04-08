@@ -8,15 +8,19 @@ class EditNoteForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.note.id != nextProps.match.params.noteId) {
+    // debugger
+    if ((nextProps.note.id !== undefined) && (this.props.match.params.noteId !== nextProps.match.params.noteId)) {
       this.props.fetchNote(nextProps.match.params.noteId);
     }
+
   }
 
   render() {
-    const { action, note } = this.props;
+    const { fetchNote, action, note } = this.props;
+    // debugger
     return (
       <NoteForm
+        fetchNote={fetchNote}
         action={action}
         note={note} />
     );
