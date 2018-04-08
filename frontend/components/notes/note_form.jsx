@@ -32,7 +32,7 @@ class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // debugger
-    this.props.createNote(this.state).then(() => this.props.history.push('/notes'))
+    this.props.action(this.state).then(() => this.props.history.push('/notes'))
   }
 
   handleCancel(e) {

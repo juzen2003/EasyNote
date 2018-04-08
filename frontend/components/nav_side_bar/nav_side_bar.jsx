@@ -19,7 +19,7 @@ class NavSideBar extends React.Component {
         <img className="side-bar-logo" src="/logo.png" alt="Logo"/>
         <ul>
           <li>
-            <Link to="/note"><i className="material-icons plus-icon" onClick={this.handleRedirect}>add_circle_outline</i></Link>
+            <Link to="/notes/new"><i className="material-icons plus-icon" onClick={this.handleRedirect}>add_circle_outline</i></Link>
           </li>
         </ul>
         <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>

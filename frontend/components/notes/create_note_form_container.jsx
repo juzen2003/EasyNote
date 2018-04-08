@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  createNote: (note) => dispatch(createNote(note)),
+  action: (note) => dispatch(createNote(note)),
 
 })
 
@@ -23,6 +23,7 @@ export default connect(
  //         "id": 3,
  //         "title": "test3",
  //         "body": "test_body",
+ //         "body_with_style": "<p>body_with_style</p>",
  //         "user_id": 8,
  //         "notebook_id": null
  //     }
