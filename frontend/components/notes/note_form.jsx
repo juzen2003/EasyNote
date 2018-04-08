@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -33,7 +33,15 @@ class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // debugger
-    this.props.action(this.state).then(() => this.props.history.push('/notes'))
+    // this.props.action(this.state).then(() =>
+    //   this.props.history.push('/notes'))
+    // debugger
+    if (this.props.location.pathname !== "/notes") {
+      this.props.action(this.state).then(() => this.props.history.push('/notes'));
+    } else {
+      this.props.action(this.state);
+      this.setState({title:"", body:"", body_with_style:""});
+    }
   }
 
   handleCancel(e) {

@@ -16,7 +16,11 @@ class NotesIndex extends React.Component {
   }
 
   render () {
-    const noteItems = this.props.notes.map((note, idx) => <NotesIndexItem key={idx} note={note}/>);
+    const noteItems = this.props.notes.map((note, idx) => <NotesIndexItem
+      key={idx}
+      note={note}
+      deleteNote={this.props.deleteNote}
+    />).reverse();
     return (
       <div>
         <ul>
