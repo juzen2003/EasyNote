@@ -3,7 +3,7 @@ import NavSideBarContainer from '../nav_side_bar/nav_side_bar_container';
 import NotesIndexContainer from '../notes/notes_index_container';
 import EditNoteFormContainer from '../notes/edit_note_form_container';
 import CreateNoteFormContainer from '../notes/create_note_form_container';
-import { fetchAllNotes } from '../../actions/note_actions'
+import { fetchAllNotes, fetchNote } from '../../actions/note_actions'
 
 
 class Main extends React.Component {
@@ -13,11 +13,15 @@ class Main extends React.Component {
     this.selectFrom = this.selectFrom.bind(this)
   }
 
+  componentWillReceiveProps(nextProps) {
+    // debugger
+  }
+
   selectFrom() {
-    if(this.props.match.params.noteId === undefined) {
-      return <CreateNoteFormContainer />
-    } else {
+    if(this.props.match.params.noteId) {
       return <EditNoteFormContainer />
+    } else {
+      return <CreateNoteFormContainer />
     }
   }
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+
 class NotesIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.note;
     this.handleClick = this.handleClick.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleClick(e) {
@@ -18,14 +20,22 @@ class NotesIndexItem extends React.Component {
     // this.props.fetchNote(this.state.id).then(() => this.props.history.push(`/notes/${this.state.id}`))
     // debugger
     this.props.history.push(`/notes/${this.state.id}`);
+
+  }
+
+  handleDelete() {
+    this.props.deleteNote(this.props.note.id).then(() => this.props.fetchAllNotes())
   }
 
   render() {
     return (
       <div className="notes-index-wrapper">
-        <div className="notes-index-item" onClick={this.handleClick}>
-          <h3>{this.props.note.title}</h3>
-          <p>{this.props.note.body}</p>
+        <div className="notes-index-item" >
+          <i class="material-icons delet-icon" onClick={this.handleDelete}>delete_forever</i>
+          <div onClick={this.handleClick}>
+            <h3>{this.props.note.title}</h3>
+            <p>{this.props.note.body}</p>
+          </div>
         </div>
       </div>
     )

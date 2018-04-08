@@ -16,8 +16,6 @@ class NotesIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.notes.length !== nextProps.notes.length) {
     this.props.fetchAllNotes();
-    //   this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
-    //
     }
     // debugger
   }
@@ -38,6 +36,7 @@ class NotesIndex extends React.Component {
       note={note}
       deleteNote={this.props.deleteNote}
       fetchNote={this.props.fetchNote}
+      fetchAllNotes={this.props.fetchAllNotes}
     />).reverse();
     return (
       <div>
