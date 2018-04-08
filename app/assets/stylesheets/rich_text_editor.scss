@@ -85,13 +85,14 @@
   border-left: none;
   border-bottom: 1px solid #ccc;
   height: 35px;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .ql-container.ql-snow {
   border: none;
 }
 
+// .ql-snow .ql-picker
 // toolbar size
 .ql-snow.ql-toolbar button svg {
   height: 70%;

@@ -26,7 +26,7 @@
   left: 73px;
   // // width: 100%;
   // flex: auto;
-  // overflow: hidden;
+  // overflow: scroll;
 
 }
 
@@ -50,6 +50,7 @@
   }
   .note-title {
     width: 61vw;
-
+    // fix the toolbar picker overflow issue
+    top: 68px;
   }
 }
