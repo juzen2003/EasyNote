@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
+import { withRouter } from 'react-router-dom';
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -87,4 +88,4 @@ class NoteForm extends React.Component {
   }
 }
 
-export default NoteForm;
+export default withRouter(NoteForm);

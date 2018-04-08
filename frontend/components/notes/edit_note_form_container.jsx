@@ -5,8 +5,8 @@ import { fetchNote, updateNote } from '../../actions/note_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultNote = {title:"", body:"", body_with_style:""}
-  
-  const note = state.notes[ownProps.match.params.noteId] || defaultNote;
+  // debugger
+  const note = state.notes[ownProps.match.params.noteId]
 
   return { note };
 }

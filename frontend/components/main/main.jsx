@@ -1,9 +1,14 @@
 import React from 'react';
 import NavSideBarContainer from '../nav_side_bar/nav_side_bar_container';
 import NotesIndexContainer from '../notes/notes_index_container';
-import EditNoteContainer from '../notes/edit_note_form_container';
+import EditNoteFormContainer from '../notes/edit_note_form_container';
+import CreateNoteFormContainer from '../notes/create_note_form_container';
 
 class Main extends React.Component {
+  componentDidMount() {
+    // need to retrieve data again
+  }
+
   render () {
     return (
       <div className="main-page">
@@ -14,7 +19,7 @@ class Main extends React.Component {
           <NotesIndexContainer />
         </div>
         <div className="notes-editing-area">
-          <p>Edit Area</p>
+          <CreateNoteFormContainer />
         </div>
       </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteForm from './note_form';
+import { withRouter } from 'react-router-dom';
 
 class EditNoteForm extends React.Component {
   componentDidMount() {
@@ -23,4 +24,4 @@ class EditNoteForm extends React.Component {
 }
 
 
-export default EditNoteForm;
+export default withRouter(EditNoteForm);
