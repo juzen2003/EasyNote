@@ -1,6 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class NotesIndexItem extends React.Component {
+  // componentWillReceiveProps(nextProps) {
+  //   debugger
+  // }
 
   render() {
     return (
@@ -14,4 +18,4 @@ class NotesIndexItem extends React.Component {
   }
 }
 
-export default NotesIndexItem;
+export default withRouter(NotesIndexItem);

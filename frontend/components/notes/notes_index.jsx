@@ -5,21 +5,37 @@ class NotesIndex extends React.Component {
   constructor(props) {
     super(props);
     this.notesCount = this.notesCount.bind(this);
+    // this.state = this.props.notes
   }
 
   componentDidMount() {
     this.props.fetchAllNotes();
   }
 
+  // Whenever a new post is created
+  componentWillReceiveProps(nextProps) {
+    if (this.props.notes.length !== nextProps.notes.length) {
+    //   this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
+    // }
+    this.props.fetchAllNotes();
+  }
+    // debugger
+    // this.props.notes.push(Object.values(nextProps.notes.slice(-1)[0])[0]);
+    // debugger
+  }
+
+
   notesCount() {
     return this.props.notes.length;
   }
 
   render () {
+    // debugger
     const noteItems = this.props.notes.map((note, idx) => <NotesIndexItem
       key={idx}
       note={note}
       deleteNote={this.props.deleteNote}
+      fetchNote={this.props.fetchNote}
     />).reverse();
     return (
       <div>
