@@ -24,7 +24,7 @@ class Api::NotebooksController < ApplicationController
   end
 
   def destroy
-    @notebook = current_user.notebookd.find(params[:id])
+    @notebook = current_user.notebooks.find(params[:id])
     # @notebook = Notebook.find(params[:id])
     if @notebook.destroy
       render json: {}

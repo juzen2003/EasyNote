@@ -1,4 +1,4 @@
-export const createNote = (notebook) => (
+export const createNotebook = (notebook) => (
   $.ajax ({
     url: '/api/notebooks',
     method: 'POST',
@@ -6,7 +6,7 @@ export const createNote = (notebook) => (
   })
 );
 
-export const updateNote = (notebook) => (
+export const updateNotebook = (notebook) => (
   $.ajax ({
     url: `/api/notebooks/${notebook.id}`,
     method: 'PATCH',
@@ -14,21 +14,21 @@ export const updateNote = (notebook) => (
   })
 );
 
-export const fetchNote = (id) => (
+export const fetchNotebook = (id) => (
   $.ajax ({
     url: `/api/notebooks/${id}`,
     method: 'GET',
   })
 );
 
-export const fetchAllNotes = () => (
+export const fetchAllNotebooks = () => (
   $.ajax ({
     url: '/api/notebooks',
     method: 'GET',
   })
 );
 
-export const deleteNote = (notebook) => (
+export const deleteNotebook = (notebook) => (
   $.ajax ({
     url: `/api/notebooks/${notebook}`,
     method: 'DELETE'

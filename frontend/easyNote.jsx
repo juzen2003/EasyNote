@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js'
 import Root from './components/root';
 
-// import {createNote, updateNote, fetchNote, fetchAllNotes, deleteNote} from './util/note_api_util'
+// import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './util/notebook_api_util'
 // import {login, logout, signup} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.createNote = createNote;
-  // window.fetchNote = fetchNote;
-  // window.fetchAllNotes = fetchAllNotes;
-  // window.updateNote = updateNote;
-  // window.deleteNote = deleteNote;
+  // window.createNotebook = createNotebook;
+  // window.fetchNotebook = fetchNotebook;
+  // window.fetchAllNotebooks = fetchAllNotebooks;
+  // window.updateNotebook = updateNotebook;
+  // window.deleteNotebook = deleteNotebook;
 });
