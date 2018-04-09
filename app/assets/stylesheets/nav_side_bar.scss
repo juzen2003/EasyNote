@@ -33,19 +33,21 @@
     color: #878787;
   }
 
-  .plus-icon {
+  .plus-icon, .notes-icon, .notebooks-icon {
     color: #6a6a6a;
     cursor: pointer;
   }
 
-  .plus-icon:hover, .notes-icon:hover {
+  .plus-icon:hover, .notes-icon:hover, .notebooks-icon:hover {
     color: #878787;
   }
 
   .notes-icon {
-    color: #6a6a6a;
-    cursor: pointer;
     margin-top: 50px;
+  }
+  .notebooks-icon {
+    margin-top: 20px;
+    font-size: 45px;
   }
 
 
