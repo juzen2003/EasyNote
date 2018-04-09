@@ -1,9 +1,9 @@
 class Api::NotebooksController < ApplicationController
-  before_action :require_login
+  # before_action :require_login
 
   def create
     @notebook = current_user.notebooks.new(notebook_params)
-    # @notebook = Notebook.new(note_params)
+    # @notebook = Notebook.new(notebook_params)
     @notebook.user_id = current_user.id
     if @notebook.save
       # render 'api/users/show'
@@ -25,7 +25,7 @@ class Api::NotebooksController < ApplicationController
 
   def destroy
     @notebook = current_user.notebookd.find(params[:id])
-    # @notebook = Note.find(params[:id])
+    # @notebook = Notebook.find(params[:id])
     if @notebook.destroy
       render json: {}
     else
