@@ -50,8 +50,9 @@ class NoteForm extends React.Component {
     if (this.props.location.pathname !== "/notes") {
       this.props.action(this.state).then(() => this.props.history.push('/notes'));
     } else {
-      this.props.action(this.state);
-      this.setState({title:"", body:"", body_with_style:""});
+      this.props.action(this.state).then(() =>
+      this.setState({title:"", body:"", body_with_style:""})
+    );
     }
   }
 

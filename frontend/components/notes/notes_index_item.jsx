@@ -12,14 +12,13 @@ class NotesIndexItem extends React.Component {
 
   handleClick(e) {
     // debugger
-    e.preventDefault()
-    console.log("click");
+    e.preventDefault();
 
     // this would route you over to another edit page
     //
-    // this.props.fetchNote(this.state.id).then(() => this.props.history.push(`/notes/${this.state.id}`))
+    this.props.fetchNote(this.state.id).then(() => this.props.history.push(`/notes/${this.state.id}`))
     // debugger
-    this.props.history.push(`/notes/${this.state.id}`);
+    // this.props.history.push(`/notes/${this.state.id}`);
 
   }
 

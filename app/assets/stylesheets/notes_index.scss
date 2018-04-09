@@ -61,29 +61,51 @@
   display: none;
 }
 
-.notes-index-wrapper:hover {
+.notes-index-item:hover {
   background-color: rgba(43, 181, 92, 0.9);
   overflow: hidden;
   cursor: pointer;
+  border-bottom: none;
+  padding-bottom: 1px;
 
-  .notes-index-item {
-    // fix the background toggling issue
-    border-bottom: none;
-    padding-bottom: 1px;
-    h3, p {
-      color: #ffffff;
-    }
+  h3, p {
+    color: #ffffff;
   }
 
   .delete-icon {
-    color: #ffffff;
-    display: inline-block;
-  }
+      color: #ffffff;
+      display: inline-block;
+    }
 
   .delete-icon:hover {
     color: #ececec;
   }
 }
+
+// the following part is the fill in all background 
+// .notes-index-wrapper:hover {
+//   background-color: rgba(43, 181, 92, 0.9);
+//   overflow: hidden;
+//   cursor: pointer;
+//
+//   .notes-index-item {
+//     // fix the background toggling issue
+//     border-bottom: none;
+//     padding-bottom: 1px;
+//     h3, p {
+//       color: #ffffff;
+//     }
+//   }
+//
+//   .delete-icon {
+//     color: #ffffff;
+//     display: inline-block;
+//   }
+//
+//   .delete-icon:hover {
+//     color: #ececec;
+//   }
+// }
 
 .click-notes-index-item {
   border: 3px solid #878787;
