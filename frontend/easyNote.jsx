@@ -4,6 +4,7 @@ import configureStore from './store/store.js'
 import Root from './components/root';
 
 // import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './util/notebook_api_util'
+// import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './actions/notebook_actions'
 // import {login, logout, signup} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
