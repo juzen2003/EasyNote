@@ -21,6 +21,9 @@ class NavSideBar extends React.Component {
           <li>
             <Link to="/notes/new"><i className="material-icons plus-icon" >add_circle_outline</i></Link>
           </li>
+          <li>
+            <Link to="/notes"><i className="material-icons notes-icon">description</i></Link>
+          </li>
         </ul>
         <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
       </div>
