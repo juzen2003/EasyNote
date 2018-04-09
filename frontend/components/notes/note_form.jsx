@@ -15,10 +15,13 @@ class NoteForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // debugger
-    // if ((nextProps.note.id !== undefined) && (this.props.match.params.noteId !== nextProps.match.params.noteId)) {
-    //   this.props.fetchNote(nextProps.match.params.noteId);
-    // }
+    if ((nextProps.note.id !== undefined) && (this.props.match.params.noteId !== nextProps.match.params.noteId)) {
+      // this.props.fetchNote(nextProps.match.params.noteId);
+      // this.setState(nextProps.note)
+      this.state = nextProps.note;
+      // console.log("re-fetch?");
+
+    }
     // debugger
     // nextProps.match.params.noteId -> string
     // nextPtops.note.id -> integer

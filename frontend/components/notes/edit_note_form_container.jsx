@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchNote: (note) => dispatch(fetchNote(note)),
+  fetchNote: (id) => dispatch(fetchNote(id)),
   action: (note) => dispatch(updateNote(note))
 })
 
