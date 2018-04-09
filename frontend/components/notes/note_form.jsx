@@ -49,7 +49,7 @@ class NoteForm extends React.Component {
     // debugger
     // this.props.action(this.state).then(() =>
     //   this.props.history.push('/notes'))
-    // debugger
+    // debugger'
     if (this.props.location.pathname !== "/notes") {
       this.props.action(this.state).then(() => this.props.history.push('/notes'));
     } else {
