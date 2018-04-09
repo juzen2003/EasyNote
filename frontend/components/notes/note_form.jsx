@@ -74,7 +74,7 @@ class NoteForm extends React.Component {
       [{ size: ["small", false, "large", "huge"] }],
       [{ color: [] }, { background: [] }],
       ["bold", "italic", "underline", "strike"],
-      [{ script: "sub" }, { script: "super" }],
+      // [{ script: "sub" }, { script: "super" }],
       [{ 'list': 'ordered'}, { 'list': 'bullet' }],
       [{ align: [] }],
       [{ 'indent': '-1'}, { 'indent': '+1' }],
