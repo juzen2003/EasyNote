@@ -58,8 +58,7 @@ class NavSideBar extends React.Component {
 
       </div>
         <div className="notebooks-modal-area" onClick={this.handleNotebooksClick}>
-        <p>Hello Notebooks modal here</p>
-        <NotebooksIndexContainer />
+          <NotebooksIndexContainer />
         </div>
      </div>
     )

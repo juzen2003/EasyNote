@@ -37,13 +37,11 @@ class NotebooksIndex extends React.Component {
       fetchAllNotebooks={this.props.fetchAllNotebooks}
     />).reverse();
     return (
-      <div>
+      <div className="notebooks-index-area">
         <ul>
           <li className="notebooks-index-title">
             <h3>NOTEBOOKS</h3>
             <p>Add Notebook link here</p>
-          </li>
-          <li>
             <p>dummy area for searching...</p>
           </li>
           <li>
