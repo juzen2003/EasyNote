@@ -22,7 +22,7 @@ class NotesIndexItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteNote(this.props.note.id).then(() => this.props.fetchAllNotes())
+    this.props.deleteNote(this.props.note.id).then(() => this.props.fetchAllNotes());
   }
 
   render() {
