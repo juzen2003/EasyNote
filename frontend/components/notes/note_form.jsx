@@ -51,9 +51,9 @@ class NoteForm extends React.Component {
     //   this.props.history.push('/notes'))
     // debugger
     if (this.props.location.pathname !== "/notes") {
-      this.props.action(this.state).then(() => this.props.history.push('/notes'));
+      this.props.action(this.state).then(() => this.fetchAllNotes()).then(() => this.props.history.push('/notes'));
     } else {
-      this.props.action(this.state).then(() =>
+      this.props.action(this.state).then(() => this.fetchAllNotes()).then(() =>
       this.setState({title:"", body:"", body_with_style:""})
     );
     }
