@@ -17,7 +17,12 @@ class NotesIndex extends React.Component {
     if (this.props.notes.length !== nextProps.notes.length) {
     this.props.fetchAllNotes();
     }
+    // const nextId = Object.values(nextProps.notes.slice(-1)[0])[0].id;
+    // if (!this.props.notes.map(el => el.id).includes(nextId) && this.props.notes.length !== nextProps.notes.length)  {
+    // this.props.fetchAllNotes();
+    // }
     // debugger
+
   }
 
   notesCount() {
