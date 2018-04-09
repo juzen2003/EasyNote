@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 
 
 class NotesIndexItem extends React.Component {
@@ -36,7 +36,7 @@ class NotesIndexItem extends React.Component {
         <Link to={`/notes/${this.props.note.id}`}>
         <div className="notes-index-item" >
           <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
-          <div onClick={this.handleClick}>
+          <div>
             <h3>{this.props.note.title}</h3>
             <p>{this.props.note.body}</p>
           </div>
