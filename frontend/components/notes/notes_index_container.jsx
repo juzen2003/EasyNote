@@ -1,6 +1,7 @@
 import React from 'react';
 import NotesIndex from './notes_index';
-import { connect, withRouter } from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchAllNotes, deleteNote, fetchNote } from '../../actions/note_actions'
 
 const mapStateToProps = state => ({

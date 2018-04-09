@@ -1,6 +1,7 @@
 import React from 'react';
 import NotebooksIndex from './notebooks_index';
-import { connect, withRouter } from 'react-redux';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { fetchAllNotebooks, deleteNotebook, fetchNotebook } from '../../actions/notebook_actions'
 
 const mapStateToProps = state => ({
@@ -13,7 +14,6 @@ const mapDispatchToProps = dispatch => ({
   deleteNotebook: (id) => dispatch(deleteNotebook(id)),
   fetchNotebook: (id) => dispatch(fetchNotebook(id))
 });
-
 
 export default connect(
   mapStateToProps,

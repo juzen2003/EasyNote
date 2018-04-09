@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
+import NotebooksIndexContainer from '../notebooks/notebooks_index_container'
 
 class NavSideBar extends React.Component {
   constructor(props) {
@@ -58,6 +59,7 @@ class NavSideBar extends React.Component {
       </div>
         <div className="notebooks-modal-area" onClick={this.handleNotebooksClick}>
         <p>Hello Notebooks modal here</p>
+        <NotebooksIndexContainer />
         </div>
      </div>
     )
