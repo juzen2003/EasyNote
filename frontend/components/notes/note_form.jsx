@@ -16,9 +16,10 @@ class NoteForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if ((nextProps.note.id !== undefined) && (this.props.match.params.noteId !== nextProps.match.params.noteId)) {
-      // this.props.fetchNote(nextProps.match.params.noteId);
-      // this.setState(nextProps.note)
-      this.state = nextProps.note;
+      // after fixing state shape of show, this setState works
+      this.setState(nextProps.note)
+
+      // this.state = nextProps.note;
       // console.log("re-fetch?");
 
     }
