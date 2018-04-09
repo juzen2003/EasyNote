@@ -52,21 +52,3 @@
   }
 
 }
-
-.notebooks-modal-area  {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 73px;
-  background-color: #ffffff;
-  z-index: 2;
-  width: 98vw;
-  height: 98vh;
-  opacity: 0.8;
-}
-
-.is-open {
-  display: block;
-  transition: 0.5s;
-  // transition-timing-function: linear
-}
