@@ -4,6 +4,7 @@ import NotesIndexItem from './notes_index_item';
 class NotesIndex extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = this.props.notes
     this.notesCount = this.notesCount.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }

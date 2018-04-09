@@ -1,14 +1,14 @@
-json.set! @note.id do
+# json.set! @note.id do
   json.extract! @note, :id, :title, :body, :body_with_style, :user_id, :notebook_id
-end
+# end
 
 # {
-#     "3": {
+
 #         "id": 3,
 #         "title": "test3",
 #         "body": "test_body",
 #         "body_with_style": "<p>test_body</P>",
 #         "user_id": 8,
 #         "notebook_id": null
-#     }
+
 # }
