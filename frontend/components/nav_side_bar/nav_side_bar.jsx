@@ -39,11 +39,15 @@ class NavSideBar extends React.Component {
     e.preventDefault();
     const modals = document.getElementsByClassName("notebooks-modal-area");
     // debugger;
+    // whenever modal is closed, "/notes"
+    // whenever modal is open, "/notebooks"
     for(let i = 0; i < modals.length; i++) {
       if(modals[i].classList.contains("is-open")) {
         modals[i].classList.remove("is-open");
+        this.props.history.push("/notes")
       } else {
         modals[i].classList.add("is-open");
+        this.props.history.push("/notebooks")
       }
     }
   }
