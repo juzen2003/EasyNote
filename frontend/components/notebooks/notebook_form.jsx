@@ -21,18 +21,23 @@ class NotebookForm extends React.Component {
 
   render () {
     return (
-      <div>
-        <i className="material-icons create-notebook-icon">import_contacts</i>
-        <h3>CREATE NOTEBOOK</h3>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            value={this.state.title}
-            placeholder="Title Your notebook"
-            onChange={this.update('title')} />
-          <Link to="/notes">Cancel</Link>
-          <input type="submit" value="Create notebook" />
-        </form>
+      <div className="notebook-form-wrapper">
+        <div className="notebook-form">
+          <i className="material-icons create-notebook-icon">import_contacts</i>
+          <h3>CREATE NOTEBOOK</h3>
+          <div className="form-breaker"></div>
+          <form onSubmit={this.handleSubmit}>
+            <input className="notebook-title-input"
+              type="text"
+              value={this.state.title}
+              placeholder="Title Your notebook"
+              onChange={this.update('title')} />
+            <div className="notebook-form-button">
+              <Link className="cancel-notebook-add" to="/notes">Cancel</Link>
+              <input type="submit" value="Create notebook" />
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
