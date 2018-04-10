@@ -22,6 +22,7 @@ class NotebooksIndex extends React.Component {
 
   }
 
+  // this would avoid the parent firing onClick event as well whenever the notebooks index is clicked
   handleClick(e) {
     // debugger
     // this.props.fetchNotebook()
@@ -43,7 +44,7 @@ class NotebooksIndex extends React.Component {
           <li className="notebooks-index">
             <div className="notebooks-index-title">
               <h3>NOTEBOOKS</h3>
-              <p>Add Notebook link here</p>
+              <i className="material-icons">add</i>
             </div>
             <input type="text" placeholder="Find a notebook"/>
           </li>
