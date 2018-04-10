@@ -12,6 +12,12 @@ class NoteForm extends React.Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.notebooksOpt = this.notebooksOpt.bind(this);
+    // debugger
+  }
+
+  componentDidMount() {
+    // this.props.fetchAllNotebooks;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -67,6 +73,17 @@ class NoteForm extends React.Component {
     this.props.history.push('/notes');
   }
 
+  notebooksOpt() {
+    // debugger
+    return (
+      Object.values(this.props.notebooks).map((notebook,idx) =>
+        <option
+          value={notebook.title}
+          key={idx}
+        >{notebook.title}</option>)
+    )
+  }
+
   render () {
     // customize toolbar here
     const toolbar = [
@@ -86,6 +103,11 @@ class NoteForm extends React.Component {
 
     return (
       <div className="rich-text-editor">
+
+        <select>
+          {this.notebooksOpt()}
+        </select>
+
         <div className="rich-text-editor-button-area">
           <button className="done-button" onClick={this.handleSubmit}>Done</button>
           <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>

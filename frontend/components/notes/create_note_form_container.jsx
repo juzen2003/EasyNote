@@ -4,9 +4,14 @@ import NoteForm from './note_form';
 import { createNote } from '../../actions/note_actions';
 import { fetchAllNotebooks } from '../../actions/notebook_actions'
 
-const mapStateToProps = state => ({
-  note: {title:"", body:"", body_with_style:"", notebook_id:null}
-})
+const mapStateToProps = state => {
+  // debugger;
+  return {
+    note: {title:"", body:"", body_with_style:"", notebook_id:null},
+    notebooks: state.entities.notebooks,
+  }
+
+}
 
 const mapDispatchToProps = dispatch => ({
   action: (note) => dispatch(createNote(note)),

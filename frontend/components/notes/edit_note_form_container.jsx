@@ -8,15 +8,15 @@ const mapStateToProps = (state, ownProps) => {
   // debugger
   const defaultNote = {title:"", body:"", body_with_style:"",  notebook_id:null}
   const note = state.entities.notes[ownProps.match.params.noteId] || defaultNote;
+  const notebooks = state.entities.notebooks;
 
   // debugger
-  return { note };
+  return { note, notebooks };
 }
 
 const mapDispatchToProps = dispatch => ({
   fetchNote: (id) => dispatch(fetchNote(id)),
   action: (note) => dispatch(updateNote(note)),
-  fetchAllNotebooks: () => dispatch(fetchAllNotebooks())
 })
 
 export default withRouter(connect(

@@ -16,7 +16,8 @@ class NotebookForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(this.state).then(() => this.props.history.push('/notebooks'));
+    // was '/'
   }
 
   render () {
