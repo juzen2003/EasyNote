@@ -2,14 +2,15 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import NoteForm from './note_form';
 import { createNote } from '../../actions/note_actions';
+import { fetchAllNotebooks } from '../../actions/notebook_actions'
 
 const mapStateToProps = state => ({
-  note: {title:"", body:"", body_with_style:"", :notebook_id:null}
+  note: {title:"", body:"", body_with_style:"", notebook_id:null}
 })
 
 const mapDispatchToProps = dispatch => ({
   action: (note) => dispatch(createNote(note)),
-
+  fetchAllNotebooks: () => dispatch(fetchAllNotebooks())
 })
 
 export default connect(
