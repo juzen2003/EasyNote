@@ -46,7 +46,7 @@ class NotebooksIndex extends React.Component {
               <h3>NOTEBOOKS</h3>
               <i className="material-icons">add</i>
             </div>
-            <input type="text" placeholder="Find a notebook"/>
+            <input type="text" placeholder="Find a notebook" disabled/>
           </li>
           <li>
           {notebookItems}

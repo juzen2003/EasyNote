@@ -8,7 +8,6 @@
   background-color: rgba(255,255,255,0.8);
   z-index: 2;
   height: 98vh;
-  // opacity: 0.8;
 }
 
 .is-open {
@@ -17,13 +16,13 @@
 
 // notebooks index area
 .notebooks-index-area {
-  // transition: width 2s;
   // transition-timing-function: linear;
   border-right: 3px solid #ececec;
   background-color: rgba(255,255,255,1);
   width: 395px;
   // 310px
   height: 98vh;
+  overflow-y: auto;
 }
 
 .notebooks-index {
