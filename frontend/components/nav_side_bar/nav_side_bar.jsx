@@ -54,6 +54,7 @@ class NavSideBar extends React.Component {
     // debugger;
     for(let i = 0; i < modals.length; i++) {
         modals[i].classList.remove("is-open");
+        this.props.history.push('/notes')
     }
   }
 
@@ -67,7 +68,7 @@ class NavSideBar extends React.Component {
             <Link to="/notes/new"><i className="material-icons plus-icon" >add_circle_outline</i></Link>
           </li>
           <li>
-            <Link to="/notes"><i className="material-icons notes-icon">description</i></Link>
+            <Link to="/notes"><i className="material-icons notes-icon" onClick={this.handleRemoveModal}>description</i></Link>
           </li>
           <li>
             <i className="material-icons notebooks-icon" onClick={this.handleNotebooksClick}>library_books</i>
