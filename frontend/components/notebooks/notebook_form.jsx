@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class NotebookForm extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class NotebookForm extends React.Component {
             value={this.state.title}
             placeholder="Title Your notebook"
             onChange={this.update('title')} />
-          <input type="button" value="Cancel" />
+          <Link to="/notes">Cancel</Link>
           <input type="submit" value="Create notebook" />
         </form>
       </div>
