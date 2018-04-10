@@ -16,6 +16,9 @@ class Main extends React.Component {
   componentWillReceiveProps(nextProps) {
     // debugger
   }
+  componentDidMount() {
+    // debugger
+  }
 
   selectFrom() {
     if(this.props.match.params.noteId) {
@@ -24,6 +27,7 @@ class Main extends React.Component {
       return <CreateNoteFormContainer />
     }
   }
+
 
   render () {
       // debugger

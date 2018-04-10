@@ -9,7 +9,10 @@ class NavSideBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleNotebooksClick = this.handleNotebooksClick.bind(this);
     this.handleRemoveModal = this.handleRemoveModal.bind(this);
+
+
   }
+
 
   handleLogout(e) {
     e.preventDefault();
