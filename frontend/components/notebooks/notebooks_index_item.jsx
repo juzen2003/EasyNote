@@ -28,13 +28,15 @@ class NotebooksIndexItem extends React.Component {
     // remove Link for now to make sure layout is fine
     return (
       <div className="notebooks-index-wrapper">
-        <div className="notebooks-index-item" >
-          <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
+        <Link to={`/notebooks/${this.props.notebook.id}`}>
+          <div className="notebooks-index-item" >
+            <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
 
-          <h3>{this.props.notebook.title}</h3>
-          <p>{this.props.notes.length} notes</p>
+            <h3>{this.props.notebook.title}</h3>
+            <p>{this.props.notes.length} notes</p>
 
-        </div>
+          </div>
+        </Link>
       </div>
     )
   }

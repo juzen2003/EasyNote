@@ -34,13 +34,13 @@ class NotesIndexItem extends React.Component {
     return (
       <div className="notes-index-wrapper">
         <Link to={`/notes/${this.props.note.id}`}>
-        <div className="notes-index-item" >
-          <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
-          <div>
-            <h3>{this.props.note.title}</h3>
-            <p>{this.props.note.body}</p>
+          <div className="notes-index-item" >
+            <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
+            <div>
+              <h3>{this.props.note.title}</h3>
+              <p>{this.props.note.body}</p>
+            </div>
           </div>
-        </div>
         </Link>
       </div>
     )

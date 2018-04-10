@@ -10,7 +10,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     // debugger
-    this.selectFrom = this.selectFrom.bind(this)
+    this.selectForm = this.selectForm.bind(this)
 
     // this is to determine how if modal should open
     this.modalOpen = this.props.match.path === "/notebooks" ? "is-open" : null
@@ -23,7 +23,7 @@ class Main extends React.Component {
     // debugger;
   }
 
-  selectFrom() {
+  selectForm() {
     if(this.props.match.params.noteId) {
       return <EditNoteFormContainer />
     } else {
@@ -43,7 +43,7 @@ class Main extends React.Component {
           <NotesIndexContainer />
         </div>
         <div className="notes-editing-area">
-          {this.selectFrom()}
+          {this.selectForm()}
         </div>
       </div>
     )
