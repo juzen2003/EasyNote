@@ -23,8 +23,9 @@ class NotebooksIndex extends React.Component {
   }
 
   handleClick(e) {
-    debugger
+    // debugger
     // this.props.fetchNotebook()
+    e.stopPropagation()
   }
 
   render () {
@@ -37,12 +38,14 @@ class NotebooksIndex extends React.Component {
       fetchAllNotebooks={this.props.fetchAllNotebooks}
     />).reverse();
     return (
-      <div className="notebooks-index-area">
+      <div className="notebooks-index-area" onClick={this.handleClick}>
         <ul>
-          <li className="notebooks-index-title">
-            <h3>NOTEBOOKS</h3>
-            <p>Add Notebook link here</p>
-            <p>dummy area for searching...</p>
+          <li className="notebooks-index">
+            <div className="notebooks-index-title">
+              <h3>NOTEBOOKS</h3>
+              <p>Add Notebook link here</p>
+            </div>
+            <input type="text" placeholder="Find a notebook"/>
           </li>
           <li>
           {notebookItems}
