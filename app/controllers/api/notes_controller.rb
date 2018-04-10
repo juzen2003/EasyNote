@@ -23,8 +23,11 @@ class Api::NotesController < ApplicationController
   end
 
   def index
-    # debugger
-    @notes = current_user.notes.all
+    if params[:notebook_id]
+      @notes = current_user.notes.where(notebook_id: params[:notebook_id])
+    else
+      @notes = current_user.notes.all
+    end
     # @notes = Note.all
     render :index
   end

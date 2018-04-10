@@ -38,3 +38,8 @@ export const removeNote = note => ({
   type: REMOVE_NOTE,
   noteId: note.id
 });
+
+// this is for fetching notes from a notebook
+export const fetchNotebookNotes = (notebookId) => dispatch => (
+  NoteApiUtil.fetchNotebookNotes(notebookId).then(notes => dispatch(receiveAllNotes(notes)))
+);

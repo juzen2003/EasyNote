@@ -34,3 +34,11 @@ export const deleteNote = (note) => (
     method: 'DELETE'
   })
 );
+
+// this is for fetching notes from a notebook
+export const fetchNotebookNotes = (notebookId) => (
+  $.ajax ({
+    url: `/api/notebooks/${notebookId}/notes`,
+    method: 'GET',
+  })
+);

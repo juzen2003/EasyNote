@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :notes, only: [:create, :update, :index, :show, :destroy]
-    resources :notebooks, only: [:create, :update, :index, :show, :destroy]
+    resources :notebooks, only: [:create, :update, :index, :show, :destroy] do
+      resources :notes, only: [:index] # this is for fetching notes from a notebook
+    end
   end
 end
