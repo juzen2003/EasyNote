@@ -51,6 +51,16 @@
   .note-title {
     width: 61vw;
     // fix the toolbar picker overflow issue
-    top: 68px;
+    // top: 68px;
+    top: 100px;
   }
+
+  .selected-notebook {
+    left: 20px;
+  }
+}
+
+// get rid of focus outline 
+select:focus, button:focus {
+  outline: none;
 }

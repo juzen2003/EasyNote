@@ -16,6 +16,20 @@
   display: block;
 }
 
+.selected-notebook {
+  border: 1px solid #ccc;
+  font-size: 12px;
+  // align-items: center;
+  position: relative;
+
+  // left: 180px;
+  // top: 20px;
+  // left: 50px;
+  // top: 20px;
+  // display: inline-block;
+}
+
+
 .done-button, .cancel-button {
   background-color: #2dbe60;
   color: #fff;
@@ -53,7 +67,8 @@
 .note-title {
   border: none;
   position: relative;
-  top: 72px;
+  // top: 72px;
+  top: 100px;
   margin-top: 25px;
   font-size: 24px;
   // width: 75%;
@@ -88,6 +103,7 @@
   border-right: none;
   border-left: none;
   border-bottom: 1px solid #ccc;
+  // toolbar border
   height: 35px;
   // overflow: hidden;
 }
@@ -104,7 +120,7 @@
 
 // offset the editor so that title can be under tool bar
 .ql-editor {
-  margin-top: 40px;
+  margin-top: 45px;
 }
 
 // bypass css reset for following styling

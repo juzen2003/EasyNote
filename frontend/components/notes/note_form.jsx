@@ -68,6 +68,7 @@ class NoteForm extends React.Component {
     const selectedValue = (notebookEl[0].selectedIndex === 0) ? null : parseInt(notebookEl[0].value);
 
     // const finalState = {
+      // id is needed here otherwise can't save
     //   title: this.state.title,
     //   body: this.state.body,
     //   body_with_style: this.state.body_with_style,
@@ -122,16 +123,15 @@ class NoteForm extends React.Component {
     return (
       <div className="rich-text-editor">
 
-        <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
-          <option value=""> -Notebook- </option>
-          {this.notebooksOpt()}
-        </select>
 
         <div className="rich-text-editor-button-area">
+
+
           <button className="done-button" onClick={this.handleSubmit}>Done</button>
           <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
         </div>
         <div className="rich-text-editor-area">
+
           <input
             className="note-title"
             type="text"
@@ -140,6 +140,12 @@ class NoteForm extends React.Component {
             onChange={this.handleChange('title')}
           />
           <div className="editor-container">
+          
+            <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
+            <option value=""> -Notebook- </option>
+            {this.notebooksOpt()}
+            </select>
+
             <ReactQuill
               value={this.state.body_with_style}
               modules={{toolbar}}
