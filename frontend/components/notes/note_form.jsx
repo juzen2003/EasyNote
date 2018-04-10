@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
 import { Redirect, withRouter } from 'react-router-dom';
+import merge from 'lodash/merge';
+
 
 class NoteForm extends React.Component {
   constructor(props) {
@@ -9,10 +11,11 @@ class NoteForm extends React.Component {
     this.state = this.props.note;
     // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.notebooksOpt = this.notebooksOpt.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this)
     // debugger
   }
 
@@ -34,8 +37,13 @@ class NoteForm extends React.Component {
     // nextPtops.note.id -> integer
   }
 
-  handleTitleChange(type) {
+  handleChange(type) {
     return e => this.setState({[type]: e.target.value})
+  }
+
+  handleSelectChange(e) {
+    const selectedVal = parseInt(e.target.value) || null
+    this.setState({notebook_id: selectedVal})
   }
 
   // react-quill onChange handler
@@ -59,12 +67,13 @@ class NoteForm extends React.Component {
     // debugger
     const selectedValue = (notebookEl[0].selectedIndex === 0) ? null : parseInt(notebookEl[0].value);
 
-    const finalState = {
-      title: this.state.title,
-      body: this.state.body,
-      body_with_style: this.state.body_with_style,
-      notebook_id: selectedValue
-    }
+    // const finalState = {
+    //   title: this.state.title,
+    //   body: this.state.body,
+    //   body_with_style: this.state.body_with_style,
+    //   notebook_id: selectedValue
+    // }
+    const finalState = merge({}, this.state, {notebook_id: selectedValue})
 
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then(() => this.props.history.push('/notes'));
@@ -113,7 +122,7 @@ class NoteForm extends React.Component {
     return (
       <div className="rich-text-editor">
 
-        <select className="selected-notebook" defaultValue={this.state.notebook_id || ""}>
+        <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
           <option value=""> -Notebook- </option>
           {this.notebooksOpt()}
         </select>
@@ -128,7 +137,7 @@ class NoteForm extends React.Component {
             type="text"
             value={this.state.title}
             placeholder="Title your note"
-            onChange={this.handleTitleChange('title')}
+            onChange={this.handleChange('title')}
           />
           <div className="editor-container">
             <ReactQuill
