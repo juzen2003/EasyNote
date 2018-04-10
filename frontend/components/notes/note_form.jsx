@@ -13,7 +13,6 @@ class NoteForm extends React.Component {
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.notebooksOpt = this.notebooksOpt.bind(this);
-    this.checkNotebookId.bind(this);
     // debugger
   }
 
@@ -94,15 +93,6 @@ class NoteForm extends React.Component {
     )
   }
 
-  checkNotebookId() {
-    debugger;
-    if(typeof this.state.notebook_id === "number"){
-      return this.state.notebook_id
-    } else {
-      return null
-    }
-  }
-
   render () {
     // customize toolbar here
     const toolbar = [
@@ -123,8 +113,8 @@ class NoteForm extends React.Component {
     return (
       <div className="rich-text-editor">
 
-        <select className="selected-notebook" defaultValue={this.checkNotebookId()}>
-          <option value={null}> -Notebook- </option>
+        <select className="selected-notebook" defaultValue={this.state.notebook_id || ""}>
+          <option value=""> -Notebook- </option>
           {this.notebooksOpt()}
         </select>
 
