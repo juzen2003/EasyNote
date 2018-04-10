@@ -68,3 +68,43 @@
 // single notebook item
 .notebooks-index-wrapper {
 }
+
+.notebooks-index-item {
+  border-bottom: 1px solid #ececec;
+  margin: 0 12px;
+  height: 61px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+
+  // notebooks index title
+  h3 {
+    color: #4a4a4a;
+    font-family: times, serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+  }
+
+  .notebook-delete-icon {
+    float: right;
+    padding-top: 10px;
+    display: none;
+  }
+}
+
+.notebooks-index-item:hover {
+  background-color: rgba(43, 181, 92, 0.9);
+  overflow: hidden;
+  cursor: pointer;
+  border-bottom: none;
+  padding-bottom: 1px;
+
+  .notebook-delete-icon {
+    color: #ffffff;
+    display: inline-block;
+  }
+  
+  .notebook-delete-icon:hover {
+    color: #ececec;
+  }
+}

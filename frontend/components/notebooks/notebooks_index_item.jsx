@@ -17,7 +17,7 @@ class NotebooksIndexItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteNote(this.props.notebook.id).then(() => {
+    this.props.deleteNotebook(this.props.notebook.id).then(() => {
        this.props.fetchAllNotebooks();
        // this.props.history.push('/notebooks');
      }
@@ -29,10 +29,10 @@ class NotebooksIndexItem extends React.Component {
     return (
       <div className="notebooks-index-wrapper">
         <div className="notebooks-index-item" >
-          <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
-          <div>
-            <h3>{this.props.notebook.title}</h3>
-          </div>
+          <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
+
+          <h3>{this.props.notebook.title}</h3>
+
         </div>
       </div>
     )

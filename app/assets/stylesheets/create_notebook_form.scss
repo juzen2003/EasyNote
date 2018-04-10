@@ -42,6 +42,10 @@
     // color: #878787;
   }
 
+  .notebook-title-input:focus {
+    outline: none;
+  }
+
   .notebook-form-button {
     display: flex;
     justify-content: space-between;

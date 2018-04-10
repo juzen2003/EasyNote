@@ -70,6 +70,10 @@
   color: #2dbe60;
 }
 
+.note-title:focus {
+  outline: none;
+}
+
 .quill {
   max-width: 960px;
   min-width: 240px;
