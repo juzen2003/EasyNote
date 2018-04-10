@@ -13,6 +13,7 @@ class NoteForm extends React.Component {
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.notebooksOpt = this.notebooksOpt.bind(this);
+    this.checkNotebookId.bind(this);
     // debugger
   }
 
@@ -54,15 +55,24 @@ class NoteForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // debugger
-    // this.props.action(this.state).then(() =>
-    //   this.props.history.push('/notes'))
-    // debugger'
+    // get the selected notebook id
+    const notebookEl = document.getElementsByClassName("selected-notebook");
+    // debugger
+    const selectedValue = (notebookEl[0].selectedIndex === 0) ? null : parseInt(notebookEl[0].value);
+
+    const finalState = {
+      title: this.state.title,
+      body: this.state.body,
+      body_with_style: this.state.body_with_style,
+      notebook_id: selectedValue
+    }
+
     if (this.props.location.pathname !== "/notes") {
-      this.props.action(this.state).then(() => this.props.history.push('/notes'));
+      this.props.action(finalState).then(() => this.props.history.push('/notes'));
     } else {
-      this.props.action(this.state).then(() =>
-      this.setState({title:"", body:"", body_with_style:""})
-    );
+      this.props.action(finalState).then(() =>
+      this.setState({title:"", body:"", body_with_style:"", notebook_id:null})
+      );
     }
   }
 
@@ -78,10 +88,19 @@ class NoteForm extends React.Component {
     return (
       Object.values(this.props.notebooks).map((notebook,idx) =>
         <option
-          value={notebook.title}
+          value={notebook.id}
           key={idx}
         >{notebook.title}</option>)
     )
+  }
+
+  checkNotebookId() {
+    debugger;
+    if(typeof this.state.notebook_id === "number"){
+      return this.state.notebook_id
+    } else {
+      return null
+    }
   }
 
   render () {
@@ -104,7 +123,8 @@ class NoteForm extends React.Component {
     return (
       <div className="rich-text-editor">
 
-        <select>
+        <select className="selected-notebook" defaultValue={this.checkNotebookId()}>
+          <option value={null}> -Notebook- </option>
           {this.notebooksOpt()}
         </select>
 

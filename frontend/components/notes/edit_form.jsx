@@ -33,7 +33,9 @@ class EditNoteForm extends React.Component {
       <NoteForm
         fetchNote={fetchNote}
         action={action}
-        note={note} />
+        note={note}
+        notebooks={this.props.notebooks}
+        />
     );
   }
 }
