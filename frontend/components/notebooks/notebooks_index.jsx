@@ -7,6 +7,7 @@ class NotebooksIndex extends React.Component {
     super(props);
     // this.state = this.props.notebooks
     this.handleClick = this.handleClick.bind(this);
+    this.getNotes = this.getNotes.bind(this);
   }
 
   componentDidMount() {
@@ -30,11 +31,20 @@ class NotebooksIndex extends React.Component {
     e.stopPropagation()
   }
 
+  // parse notes for a notebook
+  getNotes(notebook) {
+    const notesForNotebook = this.props.notes.filter(note => note.notebook_id === notebook.id);
+
+    return notesForNotebook;
+  }
+
   render () {
     // debugger
-    const notebookItems = this.props.notebooks.map((notebook, idx) => <NotebooksIndexItem
+    const notebookItems = this.props.notebooks.map((notebook, idx) =>
+    <NotebooksIndexItem
       key={idx}
       notebook={notebook}
+      notes={this.getNotes(notebook)}
       deleteNotebook={this.props.deleteNotebook}
       fetchNotebook={this.props.fetchNotebook}
       fetchAllNotebooks={this.props.fetchAllNotebooks}

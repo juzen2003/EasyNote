@@ -32,6 +32,7 @@ class NotebooksIndexItem extends React.Component {
           <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
 
           <h3>{this.props.notebook.title}</h3>
+          <p>{this.props.notes.length} notes</p>
 
         </div>
       </div>
