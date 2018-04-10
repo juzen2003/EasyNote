@@ -132,19 +132,21 @@ class NoteForm extends React.Component {
         </div>
         <div className="rich-text-editor-area">
 
-          <input
+
+          <div className="editor-container">
+
+            <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
+            <option value=""> -Notebook- </option>
+            {this.notebooksOpt()}
+            </select>
+
+            <input
             className="note-title"
             type="text"
             value={this.state.title}
             placeholder="Title your note"
             onChange={this.handleChange('title')}
-          />
-          <div className="editor-container">
-          
-            <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
-            <option value=""> -Notebook- </option>
-            {this.notebooksOpt()}
-            </select>
+            />
 
             <ReactQuill
               value={this.state.body_with_style}

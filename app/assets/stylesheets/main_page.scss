@@ -49,10 +49,10 @@
     padding-left: 20px;
   }
   .note-title {
-    width: 61vw;
+    // width: 61vw;
     // fix the toolbar picker overflow issue
     // top: 68px;
-    top: 100px;
+    left: -55px;
   }
 
   .selected-notebook {
@@ -60,7 +60,7 @@
   }
 }
 
-// get rid of focus outline 
+// get rid of focus outline
 select:focus, button:focus {
   outline: none;
 }

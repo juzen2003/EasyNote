@@ -64,22 +64,38 @@
   margin-top: -60px;
 }
 
+// .note-title {
+//   border: none;
+//   position: relative;
+//   // top: 72px;
+//   top: 100px;
+//   margin-top: 25px;
+//   font-size: 24px;
+//   // width: 75%;
+//   // margin-left: auto;
+//   // margin-right: auto;
+//   padding-left: 25px;
+//   max-width: 960px;
+//   width: 80vw;
+//   color: #2dbe60;
+//   font-family: times, serif;
+// }
+
+
 .note-title {
-  border: none;
-  position: relative;
-  // top: 72px;
-  top: 100px;
-  margin-top: 25px;
-  font-size: 24px;
-  // width: 75%;
-  // margin-left: auto;
-  // margin-right: auto;
-  padding-left: 25px;
-  max-width: 960px;
-  width: 80vw;
-  color: #2dbe60;
-  font-family: times, serif;
+    border: none;
+    position: relative;
+    top: 80px;
+    margin-top: 25px;
+    font-size: 24px;
+    left: -75px;
+    max-width: 960px;
+    // width: 80vw;
+    color: #2dbe60;
+    font-family: times, serif;
 }
+
+
 
 .note-title::placeholder {
   color: #2dbe60;
