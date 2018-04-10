@@ -7,6 +7,7 @@ import NavBarContainer from './nav_bar/nav_bar_container'
 import NotesIndexContainer from './notes/notes_index_container';
 import CreateNoteFormContainer from './notes/create_note_form_container';
 import EditNoteFormContainer from './notes/edit_note_form_container';
+import CreateNotebookFormContainer from './notebooks/create_notebook_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Home from './home/home'
 import Main from './main/main'
@@ -18,6 +19,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <ProtectedRoute exact path="/notebooks/new" component={CreateNotebookFormContainer} />
       <ProtectedRoute exact path="/notes/new" component={CreateNoteFormContainer} />
       <ProtectedRoute exact path="/notes/:noteId/" component={Main} />
       <ProtectedRoute exact path="/notes" component={Main} />

@@ -22,6 +22,8 @@ class NotebookForm extends React.Component {
   render () {
     return (
       <div>
+        <i className="material-icons create-notebook-icon">import_contacts</i>
+        <h3>CREATE NOTEBOOK</h3>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
