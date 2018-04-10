@@ -4,7 +4,7 @@ import NoteForm from './note_form';
 import { createNote } from '../../actions/note_actions';
 
 const mapStateToProps = state => ({
-  note: {title:"", body:"", body_with_style:""}
+  note: {title:"", body:"", body_with_style:"", :notebook_id:null}
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -19,13 +19,12 @@ export default connect(
 
  //
  // {
- //     "3": {
  //         "id": 3,
  //         "title": "test3",
  //         "body": "test_body",
  //         "body_with_style": "<p>body_with_style</p>",
  //         "user_id": 8,
  //         "notebook_id": null
- //     }
+
  // }
  //

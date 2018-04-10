@@ -33,7 +33,7 @@ class NotebookForm extends React.Component {
               placeholder="Title Your notebook"
               onChange={this.update('title')} />
             <div className="notebook-form-button">
-              <Link className="cancel-notebook-add" to="/notes">Cancel</Link>
+              <Link className="cancel-notebook-add" to="/notebooks">Cancel</Link>
               <input type="submit" value="Create notebook" />
             </div>
           </form>

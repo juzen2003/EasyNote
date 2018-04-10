@@ -9,10 +9,26 @@ class NavSideBar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     this.handleNotebooksClick = this.handleNotebooksClick.bind(this);
     this.handleRemoveModal = this.handleRemoveModal.bind(this);
-
-
+    this.openModal = this.openModal.bind(this);
+    // debugger
   }
 
+  componentDidMount() {
+    this.openModal();
+  }
+
+  openModal() {
+    if (this.props.modal === "is-open") {
+      const modals = document.getElementsByClassName("notebooks-modal-area");
+      // debugger;
+      for(let i = 0; i < modals.length; i++) {
+        if(modals[i].classList.contains("is-open") === false) {
+          modals[i].classList.add("is-open");
+        }
+      }
+    }
+    // debugger;
+  }
 
   handleLogout(e) {
     e.preventDefault();
@@ -51,7 +67,7 @@ class NavSideBar extends React.Component {
             <Link to="/notes/new"><i className="material-icons plus-icon" >add_circle_outline</i></Link>
           </li>
           <li>
-            <Link to="/notes" onClick={this.handleRemoveModal}><i className="material-icons notes-icon">description</i></Link>
+            <Link to="/notes"><i className="material-icons notes-icon">description</i></Link>
           </li>
           <li>
             <i className="material-icons notebooks-icon" onClick={this.handleNotebooksClick}>library_books</i>
