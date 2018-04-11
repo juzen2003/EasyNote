@@ -31,10 +31,11 @@ export const updateNotebook = (notebook) => dispatch => (
 );
 
 export const deleteNotebook = (id) => dispatch => (
-  NotebookApiUtil.deleteNotebook(id).then(notebook => dispatch(removeNotebook(notebook)))
+  NotebookApiUtil.deleteNotebook(id).then(notebook => dispatch(removeNotebook(id)))
 );
 
-export const removeNotebook = notebook => ({
+export const removeNotebook = notebookId => ({
   type: REMOVE_NOTEBOOK,
-  notebookId: notebook.id
+  // notebookId: notebook.id
+  notebookId
 });

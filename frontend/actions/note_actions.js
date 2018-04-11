@@ -32,12 +32,13 @@ export const updateNote = (note) => dispatch => (
 );
 
 export const deleteNote = (id) => dispatch => (
-  NoteApiUtil.deleteNote(id).then(note => dispatch(removeNote(note)))
+  NoteApiUtil.deleteNote(id).then(note => dispatch(removeNote(id)))
 );
 
-export const removeNote = note => ({
+export const removeNote = noteId => ({
   type: REMOVE_NOTE,
-  noteId: note.id
+  // noteId: note.id
+  noteId
 });
 
 // this is for fetching notes from a notebook
