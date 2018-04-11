@@ -127,7 +127,7 @@ class NoteForm extends React.Component {
         <div className="rich-text-editor-button-area">
 
 
-          <button className="done-button" onClick={this.handleSubmit}>Done</button>
+          <button className="done-button" onClick={this.handleSubmit} disabled>Done</button>
           <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
         </div>
         <div className="rich-text-editor-area">
