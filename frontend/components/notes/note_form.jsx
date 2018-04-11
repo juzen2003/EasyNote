@@ -16,6 +16,7 @@ class NoteForm extends React.Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.notebooksOpt = this.notebooksOpt.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this)
+    this.allowSubmit = this.allowSubmit.bind(this)
     // debugger
   }
 
@@ -38,7 +39,10 @@ class NoteForm extends React.Component {
   }
 
   handleChange(type) {
-    return e => this.setState({[type]: e.target.value})
+    return e => {
+      this.allowSubmit(e);
+      this.setState({[type]: e.target.value});
+    }
   }
 
   handleSelectChange(e) {
@@ -60,8 +64,8 @@ class NoteForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     // debugger
+    e.preventDefault();
     // get the selected notebook id
     const notebookEl = document.getElementsByClassName("selected-notebook");
     // debugger
@@ -83,6 +87,18 @@ class NoteForm extends React.Component {
       this.setState({title:"", body:"", body_with_style:"", notebook_id:null})
       );
     }
+  }
+
+  allowSubmit(e) {
+    const createButton =  document.getElementsByClassName("done-button");
+    for(let i = 0; i < createButton.length; i++) {
+      if(e.target.value && e.target.value.trim() !== "") {
+        createButton[i].setAttribute("type", "button");
+      } else {
+        createButton[i].setAttribute("type", "hidden");
+      }
+    }
+    // debugger
   }
 
   handleCancel(e) {
@@ -127,7 +143,11 @@ class NoteForm extends React.Component {
         <div className="rich-text-editor-button-area">
 
 
-          <button className="done-button" onClick={this.handleSubmit} disabled>Done</button>
+          <input
+            className="done-button" onClick={this.handleSubmit}
+            type="hidden"
+            value="Done"
+          />
           <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
         </div>
         <div className="rich-text-editor-area">
@@ -149,7 +169,7 @@ class NoteForm extends React.Component {
             />
 
             <ReactQuill
-              value={this.state.body_with_style}
+              value={this.state.body_with_style || ""}
               modules={{toolbar}}
               placeholder="Start Typing here..."
               onChange={this.handleBodyChange}

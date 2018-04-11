@@ -14,7 +14,7 @@
 
 class Note < ApplicationRecord
   validates :title, presence: true, uniqueness: true
-  validates :body, :user_id, presence: true
+  validates :user_id, presence: true
 
   # TODO: asscociation to be added
   belongs_to :user,
