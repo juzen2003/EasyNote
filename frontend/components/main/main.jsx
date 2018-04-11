@@ -3,19 +3,17 @@ import NavSideBarContainer from '../nav_side_bar/nav_side_bar_container';
 import NotesIndexContainer from '../notes/notes_index_container';
 import EditNoteFormContainer from '../notes/edit_note_form_container';
 import CreateNoteFormContainer from '../notes/create_note_form_container';
+import NotebookNotesIndexContainer from '../notes/notebook_notes_index_container';
 import { fetchAllNotes, fetchNote } from '../../actions/note_actions'
 
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
-    this.selectForm = this.selectForm.bind(this)
-
     // this is to determine how if modal should open
     this.modalOpen = this.props.match.path === "/notebooks" ? "is-open" : ""
-    // this.modalOpen = "";
-
+    this.selectForm = this.selectForm.bind(this)
+    this.selectIndexForm = this.selectIndexForm.bind(this)
     // debugger
   }
 
@@ -40,6 +38,14 @@ class Main extends React.Component {
     }
   }
 
+  selectIndexForm() {
+    if(this.props.match.params.notebookId) {
+      return <NotebookNotesIndexContainer />
+    } else {
+      return <NotesIndexContainer />
+    }
+  }
+
 
   render () {
     // debugger
@@ -49,7 +55,7 @@ class Main extends React.Component {
           <NavSideBarContainer modal={this.modalOpen}/>
         </nav>
         <div className="notes-index-area">
-          <NotesIndexContainer />
+          {this.selectIndexForm()}
         </div>
         <div className="notes-editing-area">
           {this.selectForm()}

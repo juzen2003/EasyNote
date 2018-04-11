@@ -10,7 +10,11 @@ class NotesIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAllNotes();
+    if (this.props.formType === "notebookNotes") {
+      this.props.action(this.props.notebookId);
+    } else {
+      this.props.action();
+    }
   }
 
   // Whenever a new post is created
@@ -18,7 +22,7 @@ class NotesIndex extends React.Component {
   componentWillReceiveProps(nextProps) {
     // take out this part otherwise it would try to multiple request all notes
     // if (this.props.notes.length !== nextProps.notes.length) {
-    // this.props.fetchAllNotes();
+    // this.props.action();
     // }
     // debugger
 
@@ -40,7 +44,8 @@ class NotesIndex extends React.Component {
       note={note}
       deleteNote={this.props.deleteNote}
       fetchNote={this.props.fetchNote}
-      fetchAllNotes={this.props.fetchAllNotes}
+      action={this.props.action}
+      notebookId={this.props.notebookId}
     />).reverse();
     return (
       <div>

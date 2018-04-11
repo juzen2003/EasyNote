@@ -16,18 +16,26 @@ class NotesIndexItem extends React.Component {
 
     // this would route you over to another edit page
     //
-    // this.props.fetchAllNotes().then(() => this.props.history.push(`/notes/${this.state.id}`))
+    // this.props.action().then(() => this.props.history.push(`/notes/${this.state.id}`))
     // debugger
     // change from this.state.id to this.props.note.id to udpate to correct page
     this.props.history.push(`/notes/${this.props.note.id}`);
   }
 
   handleDelete() {
-    this.props.deleteNote(this.props.note.id).then(() => {
-       this.props.fetchAllNotes();
-       // this.props.history.push('/notes');
-     }
-    );
+    if (this.props.notebookId) {
+      this.props.deleteNote(this.props.note.id).then(() => {
+         this.props.action(this.props.notebookId);
+         // this.props.history.push('/notes');
+       }
+      );
+    } else {
+      this.props.deleteNote(this.props.note.id).then(() => {
+         this.props.action();
+         // this.props.history.push('/notes');
+       }
+      );
+    }
   }
 
   render() {

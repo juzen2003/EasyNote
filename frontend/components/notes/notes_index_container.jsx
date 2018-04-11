@@ -5,12 +5,14 @@ import { withRouter } from 'react-router-dom';
 import { fetchAllNotes, deleteNote, fetchNote } from '../../actions/note_actions'
 
 const mapStateToProps = state => ({
-  notes: Object.values(state.entities.notes)
+  notes: Object.values(state.entities.notes),
+  formType: "notes",
+  notebookId: null
 });
 
 // Need to add more here
 const mapDispatchToProps = dispatch => ({
-  fetchAllNotes: () => dispatch(fetchAllNotes()),
+  action: () => dispatch(fetchAllNotes()),
   deleteNote: (id) => dispatch(deleteNote(id)),
   fetchNote: (id) => dispatch(fetchNote(id))
 });
