@@ -40,7 +40,18 @@ class NotesIndex extends React.Component {
 
   selectIndexHeader() {
     if (this.props.notebookId) {
-      return `${this.props.notebookTitle}`
+      const titleArea = document.getElementsByClassName("notes-index-title");
+      for(let i = 0; i < titleArea.length; i++) {
+          titleArea[i].classList.add("notebook-notes-index-title");
+      }
+
+      let notebookTitle = "NOTEBOOK"
+      if (this.props.notebooks[this.props.notebookId]) {
+        notebookTitle = this.props.notebooks[this.props.notebookId].title
+      }
+
+      // const notebookTitle = "NOTEBOOK"
+      return `${notebookTitle}`
     } else {
       return "NOTES"
     }

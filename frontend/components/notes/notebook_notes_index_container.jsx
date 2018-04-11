@@ -9,8 +9,8 @@ const mapStateToProps = (state, ownProps) => {
   const notes = Object.values(state.entities.notes).filter(note => note.notebook_id === notebookId);
   const formType = "notebookNotes"
   // debugger
-  const notebookTitle = state.entities.notebooks[notebookId].title
-  return { notes, formType, notebookId, notebookTitle }
+  const notebooks = state.entities.notebooks
+  return { notes, formType, notebookId, notebooks }
 };
 
 // Need to add more here

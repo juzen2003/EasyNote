@@ -64,8 +64,8 @@ class NavSideBar extends React.Component {
     // debugger;
     for(let i = 0; i < modals.length; i++) {
         modals[i].classList.remove("is-open");
-        this.props.history.push('/notes')
     }
+    this.props.history.push('/notes')
   }
 
   render() {
