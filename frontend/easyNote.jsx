@@ -4,8 +4,8 @@ import configureStore from './store/store.js'
 import Root from './components/root';
 
 // import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './util/notebook_api_util'
-import {fetchNotebookNotes, fetchAllNotes, fetchNote} from './actions/note_actions'
-import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './actions/notebook_actions'
+// import {fetchNotebookNotes, fetchAllNotes, fetchNote} from './actions/note_actions'
+// import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './actions/notebook_actions'
 // import {login, logout, signup} from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,12 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchNotebookNotes = fetchNotebookNotes;
-  // debugger
-  window.fetchAllNotes = fetchAllNotes;
-  window.fetchNote = fetchNote;
-  window.fetchNotebook = fetchNotebook;
-  window.fetchAllNotebooks = fetchAllNotebooks;
+  // window.fetchNotebookNotes = fetchNotebookNotes;
+  // window.fetchAllNotes = fetchAllNotes;
+  // window.fetchNote = fetchNote;
+  // window.fetchNotebook = fetchNotebook;
+  // window.fetchAllNotebooks = fetchAllNotebooks;
   // window.updateNotebook = updateNotebook;
   // window.deleteNotebook = deleteNotebook;
 });
