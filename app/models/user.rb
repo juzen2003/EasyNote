@@ -15,7 +15,6 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
   validates :username, presence: true, uniqueness: true
 
-  # TODO: asscociation to be added
   has_many :notes,
     foreign_key: :user_id,
     class_name: :Note
