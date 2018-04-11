@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js'
 import Root from './components/root';
 
-// import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './util/notebook_api_util'
+import {createTag, fetchTag, fetchAllTags, deleteTag} from './util/tag_api_util'
 // import {fetchNotebookNotes, fetchAllNotes, fetchNote} from './actions/note_actions'
 // import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './actions/notebook_actions'
 // import {login, logout, signup} from './actions/session_actions'
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.fetchNotebookNotes = fetchNotebookNotes;
-  // window.fetchAllNotes = fetchAllNotes;
-  // window.fetchNote = fetchNote;
-  // window.fetchNotebook = fetchNotebook;
+  window.createTag = createTag;
+  window.fetchTag = fetchTag;
+  window.fetchAllTags = fetchAllTags;
+  window.deleteTag = deleteTag;
   // window.fetchAllNotebooks = fetchAllNotebooks;
   // window.updateNotebook = updateNotebook;
   // window.deleteNotebook = deleteNotebook;
