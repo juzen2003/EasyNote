@@ -1,21 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'taggings/create'
-  end
-
-  namespace :api do
-    get 'taggings/destroy'
-  end
-
-  namespace :api do
-    get 'taggings/show'
-  end
-
-  namespace :api do
-    get 'taggings/index'
-  end
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "static_pages#root"
@@ -26,7 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     resources :notes, only: [:create, :update, :index, :show, :destroy] do
-      resources :taggings, only: [:create, :destroy, :index, :show]
+      # resources :taggings, only: [:create, :destroy, :index, :show]
     end
 
     resources :notebooks, only: [:create, :update, :index, :show, :destroy] do
@@ -34,7 +17,7 @@ Rails.application.routes.draw do
     end
 
     resources :tags, only: [:create, :destroy, :index, :show] do
-      resources :taggings, only: [:create, :destroy, :index, :show]
+      # resources :taggings, only: [:create, :destroy, :index, :show]
     end
 
   end
