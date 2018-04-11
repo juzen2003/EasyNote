@@ -37,7 +37,6 @@ export const deleteNote = (id) => dispatch => (
 
 export const removeNote = noteId => ({
   type: REMOVE_NOTE,
-  // noteId: note.id
   noteId
 });
 

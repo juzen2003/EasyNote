@@ -36,6 +36,5 @@ export const deleteNotebook = (id) => dispatch => (
 
 export const removeNotebook = notebookId => ({
   type: REMOVE_NOTEBOOK,
-  // notebookId: notebook.id
   notebookId
 });
