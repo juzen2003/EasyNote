@@ -13,10 +13,14 @@ class Main extends React.Component {
     this.selectForm = this.selectForm.bind(this)
 
     // this is to determine how if modal should open
-    this.modalOpen = this.props.match.path === "/notebooks" ? "is-open" : null
+    this.modalOpen = this.props.match.path === "/notebooks" ? "is-open" : ""
+    // this.modalOpen = "";
+
+    // debugger
   }
 
   componentWillReceiveProps(nextProps) {
+    // this.modalOpen = nextProps.match.path === "/notebooks" ? "is-open" : ""
     // debugger
   }
   componentDidMount() {
@@ -33,7 +37,7 @@ class Main extends React.Component {
 
 
   render () {
-      // debugger
+    // debugger
     return (
       <div className="main-page">
         <nav className="nav-side-bar-area">

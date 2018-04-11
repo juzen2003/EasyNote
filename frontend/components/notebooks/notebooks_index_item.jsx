@@ -28,7 +28,7 @@ class NotebooksIndexItem extends React.Component {
     // remove Link for now to make sure layout is fine
     return (
       <div className="notebooks-index-wrapper">
-        <Link to={`/notebooks/${this.props.notebook.id}`}>
+        <Link to={`/notebooks/${this.props.notebook.id}/notes`}>
           <div className="notebooks-index-item" >
             <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
 

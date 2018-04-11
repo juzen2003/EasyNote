@@ -4,9 +4,13 @@ import NavSideBar from './nav_side_bar';
 import { logout } from '../../actions/session_actions'
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => ({
-  currentUser: state.session.currentUser,
-});
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  return {
+    currentUser: state.session.currentUser,
+    modal: ownProps.modal
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),

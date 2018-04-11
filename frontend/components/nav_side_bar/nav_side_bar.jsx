@@ -15,6 +15,12 @@ class NavSideBar extends React.Component {
 
   componentDidMount() {
     this.openModal();
+    // debugger;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // this.openModal();
+    // debugger
   }
 
   openModal() {
