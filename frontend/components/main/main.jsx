@@ -20,7 +20,12 @@ class Main extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // this.modalOpen = nextProps.match.path === "/notebooks" ? "is-open" : ""
+    // nextProps.match.path
+    // "/notebooks"
+    // nextProps.match.path
+    // "/notebooks/:notebookId/notes"
+    // nextProps.match.params.notebookId
+    // "13"
     // debugger
   }
   componentDidMount() {

@@ -8,6 +8,7 @@ class NotebooksIndexItem extends React.Component {
     this.state = this.props.notebook;
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleRemoveModal = this.handleRemoveModal.bind(this);
   }
 
   handleClick(e) {
@@ -24,11 +25,22 @@ class NotebooksIndexItem extends React.Component {
     );
   }
 
+  handleRemoveModal(e) {
+    e.preventDefault();
+    const modals = document.getElementsByClassName("is-open");
+    // debugger;
+    for(let i = 0; i < modals.length; i++) {
+        modals[i].classList.remove("is-open");
+        // this would go back to main and remove modal
+        this.props.history.push(`/notebooks/${this.props.notebook.id}/notes`)
+    }
+  }
+
   render() {
     // remove Link for now to make sure layout is fine
     return (
       <div className="notebooks-index-wrapper">
-        <Link to={`/notebooks/${this.props.notebook.id}/notes`}>
+        <Link to={`/notebooks/${this.props.notebook.id}/notes`} onClick={this.handleRemoveModal}>
           <div className="notebooks-index-item" >
             <i className="material-icons notebook-delete-icon" onClick={this.handleDelete}>delete_forever</i>
 
