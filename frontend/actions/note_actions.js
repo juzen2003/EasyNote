@@ -3,6 +3,7 @@ import * as NoteApiUtil from '../util/note_api_util';
 export const RECEIVE_ALL_NOTES = "RECEIVE_ALL_NOTES";
 export const RECEIVE_NOTE = "RECEIVE_NOTE";
 export const REMOVE_NOTE = "REMOVE_NOTE";
+export const RECEIVE_PARTIAL_NOTES = "RECEIVE_PARTIAL_NOTES";
 
 export const fetchAllNotes = () => dispatch => (
   NoteApiUtil.fetchAllNotes().then(notes => dispatch(receiveAllNotes(notes)))
@@ -41,5 +42,10 @@ export const removeNote = note => ({
 
 // this is for fetching notes from a notebook
 export const fetchNotebookNotes = (notebookId) => dispatch => (
-  NoteApiUtil.fetchNotebookNotes(notebookId).then(notes => dispatch(receiveAllNotes(notes)))
+  NoteApiUtil.fetchNotebookNotes(notebookId).then(notes => dispatch(receivePatialNotes(notes)))
 );
+
+export const receivePatialNotes = notes => ({
+  type: RECEIVE_PARTIAL_NOTES,
+  notes
+});

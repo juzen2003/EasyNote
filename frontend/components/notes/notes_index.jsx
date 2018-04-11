@@ -16,9 +16,10 @@ class NotesIndex extends React.Component {
   // Whenever a new post is created
   // Should try to modify this part...
   componentWillReceiveProps(nextProps) {
-    if (this.props.notes.length !== nextProps.notes.length) {
-    this.props.fetchAllNotes();
-    }
+    // take out this part otherwise it would tried to multiple request all notes
+    // if (this.props.notes.length !== nextProps.notes.length) {
+    // this.props.fetchAllNotes();
+    // }
     // debugger
 
   }
