@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store.js'
 import Root from './components/root';
 
-// import {createTag, fetchTag, fetchAllTags, deleteTag} from './util/tag_api_util'
+// import {createTag, fetchTag, fetchAllTags, deleteTag} from './actions/tag_actions'
 // import {fetchNotebookNotes, fetchAllNotes, fetchNote} from './actions/note_actions'
 // import {createNotebook, updateNotebook, fetchNotebook, fetchAllNotebooks, deleteNotebook} from './actions/notebook_actions'
 // import {login, logout, signup} from './actions/session_actions'
