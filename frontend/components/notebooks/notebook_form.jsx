@@ -4,14 +4,28 @@ import { withRouter, Link } from 'react-router-dom';
 class NotebookForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.notebook;
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.allowSubmit = this.allowSubmit.bind(this);
   }
 
   update(field) {
     return (e) => {
+      // debugger
+      this.allowSubmit(e);
       this.setState({[field]: e.target.value});
     };
+  }
+
+  allowSubmit(e) {
+    const createButton =  document.getElementsByClassName("create-notebook-button");
+    for(let i = 0; i < createButton.length; i++) {
+      if(e.target.value && e.target.value.trim() !== "") {
+        createButton[i].disabled = false;
+      } else {
+          createButton[i].disabled = true;
+      }
+    }
   }
 
   handleSubmit(e) {
@@ -35,7 +49,7 @@ class NotebookForm extends React.Component {
               onChange={this.update('title')} />
             <div className="notebook-form-button">
               <Link className="cancel-notebook-add" to="/notebooks">Cancel</Link>
-              <input type="submit" value="Create notebook" />
+              <input className="create-notebook-button" type="submit" value="Create notebook" disabled/>
             </div>
           </form>
         </div>
