@@ -25,7 +25,7 @@ class Api::TagsController < ApplicationController
   end
 
   def index
-    # need user_id casue we can create blank tag
+    # need user_id because we can create blank tag
     # @tags = current_user.tags.all
     @tags = Tag.all
     render :index
