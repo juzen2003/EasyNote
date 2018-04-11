@@ -35,6 +35,7 @@ class EditNoteForm extends React.Component {
         action={action}
         note={note}
         notebooks={this.props.notebooks}
+        formType={this.props.formType}
         />
     );
   }

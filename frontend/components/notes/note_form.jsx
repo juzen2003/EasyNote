@@ -15,8 +15,9 @@ class NoteForm extends React.Component {
     this.handleBodyChange = this.handleBodyChange.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.notebooksOpt = this.notebooksOpt.bind(this);
-    this.handleSelectChange = this.handleSelectChange.bind(this)
-    this.allowSubmit = this.allowSubmit.bind(this)
+    this.handleSelectChange = this.handleSelectChange.bind(this);
+    this.allowSubmit = this.allowSubmit.bind(this);
+    this.selectDoneButton = this.selectDoneButton.bind(this);
     // debugger
   }
 
@@ -83,9 +84,9 @@ class NoteForm extends React.Component {
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then(() => this.props.history.push('/notes'));
     } else {
-      this.props.action(finalState).then(() =>
-      this.setState({title:"", body:"", body_with_style:"", notebook_id:null})
-      );
+      this.props.action(finalState).then(() => {
+        this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
+      });
     }
   }
 
@@ -99,6 +100,31 @@ class NoteForm extends React.Component {
       }
     }
     // debugger
+  }
+
+  selectDoneButton() {
+    // if(this.props.formType === "Edit form") {
+    //   return "button";
+    // } else {
+    //   return "hidden";
+    // }
+    if(this.props.formType === "Edit form") {
+      return (
+        <input
+          className="done-button" onClick={this.handleSubmit}
+          type="button"
+          value="Done"
+        />
+      );
+    } else {
+      return (
+        <input
+          className="done-button" onClick={this.handleSubmit}
+          type="hidden"
+          value="Done"
+        />
+      );
+    }
   }
 
   handleCancel(e) {
@@ -143,11 +169,7 @@ class NoteForm extends React.Component {
         <div className="rich-text-editor-button-area">
 
 
-          <input
-            className="done-button" onClick={this.handleSubmit}
-            type="hidden"
-            value="Done"
-          />
+          {this.selectDoneButton()}
           <button className="cancel-button" onClick={this.handleCancel}>Cancel</button>
         </div>
         <div className="rich-text-editor-area">

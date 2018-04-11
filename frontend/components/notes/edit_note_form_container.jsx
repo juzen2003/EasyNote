@@ -9,9 +9,10 @@ const mapStateToProps = (state, ownProps) => {
   const defaultNote = {title:"", body:"", body_with_style:"",  notebook_id:null}
   const note = state.entities.notes[ownProps.match.params.noteId] || defaultNote;
   const notebooks = state.entities.notebooks;
+  const formType = "Edit form"
 
   // debugger
-  return { note, notebooks };
+  return { note, notebooks, formType };
 }
 
 const mapDispatchToProps = dispatch => ({

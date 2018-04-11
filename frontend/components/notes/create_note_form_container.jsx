@@ -9,6 +9,7 @@ const mapStateToProps = state => {
   return {
     note: {title:"", body:"", body_with_style:"", notebook_id:null},
     notebooks: state.entities.notebooks,
+    formType: "Create form"
   }
 
 }
