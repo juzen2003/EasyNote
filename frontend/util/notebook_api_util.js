@@ -28,9 +28,9 @@ export const fetchAllNotebooks = () => (
   })
 );
 
-export const deleteNotebook = (notebook) => (
+export const deleteNotebook = (id) => (
   $.ajax ({
-    url: `/api/notebooks/${notebook}`,
+    url: `/api/notebooks/${id}`,
     method: 'DELETE'
   })
 );
