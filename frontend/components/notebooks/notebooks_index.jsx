@@ -14,12 +14,12 @@ class NotebooksIndex extends React.Component {
     this.props.fetchAllNotebooks();
   }
 
-  // Whenever a new post is created
+  // Whenever a new notebook is created
   // Should try to modify this part...
   componentWillReceiveProps(nextProps) {
-    if (this.props.notebooks.length !== nextProps.notebooks.length) {
-    this.props.fetchAllNotebooks();
-    }
+    // if (this.props.notebooks.length !== nextProps.notebooks.length) {
+    // this.props.fetchAllNotebooks();
+    // }
     // debugger
 
   }

@@ -22,7 +22,7 @@ class NotebooksIndexItem extends React.Component {
     e.stopPropagation();
     this.props.deleteNotebook(this.props.notebook.id).then(() => {
        this.props.fetchAllNotebooks();
-       // this.props.history.push('/notebooks');
+       this.props.history.push('/notebooks');
      }
     );
   }
