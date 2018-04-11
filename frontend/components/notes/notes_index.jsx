@@ -7,6 +7,7 @@ class NotesIndex extends React.Component {
     // this.state = this.props.notes
     this.notesCount = this.notesCount.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.selectIndexHeader = this.selectIndexHeader.bind(this);
   }
 
   componentDidMount() {
@@ -33,8 +34,16 @@ class NotesIndex extends React.Component {
   }
 
   handleClick(e) {
-    debugger
+    // debugger
     // this.props.fetchNote()
+  }
+
+  selectIndexHeader() {
+    if (this.props.notebookId) {
+      return `${this.props.notebookTitle}`
+    } else {
+      return "NOTES"
+    }
   }
 
   render () {
@@ -51,7 +60,7 @@ class NotesIndex extends React.Component {
       <div>
         <ul>
           <li className="notes-index-title">
-            <h3>NOTES</h3>
+            <h3>{this.selectIndexHeader()}</h3>
             <p>{this.notesCount()} notes</p>
           </li>
           <li>

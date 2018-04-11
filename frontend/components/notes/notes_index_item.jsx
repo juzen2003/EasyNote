@@ -8,6 +8,7 @@ class NotesIndexItem extends React.Component {
     this.state = this.props.note;
     this.handleClick = this.handleClick.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.selectItemLink = this.selectItemLink.bind(this);
   }
 
   handleClick(e) {
@@ -38,10 +39,18 @@ class NotesIndexItem extends React.Component {
     }
   }
 
+  selectItemLink() {
+    if (this.props.notebookId) {
+      return `/notebooks/${this.props.notebookId}/notes/${this.props.note.id}`
+    } else {
+      return `/notes/${this.props.note.id}`
+    }
+  }
+
   render() {
     return (
       <div className="notes-index-wrapper">
-        <Link to={`/notes/${this.props.note.id}`}>
+        <Link to={this.selectItemLink()}>
           <div className="notes-index-item" >
             <i className="material-icons delete-icon" onClick={this.handleDelete}>delete_forever</i>
             <div>
