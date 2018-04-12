@@ -1,4 +1,5 @@
 class Api::TagsController < ApplicationController
+  before_action :require_login
   def create
     @tag = Tag.new(tag_params)
     @tag.user_id = current_user.id

@@ -1,5 +1,5 @@
 class Api::NotebooksController < ApplicationController
-  # before_action :require_login
+  before_action :require_login
 
   def create
     @notebook = current_user.notebooks.new(notebook_params)

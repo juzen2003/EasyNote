@@ -30,8 +30,8 @@ class Api::NotesController < ApplicationController
 
     else
       @notes = current_user.notes.all
+      # @notes = Note.all
     end
-    # @notes = Note.all
     render :index
   end
 
