@@ -8,7 +8,7 @@ class NoteForm extends React.Component {
   constructor(props) {
     super(props);
     // const defaultState = this.props.note;
-    this.state = this.props.note;
+    this.state = merge(this.props.note, this.props.tag);
     // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -18,6 +18,8 @@ class NoteForm extends React.Component {
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.allowSubmit = this.allowSubmit.bind(this);
     this.selectDoneButton = this.selectDoneButton.bind(this);
+    this.handleAddTag = this.handleAddTag.bind(this);
+    this.handleTagChange = this.handleTagChange.bind(this);
     // debugger
   }
 
@@ -37,6 +39,18 @@ class NoteForm extends React.Component {
     // debugger
     // nextProps.match.params.noteId -> string
     // nextPtops.note.id -> integer
+  }
+
+  handleAddTag(e) {
+    // debugger
+    if(e.key === "Enter") {
+      this.props.createTag({name: e.target.value}).then((tag) => this.state.tagsID.push(tag.id))
+    }
+    // debugger
+  }
+
+  handleTagChange(e) {
+    this.setState({name: e.target.value});
   }
 
   handleChange(type) {
@@ -79,8 +93,11 @@ class NoteForm extends React.Component {
     //   body_with_style: this.state.body_with_style,
     //   notebook_id: selectedValue
     // }
+    const tag = {name: this.state.name}
+
     const finalState = merge({}, this.state, {notebook_id: selectedValue})
 
+    // Temp commented out if testing is needed
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then(() => this.props.history.push('/notes'));
     } else {
@@ -88,6 +105,7 @@ class NoteForm extends React.Component {
         this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
       });
     }
+
   }
 
   allowSubmit(e) {
@@ -186,7 +204,12 @@ class NoteForm extends React.Component {
             <div>
               <ul>
                 <li> area for tag
-
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.handleTagChange}
+                    onKeyPress={this.handleAddTag}
+                  />
                 </li>
               </ul>
             </div>

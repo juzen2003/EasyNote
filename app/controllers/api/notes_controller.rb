@@ -1,8 +1,8 @@
 class Api::NotesController < ApplicationController
   before_action :require_login
   def create
-    @note = current_user.notes.new(note_params)
-    # @note = Note.new(note_params)
+    # @note = current_user.notes.new(note_params)
+    @note = Note.new(note_params)
     @note.user_id = current_user.id
     if @note.save
       # render 'api/users/show'
