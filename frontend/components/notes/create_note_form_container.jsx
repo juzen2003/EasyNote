@@ -10,10 +10,9 @@ import { createTagging } from '../../actions/tagging_actions';
 const mapStateToProps = state => {
   // debugger;
   return {
-    note: {title:"", body:"", body_with_style:"", notebook_id:null, tagsID: []},
+    note: {title:"", body:"", body_with_style:"", notebook_id:null, tagsID: [], tagsName: [], currentTagName: ""},
     notebooks: state.entities.notebooks,
     formType: "Create form",
-    tag: {name: ""},
   }
 
 }

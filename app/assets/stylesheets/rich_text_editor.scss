@@ -16,6 +16,13 @@
   display: block;
 }
 
+.custom-edit-area {
+  display: flex;
+  align-items: center;
+  top: 50px;
+  position: relative;
+}
+
 .selected-notebook {
   border: 1px solid #ccc;
   font-size: 12px;
@@ -27,6 +34,38 @@
   // left: 50px;
   // top: 20px;
   // display: inline-block;
+}
+
+.tag-area-on-form {
+  display: flex;
+  input {
+    color: #606060;
+    background-color: #f8f8f8;
+    vertical-align: top;
+    border: 1px solid #ececec;
+    padding: 1px 8px 1px;
+    border-radius: 4px;
+    width: 30px;
+    margin: 0 3px 0 10px;
+    text-align: center;
+    display: inline-block;
+  }
+  ul {
+    display: flex;
+
+    li {
+      color: #606060;
+      background-color: #f8f8f8;
+      vertical-align: top;
+      border: 1px solid #ececec;
+      padding: 1px 8px 1px;
+      border-radius: 4px;
+      width: 30px;
+      display: inline-block;
+      margin: 0 3px;
+      text-align: center;
+    }
+  }
 }
 
 
@@ -94,7 +133,7 @@
     top: 80px;
     margin-top: 25px;
     font-size: 24px;
-    left: -75px;
+    left: 15px;
     max-width: 960px;
     // width: 80vw;
     color: #2dbe60;

@@ -8,7 +8,7 @@ class NoteForm extends React.Component {
   constructor(props) {
     super(props);
     // const defaultState = this.props.note;
-    this.state = merge(this.props.note, this.props.tag);
+    this.state = this.props.note;
     // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -44,13 +44,21 @@ class NoteForm extends React.Component {
   handleAddTag(e) {
     // debugger
     if(e.key === "Enter") {
-      this.props.createTag({name: e.target.value}).then((tag) => this.state.tagsID.push(tag.id))
+      // const context = this
+      this.props.createTag({name: e.target.value}).then((tag) => {
+        // update the tagsID array for the note
+        const tagsID = this.state.tagsID.concat(tag.tag.id)
+        const tagsName =
+        this.state.tagsName.concat(tag.tag.name)
+        this.setState({tagsID, tagsName, currentTagName: ""});
+        // debugger
+      })
+
     }
-    // debugger
   }
 
   handleTagChange(e) {
-    this.setState({name: e.target.value});
+    this.setState({currentTagName: e.target.value});
   }
 
   handleChange(type) {
@@ -93,7 +101,6 @@ class NoteForm extends React.Component {
     //   body_with_style: this.state.body_with_style,
     //   notebook_id: selectedValue
     // }
-    const tag = {name: this.state.name}
 
     const finalState = merge({}, this.state, {notebook_id: selectedValue})
 
@@ -181,6 +188,9 @@ class NoteForm extends React.Component {
       ['clean']
     ];
 
+    // create lists of tags, can create an element for it
+    const tags = this.state.tagsName.map((el, idx) => <li className="tag-item-on-form" key={idx}>{el}</li>);
+
     return (
       <div className="rich-text-editor">
 
@@ -196,22 +206,27 @@ class NoteForm extends React.Component {
 
           <div className="editor-container">
 
-            <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
-            <option value=""> -Notebook- </option>
-            {this.notebooksOpt()}
-            </select>
+            <div className="custom-edit-area">
 
-            <div>
-              <ul>
-                <li> area for tag
-                  <input
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.handleTagChange}
-                    onKeyPress={this.handleAddTag}
-                  />
-                </li>
-              </ul>
+              <select className="selected-notebook" value={this.state.notebook_id || ""} onChange={this.handleSelectChange}>
+              <option value=""> -Notebook- </option>
+              {this.notebooksOpt()}
+              </select>
+
+              <div className="tag-area-on-form">
+                <input
+                className="tag-add-button-on-form"
+                type="text"
+                value={this.state.currentTagName}
+                onChange={this.handleTagChange}
+                onKeyPress={this.handleAddTag}
+                placeholder="+tag"
+                />
+                <ul>
+                  {tags}
+                </ul>
+              </div>
+
             </div>
 
             <input
