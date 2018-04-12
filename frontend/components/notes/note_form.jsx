@@ -45,6 +45,9 @@ class NoteForm extends React.Component {
     // debugger
     if(e.key === "Enter") {
       // const context = this
+      // debugger
+
+
       this.props.createTag({name: e.target.value}).then((tag) => {
         // update the tagsID array for the note
         const tagsID = this.state.tagsID.concat(tag.tag.id)
@@ -103,8 +106,14 @@ class NoteForm extends React.Component {
     // }
 
     const finalState = merge({}, this.state, {notebook_id: selectedValue})
-
     // Temp commented out if testing is needed
+    // if (this.props.location.pathname !== "/notes") {
+    //   this.props.action(finalState).then(() => this.props.history.push('/notes'));
+    // } else {
+    //   this.props.action(finalState).then(() => {
+    //     this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
+    //   });
+    // }
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then(() => this.props.history.push('/notes'));
     } else {

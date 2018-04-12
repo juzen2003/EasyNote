@@ -26,7 +26,7 @@ class EditNoteForm extends React.Component {
   // }
 
   render() {
-    const { fetchNote, action, note, createTag, createTagging } = this.props;
+    const { fetchNote, action, note, createTag, createTagging, fetchTag } = this.props;
     // const note = this.state;
     // debugger
     return (
@@ -34,6 +34,7 @@ class EditNoteForm extends React.Component {
         fetchNote={fetchNote}
         action={action}
         createTag={createTag}
+        fetchTag={fetchTag}
         createTagging={createTagging}
         note={note}
         notebooks={this.props.notebooks}

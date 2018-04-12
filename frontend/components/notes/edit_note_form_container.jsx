@@ -4,7 +4,7 @@ import EditNoteForm from './edit_form';
 import { fetchNote, updateNote } from '../../actions/note_actions';
 import { fetchAllNotebooks } from '../../actions/notebook_actions';
 import merge from 'lodash/merge';
-import { createTag } from '../../actions/tag_actions';
+import { createTag, fetchTag } from '../../actions/tag_actions';
 import { createTagging } from '../../actions/tagging_actions';
 
 
@@ -33,6 +33,7 @@ const mapDispatchToProps = dispatch => ({
   action: (note) => dispatch(updateNote(note)),
   createTag: (tag) => dispatch(createTag(tag)),
   createTagging: (tagging) => dispatch(createTagging(tagging)),
+  fetchTag: (id) => dispatch(fetchTag(id)),
 })
 
 export default withRouter(connect(
