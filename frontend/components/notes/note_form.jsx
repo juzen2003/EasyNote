@@ -134,6 +134,7 @@ class NoteForm extends React.Component {
     this.props.history.push('/notes');
   }
 
+  // select tag of available notebooks
   notebooksOpt() {
     // debugger
     return (
@@ -181,6 +182,14 @@ class NoteForm extends React.Component {
             <option value=""> -Notebook- </option>
             {this.notebooksOpt()}
             </select>
+
+            <div>
+              <ul>
+                <li> area for tag
+
+                </li>
+              </ul>
+            </div>
 
             <input
             className="note-title"
