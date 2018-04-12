@@ -10,8 +10,8 @@ class Api::TagsController < ApplicationController
   end
 
   def destroy
-    # @tag = current_user.tags.find(params[:id])
-    @tag = Tag.find(params[:id])
+    @tag = current_user.tags.find(params[:id])
+    # @tag = Tag.find(params[:id])
     if @tag.destroy
       render json: {}
     else
@@ -20,15 +20,15 @@ class Api::TagsController < ApplicationController
   end
 
   def show
-    # @tag = current_user.tags.find(params[:id])
-    @tag = Tag.find(params[:id])
+    @tag = current_user.tags.find(params[:id])
+    # @tag = Tag.find(params[:id])
     render :show
   end
 
   def index
     # need user_id because we can create blank tag
-    # @tags = current_user.tags.all
-    @tags = Tag.all
+    @tags = current_user.tags.all
+    # @tags = Tag.all
     render :index
   end
 
