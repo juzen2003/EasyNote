@@ -8,8 +8,7 @@ class NavSideBar extends React.Component {
     super(props);
     this.state = this.props.currentUser;
     this.handleLogout = this.handleLogout.bind(this);
-    this.handleNotebooksClick = this.handleNotebooksClick.bind(this);
-    this.handleTagsClick = this.handleTagsClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.handleRemoveModal = this.handleRemoveModal.bind(this);
     this.openModal = this.openModal.bind(this);
     // debugger
@@ -43,37 +42,31 @@ class NavSideBar extends React.Component {
     this.props.logout();
   }
 
-  handleNotebooksClick(e) {
-    e.preventDefault();
-    const modals = document.getElementsByClassName("notebooks-modal-area");
-    // debugger;
-    // whenever modal is closed, "/notes"
-    // whenever modal is open, "/notebooks"
-    for(let i = 0; i < modals.length; i++) {
-      if(modals[i].classList.contains("is-open")) {
-        modals[i].classList.remove("is-open");
-        this.props.history.push("/notes")
-      } else {
-        modals[i].classList.add("is-open");
-        this.props.history.push("/notebooks")
-      }
-    }
-  }
+  handleClick(type) {
 
-  handleTagsClick(e) {
-    // debugger
-    e.preventDefault();
-    const modals = document.getElementsByClassName("tags-modal-area");
-    // debugger;
-    // whenever modal is closed, "/notes"
-    // whenever modal is open, "/tags"
-    for(let i = 0; i < modals.length; i++) {
-      if(modals[i].classList.contains("is-open")) {
-        modals[i].classList.remove("is-open");
-        this.props.history.push("/notes")
-      } else {
-        modals[i].classList.add("is-open");
-        this.props.history.push("/tags")
+    return (e) => {
+      e.preventDefault();
+      const anotherType = (type === "tags") ? "notebooks" : "tags"
+      // debugger
+      const exModals = document.getElementsByClassName(`${anotherType}-modal-area`);
+      for(let i = 0; i < exModals.length; i++) {
+        if(exModals[i].classList.contains("is-open")) {
+          exModals[i].classList.remove("is-open");
+        }
+      }
+
+      const modals = document.getElementsByClassName(`${type}-modal-area`);
+      // debugger;
+      // whenever modal is closed, "/notes"
+      // whenever modal is open, "/notebooks"
+      for(let i = 0; i < modals.length; i++) {
+        if(modals[i].classList.contains("is-open")) {
+          modals[i].classList.remove("is-open");
+          this.props.history.push("/notes")
+        } else {
+          modals[i].classList.add("is-open");
+          this.props.history.push(`/${type}`)
+        }
       }
     }
   }
@@ -101,19 +94,19 @@ class NavSideBar extends React.Component {
             <Link to="/notes"><i className="material-icons notes-icon" onClick={this.handleRemoveModal}>description</i></Link>
           </li>
           <li>
-            <i className="material-icons notebooks-icon" onClick={this.handleNotebooksClick}>library_books</i>
+            <i className="material-icons notebooks-icon" onClick={this.handleClick("notebooks")}>library_books</i>
           </li>
           <li>
-            <i className="material-icons tags-icon" onClick={this.handleTagsClick} >local_offer</i>
+            <i className="material-icons tags-icon" onClick={this.handleClick("tags")} >local_offer</i>
           </li>
         </ul>
         <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
 
       </div>
-        <div className="notebooks-modal-area" onClick={this.handleNotebooksClick}>
+        <div className="notebooks-modal-area" onClick={this.handleClick("notebooks")}>
           <NotebooksIndexContainer />
         </div>
-        <div className="tags-modal-area" onClick={this.handleTagsClick}>
+        <div className="tags-modal-area" onClick={this.handleClick("tags")}>
           <TagsIndexContainer />
         </div>
      </div>
