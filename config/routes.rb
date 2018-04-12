@@ -20,5 +20,7 @@ Rails.application.routes.draw do
       # resources :taggings, only: [:create, :destroy, :index, :show]
     end
 
+    resources :taggings, only: [:create]
+
   end
 end
