@@ -7,8 +7,8 @@ import merge from 'lodash/merge';
 class NoteForm extends React.Component {
   constructor(props) {
     super(props);
-    // const defaultState = this.props.note;
-    this.state = this.props.note;
+    // const defaultState = this.props.note; 
+    this.state = merge(this.props.note, {tagsName: [], currentTagName: ""});
     // debugger
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
