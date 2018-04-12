@@ -85,7 +85,7 @@ class NotebookForm extends React.Component {
             {this.selectForm()}
             <div className="notebook-form-button">
               <Link className="cancel-notebook-add" to={`/${this.props.formType}`}>Cancel</Link>
-              <input className="create-notebook-button" type="submit" value="Create notebook" disabled/>
+              <input className="create-notebook-button" type="submit" value=`Create ${this.props.formType}` disabled/>
             </div>
           </form>
         </div>
