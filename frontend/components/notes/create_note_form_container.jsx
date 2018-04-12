@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom';
 import NoteForm from './note_form';
 import { createNote } from '../../actions/note_actions';
 import { fetchAllNotebooks } from '../../actions/notebook_actions'
+import { createTag } from '../../actions/tag_actions';
+import { createTagging } from '../../actions/tagging_actions';
+
 
 const mapStateToProps = state => {
   // debugger;
@@ -16,7 +19,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   action: (note) => dispatch(createNote(note)),
-  fetchAllNotebooks: () => dispatch(fetchAllNotebooks())
+  fetchAllNotebooks: () => dispatch(fetchAllNotebooks()),
+  createTag: (tag) => dispatch(createTag(tag)),
+  createTagging: (tagging) => dispatch(createTagging(tagging))
 })
 
 export default connect(
