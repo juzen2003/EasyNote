@@ -20,11 +20,14 @@ class TagsIndexItem extends React.Component {
   handleDelete(e) {
     // add this so that by clicking delete, modal would still exist
     e.stopPropagation();
-    this.props.deleteTag(this.props.tag.id).then(() => {
-       this.props.fetchAllTags();
-       this.props.history.push('/tags');
-     }
-    );
+    this.props.deleteTag(this.props.tag.id)
+    // this.props.history.push('/tags')
+    // .then(() => {
+    //    // this.props.fetchAllTags();
+    //    this.props.history.push('/tags');
+    //  }
+    // );
+    // debugger
   }
 
   handleRemoveModal(e) {
@@ -40,9 +43,10 @@ class TagsIndexItem extends React.Component {
 
   render() {
     // remove Link for now to make sure layout is fine
+    // Need to modify Link to and button event handler
     return (
       <div className="tags-index-wrapper">
-        <Link to={`/tags/${this.props.tag.id}/notes`} onClick={this.handleRemoveModal}>
+        <Link to="/tags" onClick={this.handleRemoveModal}>
           <div className="tags-index-item" >
 
             <button>

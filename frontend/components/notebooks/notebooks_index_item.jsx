@@ -20,11 +20,12 @@ class NotebooksIndexItem extends React.Component {
   handleDelete(e) {
     // add this so that by clicking delete, modal would still exist
     e.stopPropagation();
-    this.props.deleteNotebook(this.props.notebook.id).then(() => {
-       this.props.fetchAllNotebooks();
-       this.props.history.push('/notebooks');
-     }
-    );
+    this.props.deleteNotebook(this.props.notebook.id)
+    // .then(() => {
+    //    // this.props.fetchAllNotebooks();
+    //    this.props.history.push('/notebooks');
+    //  }
+    // );
   }
 
   handleRemoveModal(e) {
