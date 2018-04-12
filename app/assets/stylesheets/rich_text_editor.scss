@@ -50,6 +50,11 @@
     text-align: center;
     display: inline-block;
   }
+
+  input:focus {
+    outline: none;
+  }
+
   ul {
     display: flex;
 
@@ -64,6 +69,12 @@
       display: inline-block;
       margin: 0 3px;
       text-align: center;
+    }
+
+    li:hover {
+      background-color: #2dbe60;
+      color: #ffffff;
+      font-size: 12px;
     }
   }
 }
