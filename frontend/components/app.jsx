@@ -8,6 +8,7 @@ import NotesIndexContainer from './notes/notes_index_container';
 import CreateNoteFormContainer from './notes/create_note_form_container';
 import EditNoteFormContainer from './notes/edit_note_form_container';
 import CreateNotebookFormContainer from './notebooks/create_notebook_form_container';
+import CreateTagFormContainer from './tags/create_tag_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Home from './home/home'
 import Main from './main/main'
@@ -20,6 +21,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
 
+      <ProtectedRoute exact path="/tags/new" component={CreateTagFormContainer} />
       <ProtectedRoute exact path="/tags" component={Main} />
 
       <ProtectedRoute exact path="/notebooks/new" component={CreateNotebookFormContainer} />

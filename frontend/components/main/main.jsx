@@ -11,7 +11,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     // this is to determine how if modal should open
-    this.modalOpen = this.props.match.path === "/notebooks" ? "is-open" : ""
+    this.modalOpen = (this.props.match.path === "/notebooks" || this.props.match.path === "/tags") ? this.props.match.path : ""
     this.selectForm = this.selectForm.bind(this)
     this.selectIndexForm = this.selectIndexForm.bind(this)
     // debugger
@@ -41,7 +41,8 @@ class Main extends React.Component {
   selectIndexForm() {
     if(this.props.match.params.notebookId) {
       return <NotebookNotesIndexContainer />
-    } else {
+    }
+    else {
       return <NotesIndexContainer />
     }
   }
