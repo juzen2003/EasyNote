@@ -33,12 +33,12 @@
     color: #878787;
   }
 
-  .plus-icon, .notes-icon, .notebooks-icon {
+  .plus-icon, .notes-icon, .notebooks-icon, .tags-icon {
     color: #6a6a6a;
     cursor: pointer;
   }
 
-  .plus-icon:hover, .notes-icon:hover, .notebooks-icon:hover {
+  .plus-icon:hover, .notes-icon:hover, .notebooks-icon:hover, .tags-icon:hover {
     color: #878787;
   }
 
@@ -49,6 +49,10 @@
   .notebooks-icon {
     margin-top: 20px;
     font-size: 45px;
+  }
+
+  .tags-icon {
+    margin-top: 23px;
   }
 
 }

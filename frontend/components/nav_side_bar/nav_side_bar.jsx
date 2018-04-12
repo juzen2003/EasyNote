@@ -83,6 +83,9 @@ class NavSideBar extends React.Component {
           <li>
             <i className="material-icons notebooks-icon" onClick={this.handleNotebooksClick}>library_books</i>
           </li>
+          <li>
+            <i className="material-icons tags-icon" >local_offer</i>
+          </li>
         </ul>
         <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
 
