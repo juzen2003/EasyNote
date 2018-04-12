@@ -26,13 +26,15 @@ class EditNoteForm extends React.Component {
   // }
 
   render() {
-    const { fetchNote, action, note} = this.props;
+    const { fetchNote, action, note, createTag, createTagging } = this.props;
     // const note = this.state;
     // debugger
     return (
       <NoteForm
         fetchNote={fetchNote}
         action={action}
+        createTag={createTag}
+        createTagging={createTagging}
         note={note}
         notebooks={this.props.notebooks}
         formType={this.props.formType}
