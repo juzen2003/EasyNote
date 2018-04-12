@@ -2,7 +2,7 @@ import React from 'react';
 import TagsIndex from './tags_index';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchAllTags, deleteTag, fetchTag } from '../../actions/tags_actions'
+import { fetchAllTags, deleteTag, fetchTag } from '../../actions/tag_actions'
 
 const mapStateToProps = state => {
   // debugger

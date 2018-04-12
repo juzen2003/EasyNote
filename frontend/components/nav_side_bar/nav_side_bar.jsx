@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import NotebooksIndexContainer from '../notebooks/notebooks_index_container'
+import TagsIndexContainer from '../tags/tags_index_container'
 
 class NavSideBar extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class NavSideBar extends React.Component {
     this.state = this.props.currentUser;
     this.handleLogout = this.handleLogout.bind(this);
     this.handleNotebooksClick = this.handleNotebooksClick.bind(this);
+    this.handleTagsClick = this.handleTagsClick.bind(this);
     this.handleRemoveModal = this.handleRemoveModal.bind(this);
     this.openModal = this.openModal.bind(this);
     // debugger
@@ -58,6 +60,24 @@ class NavSideBar extends React.Component {
     }
   }
 
+  handleTagsClick(e) {
+    // debugger
+    e.preventDefault();
+    const modals = document.getElementsByClassName("tags-modal-area");
+    // debugger;
+    // whenever modal is closed, "/notes"
+    // whenever modal is open, "/tags"
+    for(let i = 0; i < modals.length; i++) {
+      if(modals[i].classList.contains("is-open")) {
+        modals[i].classList.remove("is-open");
+        this.props.history.push("/notes")
+      } else {
+        modals[i].classList.add("is-open");
+        this.props.history.push("/tags")
+      }
+    }
+  }
+
   handleRemoveModal(e) {
     e.preventDefault();
     const modals = document.getElementsByClassName("is-open");
@@ -84,7 +104,7 @@ class NavSideBar extends React.Component {
             <i className="material-icons notebooks-icon" onClick={this.handleNotebooksClick}>library_books</i>
           </li>
           <li>
-            <i className="material-icons tags-icon" >local_offer</i>
+            <i className="material-icons tags-icon" onClick={this.handleTagsClick} >local_offer</i>
           </li>
         </ul>
         <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
@@ -92,6 +112,9 @@ class NavSideBar extends React.Component {
       </div>
         <div className="notebooks-modal-area" onClick={this.handleNotebooksClick}>
           <NotebooksIndexContainer />
+        </div>
+        <div className="tags-modal-area" onClick={this.handleTagsClick}>
+          <TagsIndexContainer />
         </div>
      </div>
     )
