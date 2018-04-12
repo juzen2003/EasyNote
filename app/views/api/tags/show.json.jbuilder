@@ -10,12 +10,12 @@ json.extract! @tag, :id, :name, :user_id
 #     "user_id": 8
 # }
 
-{
-    "notesID": [
-        145,
-        160
-    ],
-    "id": 6,
-    "name": "TTAG",
-    "user_id": 8
-}
+# {
+#     "notesID": [
+#         145,
+#         160
+#     ],
+#     "id": 6,
+#     "name": "TTAG",
+#     "user_id": 8
+# }
