@@ -43,11 +43,13 @@ class TagsIndexItem extends React.Component {
     return (
       <div className="tags-index-wrapper">
         <Link to={`/tags/${this.props.tag.id}/notes`} onClick={this.handleRemoveModal}>
-          <div className="tag-index-item" >
-            <i className="material-icons tag-delete-icon" onClick={this.handleDelete}>delete_forever</i>
+          <div className="tags-index-item" >
 
-            <h3>{this.props.tag.name}</h3>
-            <p>{this.props.notes.length} notes</p>
+            <button>
+            <p className="tag-name">{this.props.tag.name}</p>
+            <p className="tag-notes">{this.props.notes.length}</p>
+            </button>
+            <i className="material-icons tag-delete-icon" onClick={this.handleDelete}>delete_forever</i>
 
           </div>
         </Link>
