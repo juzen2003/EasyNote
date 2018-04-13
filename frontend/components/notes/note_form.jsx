@@ -65,6 +65,7 @@ class NoteForm extends React.Component {
       if (check) {
         this.props.fetchTag(check).then((tag) => {
           const tagsID = this.state.tagsID.concat(tag.tag.id)
+          // avoid duplicate tags:
           const tagsName =
           this.state.tagsName.concat(tag.tag.name)
           this.setState({tagsID, tagsName, currentTagName: ""});
