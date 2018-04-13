@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const notebookId = parseInt(ownProps.match.params.notebookId);
   const notes = Object.values(state.entities.notes).filter(note => note.notebook_id === notebookId);
   const formType = "notebookNotes"
-  // debugger
+  // 
   const notebooks = state.entities.notebooks
   return { notes, formType, notebookId, notebooks }
 };

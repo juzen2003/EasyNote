@@ -19,16 +19,16 @@ class EditNoteForm extends React.Component {
   //     // this.setState(nextProps.note)
   //     // this.state = nextProps.note
   //     //
-  //     // console.log("re-fetch?");
+  //    
   //   }
-  //   // debugger
+  //   //
   //
   // }
 
   render() {
     const { fetchNote, action, note, createTag, createTagging, fetchTag, tags } = this.props;
     // const note = this.state;
-    // debugger
+    //
     return (
       <NoteForm
         fetchNote={fetchNote}

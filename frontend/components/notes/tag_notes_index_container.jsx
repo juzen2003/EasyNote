@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   const tagId = parseInt(ownProps.match.params.tagId);
   const notes = Object.values(state.entities.notes).filter(note => note.tagsID.includes(tagId));
   const formType = "tagNotes"
-  // debugger
+  // 
   const tags = state.entities.tags
   return { notes, formType, tagId, tags }
 };

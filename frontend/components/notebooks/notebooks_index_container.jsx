@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchAllNotebooks, deleteNotebook, fetchNotebook } from '../../actions/notebook_actions'
 
 const mapStateToProps = state => {
-  // debugger
+  // 
   return {
     notebooks: Object.values(state.entities.notebooks),
     notes: Object.values(state.entities.notes),

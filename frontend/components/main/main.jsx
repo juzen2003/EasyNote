@@ -15,7 +15,7 @@ class Main extends React.Component {
     this.modalOpen = (this.props.match.path === "/notebooks" || this.props.match.path === "/tags") ? this.props.match.path : ""
     this.selectForm = this.selectForm.bind(this)
     this.selectIndexForm = this.selectIndexForm.bind(this)
-    // debugger
+    // 
   }
 
   componentWillReceiveProps(nextProps) {
@@ -25,10 +25,10 @@ class Main extends React.Component {
     // "/notebooks/:notebookId/notes"
     // nextProps.match.params.notebookId
     // "13"
-    // debugger
+    // 
   }
   componentDidMount() {
-    // debugger;
+    // ;
   }
 
   selectForm() {
@@ -51,7 +51,7 @@ class Main extends React.Component {
 
 
   render () {
-    // debugger
+    // 
     return (
       <div className="main-page">
         <nav className="nav-side-bar-area">

@@ -13,7 +13,7 @@ class NotebookForm extends React.Component {
 
   update(field) {
     return (e) => {
-      // debugger
+      // 
       this.allowSubmit(e);
       this.setState({[field]: e.target.value});
     };
@@ -37,7 +37,7 @@ class NotebookForm extends React.Component {
   }
 
   selectForm() {
-    // debugger
+    // 
     if(this.props.formType === "tags") {
       return (
         <input className="notebook-title-input"

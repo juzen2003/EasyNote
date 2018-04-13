@@ -12,7 +12,7 @@ class NotebooksIndexItem extends React.Component {
   }
 
   handleClick(e) {
-    // debugger
+    // 
     e.preventDefault();
     this.props.history.push(`/notebooks/${this.props.notebook.id}`);
   }
@@ -31,7 +31,7 @@ class NotebooksIndexItem extends React.Component {
   handleRemoveModal(e) {
     e.preventDefault();
     const modals = document.getElementsByClassName("is-open");
-    // debugger;
+    // ;
     for(let i = 0; i < modals.length; i++) {
         modals[i].classList.remove("is-open");
         // this would go back to main and remove modal

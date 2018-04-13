@@ -12,7 +12,7 @@ class TagsIndexItem extends React.Component {
   }
 
   handleClick(e) {
-    // debugger
+    // 
     e.preventDefault();
     this.props.history.push(`/tags/${this.props.tag.id}`);
   }
@@ -27,13 +27,13 @@ class TagsIndexItem extends React.Component {
     //    this.props.history.push('/tags');
     //  }
     // );
-    // debugger
+    // 
   }
 
   handleRemoveModal(e) {
     e.preventDefault();
     const modals = document.getElementsByClassName("is-open");
-    // debugger;
+    // ;
     for(let i = 0; i < modals.length; i++) {
         modals[i].classList.remove("is-open");
         // this would go back to main and remove modal

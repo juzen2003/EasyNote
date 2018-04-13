@@ -20,13 +20,13 @@ class NotebooksIndex extends React.Component {
     // if (this.props.notebooks.length !== nextProps.notebooks.length) {
     // this.props.fetchAllNotebooks();
     // }
-    // debugger
+    // 
 
   }
 
   // this would avoid the parent firing onClick event as well whenever the notebooks index is clicked
   handleClick(e) {
-    // debugger
+    // 
     // this.props.fetchNotebook()
     e.stopPropagation()
   }
@@ -39,7 +39,7 @@ class NotebooksIndex extends React.Component {
   }
 
   render () {
-    // debugger
+    // 
     const notebookItems = this.props.notebooks.map((notebook, idx) =>
     <NotebooksIndexItem
       key={idx}

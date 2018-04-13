@@ -16,7 +16,7 @@ class TagsIndex extends React.Component {
 
   // this would avoid the parent firing onClick event as well whenever the tags index is clicked
   handleClick(e) {
-    // debugger
+    // 
     // this.props.fetchTag()
     e.stopPropagation()
   }
@@ -29,7 +29,7 @@ class TagsIndex extends React.Component {
   }
 
   render () {
-    // debugger
+    // 
 
     const tagItems = this.props.tags.map((tag, idx) => {
       const tagNotes = this.props.notes.filter(note => tag.notesID.includes(note.id)) 

@@ -11,31 +11,31 @@ class NavSideBar extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleRemoveModal = this.handleRemoveModal.bind(this);
     this.openModal = this.openModal.bind(this);
-    // debugger
+    // 
   }
 
   componentDidMount() {
     this.openModal();
-    // debugger;
+    // ;
   }
 
   componentWillReceiveProps(nextProps) {
     // this.openModal();
-    // debugger
+    // 
   }
 
   openModal() {
-    // debugger
+    // 
     if (this.props.modal === "/notebooks" || this.props.modal === "/tags") {
       const modals = document.getElementsByClassName(`${this.props.modal.slice(1)}-modal-area`);
-      // debugger;
+      // ;
       for(let i = 0; i < modals.length; i++) {
         if(modals[i].classList.contains("is-open") === false) {
           modals[i].classList.add("is-open");
         }
       }
     }
-    // debugger;
+    // ;
   }
 
   handleLogout(e) {
@@ -48,7 +48,7 @@ class NavSideBar extends React.Component {
     return (e) => {
       e.preventDefault();
       const anotherType = (type === "tags") ? "notebooks" : "tags"
-      // debugger
+      // 
       const exModals = document.getElementsByClassName(`${anotherType}-modal-area`);
       for(let i = 0; i < exModals.length; i++) {
         if(exModals[i].classList.contains("is-open")) {
@@ -57,7 +57,7 @@ class NavSideBar extends React.Component {
       }
 
       const modals = document.getElementsByClassName(`${type}-modal-area`);
-      // debugger;
+      // ;
       // whenever modal is closed, "/notes"
       // whenever modal is open, "/notebooks"
       for(let i = 0; i < modals.length; i++) {
@@ -75,7 +75,7 @@ class NavSideBar extends React.Component {
   handleRemoveModal(e) {
     e.preventDefault();
     const modals = document.getElementsByClassName("is-open");
-    // debugger;
+    // ;
     for(let i = 0; i < modals.length; i++) {
         modals[i].classList.remove("is-open");
     }

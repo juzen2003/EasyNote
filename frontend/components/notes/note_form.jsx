@@ -9,7 +9,7 @@ class NoteForm extends React.Component {
     super(props);
     // const defaultState = this.props.note;
     this.state = merge(this.props.note, {currentTagName: ""});
-    // debugger
+    //
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleBodyChange = this.handleBodyChange.bind(this);
@@ -21,7 +21,7 @@ class NoteForm extends React.Component {
     this.handleAddTag = this.handleAddTag.bind(this);
     this.handleTagChange = this.handleTagChange.bind(this);
     this.tagExists = this.tagExists.bind(this);
-    // debugger
+    //
   }
 
   componentDidMount() {
@@ -34,18 +34,18 @@ class NoteForm extends React.Component {
       this.setState(nextProps.note)
 
       // this.state = nextProps.note;
-      // console.log("re-fetch?");
+
 
     }
 
-    // debugger
+    //
     // nextProps.match.params.noteId -> string
     // nextPtops.note.id -> integer
   }
 
   tagExists(e) {
     // const context = this;
-    // debugger
+    //
     for(let i=0; i < this.props.tags.length ; i++) {
       if(this.props.tags[i].name === e.target.value) {
         return this.props.tags[i].id
@@ -56,12 +56,12 @@ class NoteForm extends React.Component {
   }
 
   handleAddTag(e) {
-    // debugger
+    //
     if(e.key === "Enter") {
       // const context = this
-      // debugger
+      //
       const check = this.tagExists(e)
-      // debugger
+      //
       // compare with entities data if not there we create
       if (check) {
         this.props.fetchTag(check).then((tag) => {
@@ -85,7 +85,7 @@ class NoteForm extends React.Component {
           const tagsName =
           this.state.tagsName.concat(tag.tag.name)
           this.setState({tagsID, tagsName, currentTagName: ""});
-          // debugger
+          //
         })
 
       }
@@ -118,16 +118,16 @@ class NoteForm extends React.Component {
       body: plainText,
       body_with_style: value
      } );
-    // debugger
+    //
     this.setState(newBody);
   }
 
   handleSubmit(e) {
-    // debugger
+    //
     e.preventDefault();
     // get the selected notebook id
     const notebookEl = document.getElementsByClassName("selected-notebook");
-    // debugger
+    //
     const selectedValue = (notebookEl[0].selectedIndex === 0) ? null : parseInt(notebookEl[0].value);
 
     // const finalState = {
@@ -150,16 +150,16 @@ class NoteForm extends React.Component {
     // const context = this
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then((note) => {
-        // console.log(context.state.tagsID);
-        // debugger
+
+        //
         this.state.tagsID.forEach(id => this.props.createTagging({note_id: note.note.id, tag_id: id}));
 
        })
        .then(() => this.props.history.push('/notes'));
     } else {
       this.props.action(finalState).then((note) => {
-        // console.log(context.state.tagsID);
-        // debugger
+    
+        //
         this.state.tagsID.forEach(id => this.props.createTagging({note_id: note.note.id, tag_id: id}));
 
        }).then(() => {
@@ -178,7 +178,7 @@ class NoteForm extends React.Component {
         createButton[i].setAttribute("type", "hidden");
       }
     }
-    // debugger
+    //
   }
 
   selectDoneButton() {
@@ -208,14 +208,14 @@ class NoteForm extends React.Component {
 
   handleCancel(e) {
     e.preventDefault();
-    // debugger
+    //
     this.setState(this.props.note);
     this.props.history.push('/notes');
   }
 
   // select tag of available notebooks
   notebooksOpt() {
-    // debugger
+    //
     return (
       Object.values(this.props.notebooks).map((notebook,idx) =>
         <option

@@ -25,7 +25,7 @@ class NotesIndex extends React.Component {
     // if (this.props.notes.length !== nextProps.notes.length) {
     // this.props.action();
     // }
-    // debugger
+    // 
 
   }
 
@@ -34,7 +34,7 @@ class NotesIndex extends React.Component {
   }
 
   handleClick(e) {
-    // debugger
+    // 
     // this.props.fetchNote()
   }
 
@@ -65,7 +65,7 @@ class NotesIndex extends React.Component {
   }
 
   render () {
-    // debugger
+    // 
     const noteItems = this.props.notes.map((note, idx) => <NotesIndexItem
       key={idx}
       note={note}

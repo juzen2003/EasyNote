@@ -23,7 +23,7 @@ class Api::NotesController < ApplicationController
   end
 
   def index
-    # debugger
+    # 
     if params[:notebook_id]
       # @notes = current_user.notes.where(notebook_id: params[:notebook_id])
       @notes = Note.where(notebook_id: params[:notebook_id])

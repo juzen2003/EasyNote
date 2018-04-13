@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchAllTags, deleteTag, fetchTag } from '../../actions/tag_actions'
 
 const mapStateToProps = state => {
-  // debugger
+  // 
   return {
     tags: Object.values(state.entities.tags),
     notes: Object.values(state.entities.notes),
