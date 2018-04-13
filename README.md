@@ -12,7 +12,10 @@ EasyNote is built with
 
 ## Feature
 ### User Authentication
-<img width="1428" alt="home" src="https://user-images.githubusercontent.com/17075939/38748540-45b6e6dc-3f03-11e8-960a-67b0005abee2.png">
+User can sign up or login securely.
+
+![home](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/home.png)
+
 
 
 
