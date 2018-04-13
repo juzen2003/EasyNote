@@ -39,6 +39,22 @@ Notes belongs to individual tag is displayed.
 
 ![Tag Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/tags_notes.png)
 
+## Application Structure
+1. NavSide Bar
+ + Create-note button
+ + Navigate through notes, notebooks, and tags
+ + logout button
+2. Rich-text editor
+ + Create and edit notes, implemented with [React-Quill](https://github.com/zenoamaro/react-quill)
+3. Notes
+ + Display all notes
+4. Notebooks
+ + Display all notebooks
+ + Display notes in each notebook
+5. Tags
+ + Display all tags
+ + Display notes with each tag
+
 ## Future Features and Improvement
 ### Search
 * Allow user to search notes by title
@@ -47,4 +63,4 @@ Notes belongs to individual tag is displayed.
 * Add separate deleting page to for user to confirm the deletion on each note
 ### MISC
 * Allow user to remove a specific tag for an individual note
-* Sort each notes by updated time 
+* Sort each notes by updated time
