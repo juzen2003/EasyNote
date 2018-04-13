@@ -25,7 +25,8 @@ const mapStateToProps = (state, ownProps) => {
   const tagsName = getTagsName(state, note1) || []
   // debugger
   const note = merge(note1, {tagsName: tagsName})
-  return { note, notebooks, formType };
+  const tags = Object.values(state.entities.tags)
+  return { note, notebooks, formType, tags };
 }
 
 const mapDispatchToProps = dispatch => ({

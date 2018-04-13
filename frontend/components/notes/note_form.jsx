@@ -20,6 +20,7 @@ class NoteForm extends React.Component {
     this.selectDoneButton = this.selectDoneButton.bind(this);
     this.handleAddTag = this.handleAddTag.bind(this);
     this.handleTagChange = this.handleTagChange.bind(this);
+    this.tagExists = this.tagExists.bind(this);
     // debugger
   }
 
@@ -41,6 +42,10 @@ class NoteForm extends React.Component {
     // nextPtops.note.id -> integer
   }
 
+  tagExists(e) {
+    
+  }
+
   handleAddTag(e) {
     // debugger
     if(e.key === "Enter") {
@@ -48,6 +53,7 @@ class NoteForm extends React.Component {
       // debugger
 
       // compare with entities data if not there we create
+
 
       this.props.createTag({name: e.target.value}).then((tag) => {
         // update the tagsID array for the note
