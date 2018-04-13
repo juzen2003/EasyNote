@@ -13,7 +13,7 @@ class NotesIndex extends React.Component {
   componentDidMount() {
     if (this.props.formType === "notebookNotes") {
       this.props.action(this.props.notebookId);
-    } else {
+    } else if (this.props.formType === "notes"){
       this.props.action();
     }
   }
@@ -52,6 +52,8 @@ class NotesIndex extends React.Component {
 
       // const notebookTitle = "NOTEBOOK"
       return `${notebookTitle}`
+    } else if (this.props.tagId) {
+      return `TAG: ${this.props.tags[this.props.tagId].name}`
     } else {
       return "NOTES"
     }

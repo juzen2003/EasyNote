@@ -46,7 +46,7 @@ class TagsIndexItem extends React.Component {
     // Need to modify Link to and button event handler
     return (
       <div className="tags-index-wrapper">
-        <Link to="/tags" onClick={this.handleRemoveModal}>
+        <Link to={`/tags/${this.props.tag.id}/notes`} onClick={this.handleRemoveModal}>
           <div className="tags-index-item" >
 
             <button>

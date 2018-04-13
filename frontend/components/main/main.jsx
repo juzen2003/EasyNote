@@ -4,6 +4,7 @@ import NotesIndexContainer from '../notes/notes_index_container';
 import EditNoteFormContainer from '../notes/edit_note_form_container';
 import CreateNoteFormContainer from '../notes/create_note_form_container';
 import NotebookNotesIndexContainer from '../notes/notebook_notes_index_container';
+import TagNotesIndexContainer from '../notes/tag_notes_index_container';
 import { fetchAllNotes, fetchNote } from '../../actions/note_actions'
 
 
@@ -41,8 +42,9 @@ class Main extends React.Component {
   selectIndexForm() {
     if(this.props.match.params.notebookId) {
       return <NotebookNotesIndexContainer />
-    }
-    else {
+    } else if(this.props.match.params.tagId) {
+      return <TagNotesIndexContainer />
+    } else {
       return <NotesIndexContainer />
     }
   }
