@@ -266,7 +266,7 @@ class NoteForm extends React.Component {
                 value={this.state.currentTagName}
                 onChange={this.handleTagChange}
                 onKeyPress={this.handleAddTag}
-                placeholder="type and enter to + tag"
+                placeholder="enter to + tag"
                 />
                 <ul>
                   {tags}

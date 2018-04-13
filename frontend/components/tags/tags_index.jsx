@@ -30,15 +30,20 @@ class TagsIndex extends React.Component {
 
   render () {
     // debugger
-    const tagItems = this.props.tags.map((tag, idx) =>
-    <TagsIndexItem
-      key={idx}
-      tag={tag}
-      notes={this.props.notes}
-      deleteTag={this.props.deleteTag}
-      fetchTag={this.props.fetchTag}
-      fetchAllTags={this.props.fetchAllTags}
-    />).reverse();
+
+    const tagItems = this.props.tags.map((tag, idx) => {
+      const tagNotes = this.props.notes.filter(note => tag.notesID.includes(note.id)) 
+
+      return (
+      <TagsIndexItem
+        key={idx}
+        tag={tag}
+        notes={tagNotes}
+        deleteTag={this.props.deleteTag}
+        fetchTag={this.props.fetchTag}
+        fetchAllTags={this.props.fetchAllTags}
+      /> )
+    }).reverse();
     return (
       <div className="tags-index-area" onClick={this.handleClick}>
         <ul>
