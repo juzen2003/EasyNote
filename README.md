@@ -17,7 +17,7 @@ User can sign up or login securely.
 
 ![User Auth](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/home.png)
 
-### Notes with rich-text editor
+### Notes CRUD, with rich-text editor
 User is able to create notes with rich-text editor.
 
 ![Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notes.png)
@@ -94,12 +94,21 @@ const toolbar = [
  + Display all tags
  + Display notes with each tag
 
+## Challenges
+* Handle many to many association for notes and tags, and properly display results on frontend.
+* Reuse the same main page for notes/notebooks/tag, and properly show and hide modals.
+* To properly use React-Quill, it required reading through API since some methods are defined slightly different.
+
 ## Future Features and Improvement
 ### Search
 * Allow user to search notes by title
 * Allow user to search by tags and notebooks
+
 ### Separate Delete page
 * Add separate deleting page to for user to confirm the deletion on each note
+
 ### MISC
 * Allow user to remove a specific tag for an individual note
-* Sort each notes by updated time
+  * deleting tagging only without affecting notes and tags
+* Sort notes
+  * sort notes with created/updated time
