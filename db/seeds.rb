@@ -36,17 +36,36 @@ note4_body_with_style = "<ol><li>Nullam nisi in pellentesque eleifend, fusce lac
 note5_body = "Coffe↵Coding↵Debugging"
 note5_body_with_style = "<ul><li><span style=\"color: rgb(178, 107, 0);\">Coffe</span></li><li><span class=\"ql-size-large\" style=\"color: rgb(0, 71, 178);\">Coding</span></li><li><span class=\"ql-size-huge\" style=\"color: rgb(230, 0, 0);\">Debugging</span></li></ul>"
 
+note6_body = "Spicy jalapeno bacon ipsum dolor amet turducken buffalo pork loin, ribeye ground round rump chicken flank meatball bacon short ribs meatloaf drumstick. Fatback tenderloin sirloin beef ribs. Pork hamburger rump ground round venison landjaeger biltong jerky. Pastrami bresaola picanha pancetta turkey pork loin turducken strip steak ham porchetta ham hock biltong.↵↵Leberkas rump tongue ham hock landjaeger flank biltong chuck corned beef pancetta bacon porchetta prosciutto tail. Alcatra short ribs ground round strip steak flank pork swine ham hock picanha rump pastrami sirloin chuck brisket ham. Cupim meatloaf shoulder bresaola meatball shank short ribs short loin beef. Ham frankfurter tongue porchetta ribeye turducken shoulder swine. Frankfurter beef ribs jerky fatback. Shank picanha hamburger shoulder.↵↵Pork chop burgdoggen kielbasa brisket tongue cupim jerky t-bone rump buffalo tri-tip. Pork belly frankfurter landjaeger kielbasa shankle. Buffalo shoulder shankle kielbasa. Drumstick meatball t-bone jerky, pancetta kielbasa corned beef turducken porchetta. Bacon buffalo fatback tenderloin frankfurter ham hock pork loin t-bone."
+
+note6_body_with_style = "<p><span style=\"background-color: rgb(255, 255, 102);\">Spicy jalapeno bacon ipsum dolor amet turducken buffalo pork loin, ribeye ground round rump chicken flank meatball bacon short ribs meatloaf drumstick. Fatback tenderloin sirloin beef ribs. Pork hamburger rump ground round venison landjaeger biltong jerky. Pastrami bresaola picanha pancetta turkey pork loin turducken strip steak ham porchetta ham hock biltong.</span></p><p><br></p><p><span style=\"color: rgb(240, 102, 102);\">Leberkas rump tongue ham hock landjaeger flank biltong chuck corned beef pancetta bacon porchetta prosciutto tail. Alcatra short ribs ground round strip steak flank pork swine ham hock picanha rump pastrami sirloin chuck brisket ham. Cupim meatloaf shoulder bresaola meatball shank short ribs short loin beef. Ham frankfurter tongue porchetta ribeye turducken shoulder swine. Frankfurter beef ribs jerky fatback. Shank picanha hamburger shoulder.</span></p><p><br></p><p><strong><em>Pork chop burgdoggen kielbasa brisket tongue cupim jerky t-bone rump buffalo tri-tip. Pork belly frankfurter landjaeger kielbasa shankle. Buffalo shoulder shankle kielbasa. Drumstick meatball t-bone jerky, pancetta kielbasa corned beef turducken porchetta. Bacon buffalo fatback tenderloin frankfurter ham hock pork loin t-bone.</em></strong></p><p><br></p>"
+
+note7_body = "Bacon ipsum dolor amet duis jowl magna, veniam corned beef pancetta buffalo in shankle tempor sunt. Pork ullamco exercitation, rump deserunt meatloaf et porchetta in t-bone. Short loin laboris voluptate, drumstick veniam velit prosciutto ad venison. Do kielbasa pig enim salami ex consequat dolore. Cillum ea ribeye, leberkas swine non magna deserunt anim."
+
+note7_body_with_style = "<p><span class=\"ql-font-monospace\" style=\"background-color: rgb(204, 224, 245);\">Bacon ipsum dolor amet duis jowl magna, veniam corned beef pancetta buffalo in shankle tempor sunt. </span><span class=\"ql-font-monospace\">Pork ullamco exercitation, rump deserunt meatloaf et porchetta in t-bone. Short loin laboris voluptate, drumstick veniam velit prosciutto ad venison. </span><s class=\"ql-font-monospace\" style=\"color: rgb(0, 102, 204);\">Do kielbasa pig enim salami ex consequat dolore. Cillum ea ribeye, leberkas swine non magna deserunt anim.</s></p>"
+
+note8_body = "Pudding bear claw candy tiramisu icing pie chocolate cotton candy brownie. Dragée I love I love chocolate bar candy chocolate jujubes lollipop. Jelly-o cake sweet roll.↵↵I love tootsie roll chocolate cake danish cotton candy gummies jujubes I love apple pie. I love cotton candy tart. Cupcake sesame snaps macaroon pastry fruitcake powder jelly tiramisu tart. Ice cream lemon drops I love I love."
+
+note8_body_with_style = "<p><span class=\"ql-size-large\" style=\"color: rgb(230, 0, 0);\">Pudding</span><span class=\"ql-size-large\"> bear claw candy tiramisu icing pie chocolate cotton candy brownie. Dragée I love I love chocolate bar candy chocolate jujubes lollipop. Jelly-o cake sweet roll.</span></p><p><br></p><p>I love tootsie roll chocolate cake danish cotton candy gummies jujubes I love apple pie. I love cotton candy tart. <strong style=\"color: rgb(255, 194, 102);\"><em>Cupcake sesame snaps macaroon pastry fruitcake powder jelly tiramisu tart. Ice cream lemon drops I love I love.</em></strong></p>"
+
 note1 = Note.create!(title: "Lorem Ipsum", user_id: demo_user.id, notebook_id: random_book.id, body: note1_body, body_with_style: note1_body_with_style)
 note2 = Note.create!(title: "Journal", user_id: demo_user.id, notebook_id: general_book.id, body: note2_body, body_with_style: note2_body_with_style)
 note3 = Note.create!(title: "Japan", user_id: demo_user.id, notebook_id: general_book.id, body: note3_body, body_with_style: note3_body_with_style)
 note4 = Note.create!(title: "ToDo List", user_id: demo_user.id, notebook_id: life_book.id, body: note4_body, body_with_style: note4_body_with_style)
 note5 = Note.create!(title: "AA Life", user_id: demo_user.id, notebook_id: life_book.id, body: note5_body, body_with_style: note5_body_with_style)
+note6 = Note.create!(title: "Hungry?", user_id: demo_user.id, notebook_id: random_book.id, body: note6_body, body_with_style: note6_body_with_style)
+note7 = Note.create!(title: "Lunch Time", user_id: demo_user.id, notebook_id: life_book.id, body: note7_body, body_with_style: note7_body_with_style)
+note8 = Note.create!(title: "Pudding", user_id: demo_user.id, notebook_id: life_book.id, body: note8_body, body_with_style: note8_body_with_style)
 
 tag1 = Tag.create!(name: "Japan", user_id: demo_user.id)
 tag2 = Tag.create!(name: "Life", user_id: demo_user.id)
 tag3 = Tag.create!(name: "Coding", user_id: demo_user.id)
 tag4 = Tag.create!(name: "News", user_id: demo_user.id)
 tag5 = Tag.create!(name: "Random", user_id: demo_user.id)
+tag6 = Tag.create!(name: "pork chop", user_id: demo_user.id)
+tag7 = Tag.create!(name: "meat", user_id: demo_user.id)
+tag8 = Tag.create!(name: "hungry", user_id: demo_user.id)
+tag9 = Tag.create!(name: "sweet", user_id: demo_user.id)
 
 tagging_list = [
   [note1.id, tag5.id],
@@ -59,6 +78,16 @@ tagging_list = [
   [note5.id, tag2.id],
   [note5.id, tag3.id],
   [note5.id, tag4.id],
+  [note6.id, tag2.id],
+  [note6.id, tag6.id],
+  [note6.id, tag7.id],
+  [note6.id, tag8.id],
+  [note7.id, tag6.id],
+  [note7.id, tag3.id],
+  [note7.id, tag8.id],
+  [note8.id, tag8.id],
+  [note8.id, tag9.id],
+  [note8.id, tag2.id],
 ]
 
 tagging_list.each do |note_id, tag_id|
