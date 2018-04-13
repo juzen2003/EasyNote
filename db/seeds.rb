@@ -48,14 +48,19 @@ note8_body = "Pudding bear claw candy tiramisu icing pie chocolate cotton candy 
 
 note8_body_with_style = "<p><span class=\"ql-size-large\" style=\"color: rgb(230, 0, 0);\">Pudding</span><span class=\"ql-size-large\"> bear claw candy tiramisu icing pie chocolate cotton candy brownie. Dragée I love I love chocolate bar candy chocolate jujubes lollipop. Jelly-o cake sweet roll.</span></p><p><br></p><p>I love tootsie roll chocolate cake danish cotton candy gummies jujubes I love apple pie. I love cotton candy tart. <strong style=\"color: rgb(255, 194, 102);\"><em>Cupcake sesame snaps macaroon pastry fruitcake powder jelly tiramisu tart. Ice cream lemon drops I love I love.</em></strong></p>"
 
+note9_body = "SO FUN"
+note9_body_with_style = "<p><span class=\"ql-size-huge\" style=\"color: rgb(230, 0, 0); background-color: rgb(255, 255, 0);\">SO FUN</span></p>"
+
 note1 = Note.create!(title: "Lorem Ipsum", user_id: demo_user.id, notebook_id: random_book.id, body: note1_body, body_with_style: note1_body_with_style)
 note2 = Note.create!(title: "Journal", user_id: demo_user.id, notebook_id: general_book.id, body: note2_body, body_with_style: note2_body_with_style)
 note3 = Note.create!(title: "Japan", user_id: demo_user.id, notebook_id: general_book.id, body: note3_body, body_with_style: note3_body_with_style)
 note4 = Note.create!(title: "ToDo List", user_id: demo_user.id, notebook_id: life_book.id, body: note4_body, body_with_style: note4_body_with_style)
-note5 = Note.create!(title: "AA Life", user_id: demo_user.id, notebook_id: life_book.id, body: note5_body, body_with_style: note5_body_with_style)
 note6 = Note.create!(title: "Hungry?", user_id: demo_user.id, notebook_id: random_book.id, body: note6_body, body_with_style: note6_body_with_style)
 note7 = Note.create!(title: "Lunch Time", user_id: demo_user.id, notebook_id: life_book.id, body: note7_body, body_with_style: note7_body_with_style)
 note8 = Note.create!(title: "Pudding", user_id: demo_user.id, notebook_id: life_book.id, body: note8_body, body_with_style: note8_body_with_style)
+note9 = Note.create!(title: "FS Project", user_id: demo_user.id, notebook_id: life_book.id, body: note9_body, body_with_style: note9_body_with_style)
+note5 = Note.create!(title: "AA Life", user_id: demo_user.id, notebook_id: life_book.id, body: note5_body, body_with_style: note5_body_with_style)
+
 
 tag1 = Tag.create!(name: "Japan", user_id: demo_user.id)
 tag2 = Tag.create!(name: "Life", user_id: demo_user.id)
@@ -66,6 +71,8 @@ tag6 = Tag.create!(name: "pork chop", user_id: demo_user.id)
 tag7 = Tag.create!(name: "meat", user_id: demo_user.id)
 tag8 = Tag.create!(name: "hungry", user_id: demo_user.id)
 tag9 = Tag.create!(name: "sweet", user_id: demo_user.id)
+tag10 = Tag.create!(name: "debugging", user_id: demo_user.id)
+
 
 tagging_list = [
   [note1.id, tag5.id],
@@ -88,6 +95,9 @@ tagging_list = [
   [note8.id, tag8.id],
   [note8.id, tag9.id],
   [note8.id, tag2.id],
+  [note9.id, tag10.id],
+  [note9.id, tag2.id],
+  [note9.id, tag3.id],
 ]
 
 tagging_list.each do |note_id, tag_id|
