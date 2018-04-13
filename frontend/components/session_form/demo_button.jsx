@@ -10,7 +10,9 @@ class DemoButton extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    dispatch(login(this.state));
+    // dispatch(login(this.state));
+    this.props.login(this.state)
+
   }
 
   render() {

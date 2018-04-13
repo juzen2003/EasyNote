@@ -24,7 +24,7 @@ class NotesIndexItem extends React.Component {
   }
 
   handleDelete() {
-    if (this.props.notebookId) {
+    if (this.props.notebookId || this.props.tagId) {
       this.props.deleteNote(this.props.note.id).then(() => {
          // this.props.action(this.props.notebookId);
          // this.props.history.push(`notebooks/${this.props.notebookId}/notes`);

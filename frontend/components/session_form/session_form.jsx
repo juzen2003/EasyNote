@@ -76,7 +76,7 @@ class SessionForm extends React.Component {
               type="submit"
               value={this.props.formType}
             />
-            <DemoButton/>
+            <DemoButton login={this.props.login}/>
           </form>
         </div>
         {this.renderErrors()}
