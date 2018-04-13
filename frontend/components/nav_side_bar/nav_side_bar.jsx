@@ -89,19 +89,19 @@ class NavSideBar extends React.Component {
         <img className="side-bar-logo" src="/logo.png" alt="Logo"/>
         <ul>
           <li>
-            <Link to="/notes/new"><i className="material-icons plus-icon" >add_circle_outline</i></Link>
+            <Link to="/notes/new"><i title="NEW NOTE" className="material-icons plus-icon" >add_circle_outline</i></Link>
           </li>
           <li>
-            <Link to="/notes"><i className="material-icons notes-icon" onClick={this.handleRemoveModal}>description</i></Link>
+            <Link to="/notes"><i title="NOTES" className="material-icons notes-icon" onClick={this.handleRemoveModal}>description</i></Link>
           </li>
           <li>
-            <i className="material-icons notebooks-icon" onClick={this.handleClick("notebooks")}>library_books</i>
+            <i title="NOTEBOOKS" className="material-icons notebooks-icon" onClick={this.handleClick("notebooks")}>library_books</i>
           </li>
           <li>
-            <i className="material-icons tags-icon" onClick={this.handleClick("tags")} >local_offer</i>
+            <i title="TAGS" className="material-icons tags-icon" onClick={this.handleClick("tags")} >local_offer</i>
           </li>
         </ul>
-        <i className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
+        <i title="LOGOUT" className="material-icons logout-icon" onClick={this.handleLogout}>power_settings_new</i>
 
       </div>
         <div className="notebooks-modal-area" onClick={this.handleClick("notebooks")}>

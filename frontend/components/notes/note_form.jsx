@@ -153,7 +153,8 @@ class NoteForm extends React.Component {
         // debugger
         this.state.tagsID.forEach(id => this.props.createTagging({note_id: note.note.id, tag_id: id}));
 
-       }).then(() => this.props.history.push('/notes'));
+       })
+       .then(() => this.props.history.push('/notes'));
     } else {
       this.props.action(finalState).then((note) => {
         // console.log(context.state.tagsID);
