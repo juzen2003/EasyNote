@@ -13,7 +13,7 @@ const mapStateToProps = state => {
     note: {title:"", body:"", body_with_style:"", notebook_id:null,   tagsID: [], tagsName: []},
     notebooks: state.entities.notebooks,
     formType: "Create form",
-    tag: Object.values(state.entities.tags)
+    tags: Object.values(state.entities.tags)
   }
 
 }

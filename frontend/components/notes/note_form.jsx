@@ -43,7 +43,15 @@ class NoteForm extends React.Component {
   }
 
   tagExists(e) {
-    
+    // const context = this;
+    // debugger
+    for(let i=0; i < this.props.tags.length ; i++) {
+      if(this.props.tags[i].name === e.target.value) {
+        return this.props.tags[i].id
+      }
+    }
+
+    return false
   }
 
   handleAddTag(e) {
@@ -51,18 +59,29 @@ class NoteForm extends React.Component {
     if(e.key === "Enter") {
       // const context = this
       // debugger
-
+      const check = this.tagExists(e)
+      // debugger
       // compare with entities data if not there we create
+      if (check) {
+        this.props.fetchTag(check).then((tag) => {
+          const tagsID = this.state.tagsID.concat(tag.tag.id)
+          const tagsName =
+          this.state.tagsName.concat(tag.tag.name)
+          this.setState({tagsID, tagsName, currentTagName: ""});
+        })
 
+      } else {
 
-      this.props.createTag({name: e.target.value}).then((tag) => {
-        // update the tagsID array for the note
-        const tagsID = this.state.tagsID.concat(tag.tag.id)
-        const tagsName =
-        this.state.tagsName.concat(tag.tag.name)
-        this.setState({tagsID, tagsName, currentTagName: ""});
-        // debugger
-      })
+        this.props.createTag({name: e.target.value}).then((tag) => {
+          // update the tagsID array for the note
+          const tagsID = this.state.tagsID.concat(tag.tag.id)
+          const tagsName =
+          this.state.tagsName.concat(tag.tag.name)
+          this.setState({tagsID, tagsName, currentTagName: ""});
+          // debugger
+        })
+
+      }
 
     }
   }
@@ -121,16 +140,21 @@ class NoteForm extends React.Component {
     //     this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
     //   });
     // }
-    const context = this
+    // const context = this
     if (this.props.location.pathname !== "/notes") {
       this.props.action(finalState).then((note) => {
         // console.log(context.state.tagsID);
         // debugger
-        context.state.tagsID.forEach(id => context.props.createTagging({note_id: note.note.id, tag_id: id}));
+        this.state.tagsID.forEach(id => this.props.createTagging({note_id: note.note.id, tag_id: id}));
 
        }).then(() => this.props.history.push('/notes'));
     } else {
-      this.props.action(finalState).then(() => {
+      this.props.action(finalState).then((note) => {
+        // console.log(context.state.tagsID);
+        // debugger
+        this.state.tagsID.forEach(id => this.props.createTagging({note_id: note.note.id, tag_id: id}));
+
+       }).then(() => {
         this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
       });
     }
@@ -242,7 +266,7 @@ class NoteForm extends React.Component {
                 value={this.state.currentTagName}
                 onChange={this.handleTagChange}
                 onKeyPress={this.handleAddTag}
-                placeholder="+tag"
+                placeholder="type and enter to + tag"
                 />
                 <ul>
                   {tags}
