@@ -64,11 +64,16 @@ class NoteForm extends React.Component {
       // compare with entities data if not there we create
       if (check) {
         this.props.fetchTag(check).then((tag) => {
-          const tagsID = this.state.tagsID.concat(tag.tag.id)
           // avoid duplicate tags:
-          const tagsName =
-          this.state.tagsName.concat(tag.tag.name)
-          this.setState({tagsID, tagsName, currentTagName: ""});
+          if(!this.state.tagsName.includes(tag.tag.name)) {
+            const tagsID = this.state.tagsID.concat(tag.tag.id)
+            const tagsName =
+            this.state.tagsName.concat(tag.tag.name)
+            this.setState({tagsID, tagsName, currentTagName: ""});
+          } else {
+            this.setState({currentTagName: ""});
+          }
+
         })
 
       } else {
