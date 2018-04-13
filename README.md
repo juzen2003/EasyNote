@@ -1,4 +1,12 @@
-# README
+# EasyNote
+[Live Demo](https://easynote.herokuapp.com/#/)
+
+[EasyNote](https://easynote.herokuapp.com/#/), a single-page clone of [Evernote](https://evernote.com/), is an application to create and organize rich-text notes easily online.
+
+### technologies
+
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

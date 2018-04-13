@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     const splashMessages = "An Easy Way to Keep Track of Your Amazing Ideas";
     const messages = "Manage and organize your notes, thoughts, and ideas in one easy place with EasyNote."
-    const copyrightMessages = "2018 EasyNote Corporation. All rights reserved.";
+    const copyrightMessages = "2018 EasyNote";
     return (
       <div className="home-page">
         <div className="nav-bar-area">
