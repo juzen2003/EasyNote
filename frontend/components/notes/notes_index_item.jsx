@@ -43,6 +43,8 @@ class NotesIndexItem extends React.Component {
   selectItemLink() {
     if (this.props.notebookId) {
       return `/notebooks/${this.props.notebookId}/notes/${this.props.note.id}`
+    } else if(this.props.tagId) {
+      return `/tags/${this.props.tagId}/notes/${this.props.note.id}`
     } else {
       return `/notes/${this.props.note.id}`
     }

@@ -68,6 +68,7 @@ class NotesIndex extends React.Component {
       fetchNote={this.props.fetchNote}
       action={this.props.action}
       notebookId={this.props.notebookId}
+      tagId={this.props.tagId}
     />).reverse();
     return (
       <div>
