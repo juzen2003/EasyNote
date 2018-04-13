@@ -14,30 +14,18 @@ EasyNote is built with
 ### User Authentication
 User can sign up or login securely.
 
-![home](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/home.png)
+![User Auth](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/home.png)
 
+### Notes with rich-text editor
+User is able to create notes with rich-text editor.
 
+![Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notes.png)
 
+### Notebooks
+Notes can be organized by Notebooks.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Notebook ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notebooks.png)
 
-Things you may want to cover:
+Notes belonging to individual notebook is shown.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Notebook Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notebooks_notes.png)
