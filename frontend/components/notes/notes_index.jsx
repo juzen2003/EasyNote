@@ -52,8 +52,13 @@ class NotesIndex extends React.Component {
 
       // const notebookTitle = "NOTEBOOK"
       return `${notebookTitle}`
+
     } else if (this.props.tagId) {
-      return `TAG: ${this.props.tags[this.props.tagId].name}`
+      let tagName = "TAG"
+      if (this.props.tags[this.props.tagId]) {
+        tagName = `TAG: ${this.props.tags[this.props.tagId].name}`
+      }
+      return tagName
     } else {
       return "NOTES"
     }
