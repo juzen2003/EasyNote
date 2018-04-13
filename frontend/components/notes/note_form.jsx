@@ -37,6 +37,7 @@ class NoteForm extends React.Component {
       // console.log("re-fetch?");
 
     }
+
     // debugger
     // nextProps.match.params.noteId -> string
     // nextPtops.note.id -> integer

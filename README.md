@@ -24,8 +24,27 @@ User is able to create notes with rich-text editor.
 ### Notebooks
 Notes can be organized by Notebooks.
 
-![Notebook ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notebooks.png)
+![Notebooks ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notebooks.png)
 
-Notes belonging to individual notebook is shown.
+Notes belonging to individual notebook is displayed.
 
 ![Notebook Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/notebooks_notes.png)
+
+### Tags
+Notes can be tagged with multiple tags
+
+![Tags ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/tags.png)
+
+Notes belongs to individual tag is displayed.
+
+![Tag Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/tags_notes.png)
+
+## Future Features and Improvement
+### Search
+* Allow user to search notes by title
+* Allow user to search by tags and notebooks
+### Separate Delete page
+* Add separate deleting page to for user to confirm the deletion on each note
+### MISC
+* Allow user to remove a specific tag for an individual note
+* Sort each notes by updated time 
