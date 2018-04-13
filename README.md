@@ -1,5 +1,6 @@
 # EasyNote
-[Live Demo](https://easynote.herokuapp.com/#/)
+[Live Demo](https://easynote.herokuapp.com/#/)  
+[Design Doc](https://github.com/juzen2003/EasyNote/wiki)
 
 [EasyNote](https://easynote.herokuapp.com/#/), a single-page clone of [Evernote](https://evernote.com/), is an application to create and organize rich-text notes online. It allows user to create an account, create notes, and manage them via notebooks and tags easily.
 
@@ -38,6 +39,44 @@ Notes can be tagged with multiple tags
 Notes belongs to individual tag is displayed.
 
 ![Tag Notes ](https://github.com/juzen2003/EasyNote/blob/master/easyNote_readme_image/tags_notes.png)
+
+### MISC
++ Modal, when icons are clicked, open up notebooks and tags index table with modals.
+```js
+openModal() {
+  if (this.props.modal === "/notebooks" || this.props.modal === "/tags") {
+    const modals = document.getElementsByClassName(`${this.props.modal.slice(1)}-modal-area`);
+    for(let i = 0; i < modals.length; i++) {
+      if(modals[i].classList.contains("is-open") === false) {
+        modals[i].classList.add("is-open");
+      }
+    }
+  }
+}
+```
++ Configure and render the rich-text editor (React-Quill)
+```js
+const toolbar = [
+  [{ font: [] }],
+  [{ size: ["small", false, "large", "huge"] }],
+  [{ color: [] }, { background: [] }],
+  ["bold", "italic", "underline", "strike"],
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ align: [] }],
+  [{ 'indent': '-1'}, { 'indent': '+1' }],
+  ["blockquote", "code-block"],
+  ["link", "image"],
+  ['clean']
+];
+```
+```js
+<ReactQuill
+  value={this.state.body_with_style || ""}
+  modules={{toolbar}}
+  placeholder="Start Typing here..."
+  onChange={this.handleBodyChange}
+/>
+```
 
 ## Application Structure
 1. NavSide Bar
