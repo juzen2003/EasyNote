@@ -47,6 +47,7 @@ class NoteForm extends React.Component {
       // const context = this
       // debugger
 
+      // compare with entities data if not there we create
 
       this.props.createTag({name: e.target.value}).then((tag) => {
         // update the tagsID array for the note
@@ -114,8 +115,14 @@ class NoteForm extends React.Component {
     //     this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
     //   });
     // }
+    const context = this
     if (this.props.location.pathname !== "/notes") {
-      this.props.action(finalState).then(() => this.props.history.push('/notes'));
+      this.props.action(finalState).then((note) => {
+        // console.log(context.state.tagsID);
+        // debugger
+        context.state.tagsID.forEach(id => context.props.createTagging({note_id: note.note.id, tag_id: id}));
+
+       }).then(() => this.props.history.push('/notes'));
     } else {
       this.props.action(finalState).then(() => {
         this.setState({title:"", body:"", body_with_style:"", notebook_id:null});
