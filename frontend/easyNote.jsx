@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store.js'
+import configureStore from './store/store.js';
 import Root from './components/root';
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://<your app name>.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
 
 // import {createTag, fetchTag, fetchAllTags, deleteTag} from './actions/tag_actions'
 // import {fetchNotebookNotes, fetchAllNotes, fetchNote} from './actions/note_actions'
@@ -27,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-  
+
   // window.createTag = createTag;
   // window.fetchTag = fetchTag;
   // window.fetchAllTags = fetchAllTags;
